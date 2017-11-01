@@ -36,9 +36,7 @@
             <img src="/" alt="Nusendra.com">
           </a>
           <a class="navbar-item is-tab is-hidden-mobile is-active"><span class="icon is-medium"><i class="fa fa-home"></i></span>Home</a>
-          <a class="navbar-item is-tab is-hidden-mobile">Features</a>
-          <a class="navbar-item is-tab is-hidden-mobile">Pricing</a>
-          <a class="navbar-item is-tab is-hidden-mobile">About</a>
+          <a class="navbar-item is-tab is-hidden-mobile">Front End</a>
 
           <button class="button navbar-burger" data-target="navMenu">
             <span></span>
@@ -48,24 +46,15 @@
 
         </div>
 
-
         <div class="navbar-menu navbar-end" id="navMenu">
           <a class="navbar-item is-tab is-hidden-tablet is-active">Home</a>
-          <a class="navbar-item is-tab is-hidden-tablet">Features</a>
-          <a class="navbar-item is-tab is-hidden-tablet">Pricing</a>
-          <a class="navbar-item is-tab is-hidden-tablet">About</a>
-          <a class="navbar-item nav-tag">
-            <span class="icon is-small">
-              <i class="fa fa-envelope-o"></i>
-            </span>
-            <span class="tag is-primary tag-notif">6</span>
-          </a>
+          <a class="navbar-item is-tab is-hidden-tablet">Front End</a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               <figure class="image is-32x32" style="margin-right:.5em;">
                 {{-- <img src="https://avatars1.githubusercontent.com/u/7221389?v=4&s=32"> --}}
               </figure>
-              Nusendra
+              {{ Auth::user()->name }}
             </a>
 
             <div class="navbar-dropdown is-right">
@@ -94,37 +83,25 @@
       <aside class="column is-2">
         <nav class="menu">
           <p class="menu-label">
-            General
+            UTAMA
           </p>
           <ul class="menu-list">
-            <router-link to="/su">Home</router-link>
-            <li><a class="is-active" href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
+            <router-link to="/">Dashboard</router-link>
           </ul>
           <p class="menu-label">
-            Administration
+            MASTER DATA
           </p>
           <ul class="menu-list">
-            <li><a href="/bulma-admin-dashboard-template/forms.html"><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> Forms</a></li>
-            <li><a href="/bulma-admin-dashboard-template/ui-elements.html"><span class="icon is-small"><i class="fa fa-desktop"></i></span> UI Elements</a></li>
-            <li><a href="/bulma-admin-dashboard-template/tables.html"><span class="icon is-small"><i class="fa fa-table"></i></span> Tables</a></li>
-            <li><a href="/bulma-admin-dashboard-template/presentations.html"><span class="icon is-small"><i class="fa fa-bar-chart"></i></span> Presentations</a></li>
-
-            <li>
-              <a class=""><i class="fa fa-cog"></i> Settings</a>
-              <ul>
-                <li><a>Members</a></li>
-                <li><a>Plugins</a></li>
-                <li><a>Add a member</a></li>
-              </ul>
-            </li>
+            <router-link to="/kategori">Kategori</router-link>
+            <router-link to="/tag">Tag</router-link>
+            <router-link to="/gambar">Gambar</router-link>
           </ul>
           <p class="menu-label">
-            Live On
+            BLOGGING
           </p>
           <ul class="menu-list">
-            <li><a><span class="icon is-small"><i class="fa fa-bug"></i></span> Additional Pages</a></li>
-            <li><a><span class="icon is-small"><i class="fa fa-windows"></i></span> Extras</a></li>
-            <li><a><span class="icon is-small"><i class="fa fa-laptop"></i></span> Landing Page</a></li>
+            <router-link to="/blog">Blog</router-link>
+            <router-link to="/komentar">Komentar</router-link>
           </ul>
         </nav>
       </aside>

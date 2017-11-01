@@ -19,6 +19,7 @@ Route::view('/login','auth.login');
 
 Route::group(['middleware' => 'Authentication'], function(){
   Route::view('/backend','index');
+  Route::resource('kategori','KategoriController');
 });
 
 Auth::routes();
