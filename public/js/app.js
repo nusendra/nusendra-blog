@@ -16037,16 +16037,7 @@ module.exports = function (css) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(5);
 
 
-var routes = [{
-  path: '/',
-  component: __webpack_require__(42)
-}, {
-  path: '/kategori',
-  component: __webpack_require__(45)
-}, {
-  path: '/kategori-create',
-  component: __webpack_require__(48)
-}];
+var routes = [{ path: '/', component: __webpack_require__(42) }, { path: '/kategori', component: __webpack_require__(45) }, { path: '/kategori-create', component: __webpack_require__(64) }, { path: '/kategori/:id', component: __webpack_require__(64), props: true }];
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
   routes: routes
@@ -16115,11 +16106,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 /* 44 */
@@ -16232,14 +16219,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
+  data: function data() {
+    return {
+      kategoris: ''
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('kategori').then(function (response) {
+      _this.kategoris = response.data;
+    }).catch(function (error) {
+      console.log(error);
+    });
+  }
 });
 
 /***/ }),
@@ -16258,7 +16253,36 @@ var render = function() {
         _c("a", { staticClass: "button is-primary" }, [_vm._v("Add New")])
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _c("table", { staticClass: "table" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.kategoris, function(kategori) {
+            return _c("tr", [
+              _c("td", [_vm._v(_vm._s(kategori.id))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(kategori.kategori))]),
+              _vm._v(" "),
+              _c(
+                "td",
+                [
+                  _c(
+                    "router-link",
+                    { attrs: { to: "/kategori/" + kategori.id } },
+                    [_c("a", [_vm._v("edit")])]
+                  ),
+                  _vm._v(" "),
+                  _c("router-link", { attrs: { to: "/kategori" } }, [
+                    _c("a", [_vm._v("hapus")])
+                  ])
+                ],
+                1
+              )
+            ])
+          })
+        )
+      ])
     ],
     1
   )
@@ -16268,33 +16292,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("table", { staticClass: "table" }, [
-      _c("thead", [
-        _c("tr", [
-          _c("th", [_vm._v("No")]),
-          _vm._v(" "),
-          _c("th", { attrs: { width: "50%" } }, [_vm._v("Judul Kategori")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Action")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tfoot", [
-        _c("tr", [
-          _c("th", [_vm._v("No")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Judul Kategori")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Action")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tbody", [
-        _c("tr", [
-          _c("th", [_vm._v("1")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Lol")])
-        ])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("No")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "50%" } }, [_vm._v("Judul Kategori")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")])
       ])
     ])
   }
@@ -16309,15 +16313,33 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(49)
+var __vue_script__ = __webpack_require__(62)
 /* template */
-var __vue_template__ = __webpack_require__(50)
+var __vue_template__ = __webpack_require__(63)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -16334,7 +16356,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/KategoriCreate.vue"
+Component.options.__file = "resources/assets/js/components/Sukses.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -16344,9 +16366,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3c313313", Component.options)
+    hotAPI.createRecord("data-v-fab5cf9e", Component.options)
   } else {
-    hotAPI.reload("data-v-3c313313", Component.options)
+    hotAPI.reload("data-v-fab5cf9e", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -16357,7 +16379,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 49 */
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16369,87 +16391,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      id: 0,
-      kategori: ''
-    };
-  },
-  methods: {
-    submit: function submit() {
-      axios.post('kategori', {
-        id: this.id,
-        kategori: this.kategori
-      }).then(function (response) {
-        console.log("ntap");
-      }).catch(function (error) {
-        console.log(error.response.data);
-      });
+  props: ['pesan', 'alert'],
+  computed: {
+    show: function show() {
+      return this.alert;
     }
   }
-
 });
 
 /***/ }),
-/* 50 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "field" }, [
-    _c("pre", [_vm._v(_vm._s(_vm.$data))]),
-    _vm._v(" "),
-    _c("label", { staticClass: "label" }, [_vm._v("Kategori")]),
-    _vm._v(" "),
-    _c("div", { staticClass: "control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.kategori,
-            expression: "kategori"
-          }
-        ],
-        staticClass: "input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.kategori },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.kategori = $event.target.value
-          }
-        }
-      })
-    ]),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _c("div", { staticClass: "field is-grouped" }, [
-      _c("div", { staticClass: "control" }, [
-        _c(
-          "button",
-          { staticClass: "button is-link", on: { click: _vm.submit } },
-          [_vm._v("Submit")]
-        )
-      ])
-    ])
-  ])
+  return _c(
+    "div",
+    {
+      directives: [
+        { name: "show", rawName: "v-show", value: _vm.show, expression: "show" }
+      ],
+      staticClass: "notification is-primary"
+    },
+    [_vm._v("\n  " + _vm._s(_vm.pesan) + "\n")]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -16457,15 +16426,189 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3c313313", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-fab5cf9e", module.exports)
   }
 }
 
 /***/ }),
-/* 51 */
-/***/ (function(module, exports) {
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(65)
+/* template */
+var __vue_template__ = __webpack_require__(66)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/KategoriStore.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-19c5699a", Component.options)
+  } else {
+    hotAPI.reload("data-v-19c5699a", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Sukses__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Sukses___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Sukses__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['id'],
+  components: {
+    'sukses': __WEBPACK_IMPORTED_MODULE_0__components_Sukses___default.a
+  },
+  data: function data() {
+    return {
+      // id:0,
+      kategori: '',
+      statusResponse: false
+    };
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      axios.post('kategori', {
+        id: this.id,
+        kategori: this.kategori
+      }).then(function (response) {
+        _this.statusResponse = true;
+        _this.kategori = '';
+      }).catch(function (error) {
+        console.log(error.response.data);
+      });
+    }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    axios.get('kategori/' + this.id + '/edit').then(function (response) {
+      _this2.kategori = response.data;
+      // console.log(response.data)
+    }).catch(function (error) {
+      console.log(error);
+    });
+  }
+});
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "field" },
+    [
+      _c("sukses", {
+        attrs: { pesan: "Proses Berhasil", alert: _vm.statusResponse }
+      }),
+      _vm._v(" "),
+      _c("label", { staticClass: "label" }, [_vm._v("Kategori")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "control" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.kategori,
+              expression: "kategori"
+            }
+          ],
+          staticClass: "input",
+          attrs: { type: "text" },
+          domProps: { value: _vm.kategori },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.kategori = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "field is-grouped" }, [
+        _c("div", { staticClass: "control" }, [
+          _c(
+            "button",
+            { staticClass: "button is-link", on: { click: _vm.submit } },
+            [_vm._v("Submit")]
+          )
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-19c5699a", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

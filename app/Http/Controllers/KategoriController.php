@@ -17,7 +17,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        //
+        $model = Kategori::all();
+        return $model;
     }
 
     /**
@@ -76,7 +77,8 @@ class KategoriController extends Controller
      */
     public function edit(Kategori $kategori)
     {
-        //
+        $model = $kategori->kategori;
+        return $model;
     }
 
     /**

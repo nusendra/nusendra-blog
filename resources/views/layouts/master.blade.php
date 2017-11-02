@@ -77,7 +77,18 @@
       </nav>
     </div>
   </header>
-
+  <section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Personal Blog
+      </h1>
+      <h2 class="subtitle">
+        {{Auth::user()->name}}
+      </h2>
+    </div>
+  </div>
+</section>
   <div class="section" id="app">
     <div class="columns">
       <aside class="column is-2">
@@ -109,7 +120,15 @@
     </div>
   </div>
 </body>
-
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Nusendra.com</strong>. Built with Laravel + Vue.JS + Bulma CSS
+      </p>
+    </div>
+  </div>
+</footer>
 </html>
 
 <script src="js/app.js" charset="utf-8"></script>

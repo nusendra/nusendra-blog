@@ -1,6 +1,6 @@
 <template>
   <div class="field">
-    <pre>{{$data}}</pre>
+    <sukses pesan="Proses Berhasil" :alert="statusResponse"></sukses>
     <label class="label">Kategori</label>
     <div class="control">
       <input class="input" type="text" v-model="kategori">
@@ -15,11 +15,17 @@
 </template>
 
 <script>
+  import Sukses from '../components/Sukses';
     export default {
+        props: ['id'],
+        components: {
+          'sukses':Sukses
+        },
         data: function() {
           return {
-            id:0,
-            kategori:''
+            // id:0,
+            kategori:'',
+            statusResponse:false
           }
         },
         methods:{
@@ -29,12 +35,23 @@
               kategori : this.kategori
       			})
       			.then(response => {
-      				console.log("ntap");
+              this.statusResponse = true;
+              this.kategori = '';
       			})
       			.catch(function(error) {
       			    console.log(error.response.data);
       			});
           }
+        },
+        mounted(){
+          axios.get('kategori/' + this.id + '/edit')
+          .then((response) => {
+            this.kategori = response.data
+            // console.log(response.data)
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
         }
 
     }
