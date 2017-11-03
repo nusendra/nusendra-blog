@@ -5,14 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Kategori extends Model
+class Post extends Model
 {
   use SoftDeletes;
   protected $dates = ['deleted_at'];
   protected $guarded = ['id'];
 
-  public function posts()
+  public function kategoris()
   {
-    return $this->belongsToMany('App\Kategori');
+    return $this->belongsToMany('App\Post');
   }
 }

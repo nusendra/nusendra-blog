@@ -1,10 +1,20 @@
 <template>
-  <div class="field">
+  <div class="field column is-5">
     <sukses pesan="Proses Berhasil" :alert="statusResponse"></sukses>
-    <label class="label">Kategori</label>
-    <div class="control">
-      <input class="input" type="text" v-model="kategori">
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Kategori</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input class="input" type="text" v-model="kategori">
+          </p>
+        </div>
+      </div>
     </div>
+
     <br>
     <div class="field is-grouped">
       <div class="control">
@@ -23,7 +33,6 @@
         },
         data: function() {
           return {
-            // id:0,
             kategori:'',
             statusResponse:false
           }
@@ -44,14 +53,16 @@
           }
         },
         mounted(){
-          axios.get('kategori/' + this.id + '/edit')
-          .then((response) => {
-            this.kategori = response.data
-            // console.log(response.data)
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+          if(this.id > 0)
+          {
+            axios.get('kategori/' + this.id + '/edit')
+            .then((response) => {
+              this.kategori = response.data
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+          }
         }
 
     }

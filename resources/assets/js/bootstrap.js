@@ -2,9 +2,14 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import axios from 'axios';
 import Bulma from 'bulma';
+import VueSlugify from 'vue-slugify';
+import Multiselect from 'vue-multiselect'
 
 window.Vue = Vue;
 Vue.use(VueRouter);
+Vue.use(VueSlugify);
+
+Vue.component('multiselect', Multiselect)
 
 window.axios = axios;
 

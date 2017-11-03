@@ -13,7 +13,7 @@
 
   {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css"> --}}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.0.6/dist/vue-multiselect.min.css">
   <!-- GOOGLE ANALYTICS AND FRIENDS -->
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
@@ -111,12 +111,14 @@
             BLOGGING
           </p>
           <ul class="menu-list">
-            <router-link to="/blog">Blog</router-link>
+            <router-link to="/post">Post</router-link>
             <router-link to="/komentar">Komentar</router-link>
           </ul>
         </nav>
       </aside>
-      <router-view></router-view>
+      <div class="column is-10">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </body>
