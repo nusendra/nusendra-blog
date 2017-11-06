@@ -11,17 +11,8 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Nusendra.com</title>
 
-  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css"> --}}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.0.6/dist/vue-multiselect.min.css">
-  <!-- GOOGLE ANALYTICS AND FRIENDS -->
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5442972248172818",
-    enable_page_level_ads: true
-  });
-  </script>
 
 </head>
 
@@ -36,7 +27,7 @@
             <img src="/" alt="Nusendra.com">
           </a>
           <a class="navbar-item is-tab is-hidden-mobile is-active"><span class="icon is-medium"><i class="fa fa-home"></i></span>Home</a>
-          <a class="navbar-item is-tab is-hidden-mobile">Front End</a>
+          <a class="navbar-item is-tab is-hidden-mobile" href="/">Front End</a>
 
           <button class="button navbar-burger" data-target="navMenu">
             <span></span>

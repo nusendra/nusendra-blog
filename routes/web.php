@@ -11,14 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return 'Go to /backend for admin panel';
-});
-
+Route::view('/','frontend.index');
 Route::view('/login','auth.login');
 
 Route::group(['middleware' => 'Authentication'], function(){
-  Route::view('/backend','index');
+  Route::view('/backend','backend.index');
   Route::resource('kategori','KategoriController');
   Route::resource('post','PostController');
 });

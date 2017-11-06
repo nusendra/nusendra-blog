@@ -108,7 +108,7 @@
 </template>
 
 <script>
-  import Sukses from '../components/Sukses';
+  import Sukses from '../../components/alert/Sukses';
 
     export default {
         props: ['id'],
