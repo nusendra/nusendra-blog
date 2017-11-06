@@ -5,7 +5,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th>No</th>
+            <th>ID</th>
             <th>Judul</th>
             <th>Ringkasan</th>
             <th>Status Terbit</th>
@@ -14,16 +14,20 @@
             <th>Action</th>
           </tr>
         </thead>
-        <!-- <tbody>
-          <tr v-for="kategori in kategoris">
-            <td>{{kategori.id}}</td>
-            <td>{{kategori.kategori}}</td>
+        <tbody>
+          <tr v-for="post in posts">
+            <td>{{post.id}}</td>
+            <td>{{post.judul}}</td>
+            <td>{{post.ringkasan}}</td>
+            <td>{{post.status_terbit}}</td>
+            <td>{{post.tgl_terbit}}</td>
+            <td>{{post.user_id}}</td>
             <td>
-              <router-link :to="'/kategori/' + kategori.id"><a>edit</a></router-link>
-              <router-link to="/kategori"><a>hapus</a></router-link>
+              <router-link :to="'/post/' + post.id"><a>edit</a></router-link>
+              <router-link to="/post"><a>hapus</a></router-link>
             </td>
           </tr>
-        </tbody> -->
+        </tbody>
       </table>
     </div>
 </template>
@@ -32,13 +36,13 @@
     export default {
       data: function() {
         return {
-          kategoris: ''
+          posts: ''
         }
       },
       mounted(){
-        axios.get('kategori')
+        axios.get('post')
         .then((response) => {
-          this.kategoris = response.data
+          this.posts = response.data
         })
         .catch(function (error) {
           console.log(error);

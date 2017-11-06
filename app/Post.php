@@ -13,6 +13,6 @@ class Post extends Model
 
   public function kategoris()
   {
-    return $this->belongsToMany('App\Post');
+    return $this->belongsToMany('App\Kategori');
   }
 }

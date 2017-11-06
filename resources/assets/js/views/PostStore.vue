@@ -1,6 +1,6 @@
 <template>
   <div class="field columns">
-    <pre>{{$data}}</pre>
+
     <div class="column is-three-quarters">
 
       <sukses pesan="Proses Berhasil" :alert="statusResponse"></sukses>
@@ -28,6 +28,19 @@
           </div>
         </div>
       </div>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Ringkasan</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <textarea class="textarea" type="text" v-model="ringkasan"></textarea>
+            </p>
+          </div>
+        </div>
+      </div>
+
       <hr>
       <div class="field is-horizontal">
         <div class="field-label is-normal">
@@ -48,9 +61,38 @@
         <div class="field-body">
           <div class="field">
             <p class="control">
-              <multiselect v-model="value" :options="options" :multiple="true" :close-on-select="false" :clear-on-select="false" :hide-selected="true" :preserve-search="true" placeholder="Pick some" label="name" track-by="name">
-                <template slot="tag" slot-scope="props"><span class="custom__tag"><span>{{ props.option.language }}</span><span class="custom__remove" @click="props.remove(props.option)">❌</span></span></template>
+              <multiselect v-model="value" :options="options" :multiple="true" :close-on-select="false" :clear-on-select="false" :hide-selected="true" :preserve-search="true" placeholder="Pilih kategori" label="kategori" track-by="id">
+                <template slot="tag" slot-scope="props"><span class="custom__tag"><span> {{ props.option.kategori }}</span><span class="custom__remove" @click="props.remove(props.option.kategori)"> ❌</span></span></template>
               </multiselect>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Terbitkan ?</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <label class="checkbox">
+                <input type="checkbox" v-model="terbit">
+                {{terbit}}
+              </label>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Tgl Terbit</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <datepicker placeholder="" :config="{ dateFormat: 'Y-m-d', static: true }" v-model="tgl_terbit"></datepicker>
             </p>
           </div>
         </div>
@@ -67,42 +109,50 @@
 
 <script>
   import Sukses from '../components/Sukses';
-  // import Multiselect from 'vue-multiselect'
 
     export default {
         props: ['id'],
         components: {
           'sukses':Sukses,
-          // 'multiselect':Multiselect
         },
         data: function() {
           return {
             judul:'',
+            ringkasan:'',
             slug:'',
             isi:'',
+            terbit:true,
+            tgl_terbit:'',
             statusResponse:false,
-            value: [
-               { name: 'Vue.js', language: 'JavaScript' }
-             ],
-             options: [
-               { name: 'Vue.js', language: 'JavaScript' },
-               { name: 'Adonis', language: 'JavaScript' },
-               { name: 'Rails', language: 'Ruby' },
-               { name: 'Sinatra', language: 'Ruby' },
-               { name: 'Laravel', language: 'PHP' },
-               { name: 'Phoenix', language: 'Elixir' }
-             ]
+            value: [],
+            options: []
           }
         },
         methods:{
           submit : function() {
-            axios.post('kategori', {
+            let array_select = [];
+            this.value.map(function(value,key){
+              array_select.push(value.id)
+            })
+            axios.post('post', {
       				id : this.id,
-              kategori : this.kategori
+              judul : this.judul,
+              ringkasan : this.ringkasan,
+              slug : this.slug,
+              isi : this.isi,
+              status_terbit : this.terbit,
+              tgl_terbit : this.tgl_terbit,
+              kategori : array_select
       			})
       			.then(response => {
               this.statusResponse = true;
-              this.kategori = '';
+              this.judul = '';
+              this.ringkasan = '';
+              this.slug = '';
+              this.isi = '';
+              this.terbit = true;
+              this.tgl_terbit = '';
+              this.value = [];
       			})
       			.catch(function(error) {
       			    console.log(error.response.data);
@@ -110,22 +160,14 @@
           }
         },
         mounted(){
-          // axios.get('kategori')
-          // .then((response) => {
-          //   this.options = response.data
-            // console.log(response.data)
-          // })
-          // .catch(function (error) {
-          //   console.log(error);
-          // });
-          // axios.get('kategori/' + this.id + '/edit')
-          // .then((response) => {
-          //   this.kategori = response.data
-          //   // console.log(response.data)
-          // })
-          // .catch(function (error) {
-          //   console.log(error);
-          // });
+          axios.get('kategori')
+          .then((response) => {
+            this.options = response.data
+            console.log(response.data)
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
         }
 
     }

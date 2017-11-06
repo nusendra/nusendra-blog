@@ -26,3 +26,8 @@ Route::group(['middleware' => 'Authentication'], function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/tes',function(){
+  $post = \App\Post::find(1);
+  $post->kategoris()->sync([2,3]);
+});

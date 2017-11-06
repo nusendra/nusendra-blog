@@ -12,7 +12,7 @@ class KategoriController extends Controller
 {
     public function index()
     {
-        $model = Kategori::all();
+        $model = Kategori::select('id','kategori')->get();
         return $model;
     }
 
