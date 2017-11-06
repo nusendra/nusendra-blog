@@ -11,16 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return 'Go to /backend for admin panel';
-});
-
+Route::view('/','frontend.index');
 Route::view('/login','auth.login');
 
 Route::group(['middleware' => 'Authentication'], function(){
-  Route::view('/backend','index');
+  Route::view('/backend','backend.index');
+  Route::resource('kategori','KategoriController');
+  Route::resource('post','PostController');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/tes',function(){
+  $post = \App\Post::find(1);
+  $post->kategoris()->sync([2,3]);
+});

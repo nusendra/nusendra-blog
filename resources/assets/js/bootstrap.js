@@ -1,10 +1,17 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import axios from 'axios';
-import Bulma from 'bulma';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import axios from 'axios'
+import Bulma from 'bulma'
+import VueSlugify from 'vue-slugify'
+import Multiselect from 'vue-multiselect'
+import Datepicker from 'vue-bulma-datepicker'
 
 window.Vue = Vue;
 Vue.use(VueRouter);
+Vue.use(VueSlugify);
+
+Vue.component('multiselect', Multiselect)
+Vue.component('datepicker', Datepicker)
 
 window.axios = axios;
 
