@@ -2,11 +2,11 @@
   <section class="container">
     {{loadingContent}}
     <div class="columns features" v-for="posts in chunkedPosts">
-        <div class="column is-4" v-for="post in posts">
+        <div class="column is-3" v-for="post in posts">
           <div class="card" >
             <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              <figure class="image is-3by2">
+                <img :src="'/image/' + post.featured_thumbnail" alt="Placeholder image">
               </figure>
             </div>
             <div class="card-content">
@@ -41,7 +41,7 @@
     },
     computed: {
       chunkedPosts () {
-        return chunk(this.posts,3)
+        return chunk(this.posts,4)
       }
     },
     mounted(){

@@ -20113,6 +20113,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -20125,6 +20146,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       judul: '',
       ringkasan: '',
+      image: '',
       slug: '',
       isi: '',
       terbit: true,
@@ -20135,9 +20157,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   methods: {
-    submit: function submit() {
+    onFileChange: function onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.createImage(files[0]);
+    },
+    createImage: function createImage(file) {
+      var image = new Image();
+      var reader = new FileReader();
+      var vm = this;
+
+      reader.onload = function (e) {
+        vm.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
+
+    submit: function submit(e) {
       var _this = this;
 
+      e.preventDefault();
       var array_select = [];
       this.value.map(function (value, key) {
         array_select.push(value.id);
@@ -20150,7 +20189,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         isi: this.isi,
         status_terbit: this.terbit,
         tgl_terbit: this.tgl_terbit,
-        kategori: array_select
+        kategori: array_select,
+        image: this.image
       }).then(function (response) {
         _this.statusResponse = true;
         _this.judul = '';
@@ -20160,6 +20200,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this.terbit = true;
         _this.tgl_terbit = '';
         _this.value = [];
+        _this.image = '';
       }).catch(function (error) {
         console.log(error.response.data);
       });
@@ -20170,7 +20211,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     axios.get('kategori').then(function (response) {
       _this2.options = response.data;
-      console.log(response.data);
     }).catch(function (error) {
       console.log(error);
     });
@@ -20194,292 +20234,320 @@ var render = function() {
           attrs: { pesan: "Proses Berhasil", alert: _vm.statusResponse }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "field is-horizontal" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "field-body" }, [
-            _c("div", { staticClass: "field" }, [
-              _c("p", { staticClass: "control" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.judul,
-                      expression: "judul"
-                    }
-                  ],
-                  staticClass: "input",
-                  attrs: { type: "text" },
-                  domProps: { value: _vm.judul },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.judul = $event.target.value
-                    }
-                  }
-                })
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field is-horizontal" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c("div", { staticClass: "field-body" }, [
-            _c("div", { staticClass: "field" }, [
-              _c("p", { staticClass: "control" }, [
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.isi,
-                      expression: "isi"
-                    }
-                  ],
-                  staticClass: "textarea",
-                  attrs: { type: "text" },
-                  domProps: { value: _vm.isi },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.isi = $event.target.value
-                    }
-                  }
-                })
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field is-horizontal" }, [
-          _vm._m(2),
-          _vm._v(" "),
-          _c("div", { staticClass: "field-body" }, [
-            _c("div", { staticClass: "field" }, [
-              _c("p", { staticClass: "control" }, [
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.ringkasan,
-                      expression: "ringkasan"
-                    }
-                  ],
-                  staticClass: "textarea",
-                  attrs: { type: "text" },
-                  domProps: { value: _vm.ringkasan },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.ringkasan = $event.target.value
-                    }
-                  }
-                })
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("div", { staticClass: "field is-horizontal" }, [
-          _vm._m(3),
-          _vm._v(" "),
-          _c("div", { staticClass: "field-body" }, [
-            _c("div", { staticClass: "field" }, [
-              _c("p", { staticClass: "control" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.slug,
-                      expression: "slug"
-                    },
-                    { name: "slugify", rawName: "v-slugify" }
-                  ],
-                  staticClass: "input",
-                  attrs: { type: "text" },
-                  domProps: { value: _vm.slug },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.slug = $event.target.value
-                    }
-                  }
-                })
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field is-horizontal" }, [
-          _vm._m(4),
-          _vm._v(" "),
-          _c("div", { staticClass: "field-body" }, [
-            _c("div", { staticClass: "field" }, [
-              _c(
-                "p",
-                { staticClass: "control" },
-                [
-                  _c("multiselect", {
-                    attrs: {
-                      options: _vm.options,
-                      multiple: true,
-                      "close-on-select": false,
-                      "clear-on-select": false,
-                      "hide-selected": true,
-                      "preserve-search": true,
-                      placeholder: "Pilih kategori",
-                      label: "kategori",
-                      "track-by": "id"
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "tag",
-                        fn: function(props) {
-                          return [
-                            _c("span", { staticClass: "custom__tag" }, [
-                              _c("span", [
-                                _vm._v(" " + _vm._s(props.option.kategori))
-                              ]),
-                              _c(
-                                "span",
-                                {
-                                  staticClass: "custom__remove",
-                                  on: {
-                                    click: function($event) {
-                                      props.remove(props.option.kategori)
-                                    }
-                                  }
-                                },
-                                [_vm._v(" ❌")]
-                              )
-                            ])
-                          ]
-                        }
-                      }
-                    ]),
-                    model: {
-                      value: _vm.value,
-                      callback: function($$v) {
-                        _vm.value = $$v
-                      },
-                      expression: "value"
-                    }
-                  })
-                ],
-                1
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("div", { staticClass: "field is-horizontal" }, [
-          _vm._m(5),
-          _vm._v(" "),
-          _c("div", { staticClass: "field-body" }, [
-            _c("div", { staticClass: "field" }, [
-              _c("p", { staticClass: "control" }, [
-                _c("label", { staticClass: "checkbox" }, [
+        _c("form", { attrs: { enctype: "multipart/form-data" } }, [
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("p", { staticClass: "control" }, [
                   _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.terbit,
-                        expression: "terbit"
+                        value: _vm.judul,
+                        expression: "judul"
                       }
                     ],
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      checked: Array.isArray(_vm.terbit)
-                        ? _vm._i(_vm.terbit, null) > -1
-                        : _vm.terbit
-                    },
+                    staticClass: "input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.judul },
                     on: {
-                      change: function($event) {
-                        var $$a = _vm.terbit,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 && (_vm.terbit = $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              (_vm.terbit = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
-                          }
-                        } else {
-                          _vm.terbit = $$c
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
+                        _vm.judul = $event.target.value
                       }
                     }
-                  }),
-                  _vm._v(
-                    "\n              " + _vm._s(_vm.terbit) + "\n            "
-                  )
+                  })
                 ])
               ])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field is-horizontal" }, [
-          _vm._m(6),
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "field-body" }, [
-            _c("div", { staticClass: "field" }, [
-              _c(
-                "p",
-                { staticClass: "control" },
-                [
-                  _c("datepicker", {
-                    attrs: {
-                      placeholder: "",
-                      config: { dateFormat: "Y-m-d", static: true }
-                    },
-                    model: {
-                      value: _vm.tgl_terbit,
-                      callback: function($$v) {
-                        _vm.tgl_terbit = $$v
-                      },
-                      expression: "tgl_terbit"
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("p", { staticClass: "control" }, [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.isi,
+                        expression: "isi"
+                      }
+                    ],
+                    staticClass: "textarea",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.isi },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.isi = $event.target.value
+                      }
                     }
                   })
-                ],
-                1
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("p", { staticClass: "control" }, [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.ringkasan,
+                        expression: "ringkasan"
+                      }
+                    ],
+                    staticClass: "textarea",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.ringkasan },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.ringkasan = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "file has-name is-boxed" }, [
+            _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("label", { staticClass: "file-label" }, [
+                _c("input", {
+                  staticClass: "file-input",
+                  attrs: { type: "file", name: "resume" },
+                  on: { change: _vm.onFileChange }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "file-cta" }, [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "file-label" }, [
+                    _vm._v("\n                Pilih Gambar\n              ")
+                  ]),
+                  _vm._v(" "),
+                  _c("img", { attrs: { src: _vm.image, alt: "" } })
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(5),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("p", { staticClass: "control" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.slug,
+                        expression: "slug"
+                      },
+                      { name: "slugify", rawName: "v-slugify" }
+                    ],
+                    staticClass: "input",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.slug },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.slug = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(6),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c(
+                  "p",
+                  { staticClass: "control" },
+                  [
+                    _c("multiselect", {
+                      attrs: {
+                        options: _vm.options,
+                        multiple: true,
+                        "close-on-select": false,
+                        "clear-on-select": false,
+                        "hide-selected": true,
+                        "preserve-search": true,
+                        placeholder: "Pilih kategori",
+                        label: "kategori",
+                        "track-by": "id"
+                      },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "tag",
+                          fn: function(props) {
+                            return [
+                              _c("span", { staticClass: "custom__tag" }, [
+                                _c("span", [
+                                  _vm._v(" " + _vm._s(props.option.kategori))
+                                ]),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass: "custom__remove",
+                                    on: {
+                                      click: function($event) {
+                                        props.remove(props.option.kategori)
+                                      }
+                                    }
+                                  },
+                                  [_vm._v(" ❌")]
+                                )
+                              ])
+                            ]
+                          }
+                        }
+                      ]),
+                      model: {
+                        value: _vm.value,
+                        callback: function($$v) {
+                          _vm.value = $$v
+                        },
+                        expression: "value"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(7),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("p", { staticClass: "control" }, [
+                  _c("label", { staticClass: "checkbox" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.terbit,
+                          expression: "terbit"
+                        }
+                      ],
+                      attrs: { type: "checkbox" },
+                      domProps: {
+                        checked: Array.isArray(_vm.terbit)
+                          ? _vm._i(_vm.terbit, null) > -1
+                          : _vm.terbit
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.terbit,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.terbit = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.terbit = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.terbit = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.terbit) +
+                        "\n              "
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field is-horizontal" }, [
+            _vm._m(8),
+            _vm._v(" "),
+            _c("div", { staticClass: "field-body" }, [
+              _c("div", { staticClass: "field" }, [
+                _c(
+                  "p",
+                  { staticClass: "control" },
+                  [
+                    _c("datepicker", {
+                      attrs: {
+                        placeholder: "",
+                        config: { dateFormat: "Y-m-d", static: true }
+                      },
+                      model: {
+                        value: _vm.tgl_terbit,
+                        callback: function($$v) {
+                          _vm.tgl_terbit = $$v
+                        },
+                        expression: "tgl_terbit"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "field is-grouped" }, [
+            _c("div", { staticClass: "control" }, [
+              _c(
+                "button",
+                { staticClass: "button is-link", on: { click: _vm.submit } },
+                [_vm._v("Submit")]
               )
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("div", { staticClass: "field is-grouped" }, [
-          _c("div", { staticClass: "control" }, [
-            _c(
-              "button",
-              { staticClass: "button is-link", on: { click: _vm.submit } },
-              [_vm._v("Submit")]
-            )
           ])
         ])
       ],
@@ -20510,6 +20578,22 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "field-label is-normal" }, [
       _c("label", { staticClass: "label" }, [_vm._v("Ringkasan")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field-label is-normal" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Featured Thumbnail")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "file-icon" }, [
+      _c("i", { staticClass: "fa fa-upload" })
     ])
   },
   function() {
@@ -21335,7 +21419,7 @@ var chunk = __webpack_require__(98);
   },
   computed: {
     chunkedPosts: function chunkedPosts() {
-      return chunk(this.posts, 3);
+      return chunk(this.posts, 4);
     }
   },
   mounted: function mounted() {
@@ -21411,9 +21495,18 @@ var render = function() {
           "div",
           { staticClass: "columns features" },
           _vm._l(posts, function(post) {
-            return _c("div", { staticClass: "column is-4" }, [
+            return _c("div", { staticClass: "column is-3" }, [
               _c("div", { staticClass: "card" }, [
-                _vm._m(0, true),
+                _c("div", { staticClass: "card-image" }, [
+                  _c("figure", { staticClass: "image is-3by2" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/image/" + post.featured_thumbnail,
+                        alt: "Placeholder image"
+                      }
+                    })
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-content" }, [
                   _c("div", { staticClass: "media" }, [
@@ -21451,23 +21544,7 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-image" }, [
-      _c("figure", { staticClass: "image is-4by3" }, [
-        _c("img", {
-          attrs: {
-            src: "https://bulma.io/images/placeholders/1280x960.png",
-            alt: "Placeholder image"
-          }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
