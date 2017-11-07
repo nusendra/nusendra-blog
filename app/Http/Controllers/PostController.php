@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $model = Post::all();
+        $model = Post::with('user')->get();
         return $model;
     }
 

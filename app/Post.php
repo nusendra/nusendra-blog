@@ -15,4 +15,9 @@ class Post extends Model
   {
     return $this->belongsToMany('App\Kategori');
   }
+
+  public function user()
+  {
+    return $this->belongsTo('App\User');
+  }
 }
