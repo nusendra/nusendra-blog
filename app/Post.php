@@ -11,6 +11,10 @@ class Post extends Model
   protected $dates = ['deleted_at'];
   protected $guarded = ['id'];
 
+  public function getTglTerbitAttribute($value) {
+    return $value ? date('d F Y', strtotime($value)) : NULL;
+  }
+
   public function kategoris()
   {
     return $this->belongsToMany('App\Kategori');

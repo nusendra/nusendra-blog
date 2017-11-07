@@ -20,7 +20,7 @@
               <div class="content">
                 {{post.ringkasan}}
                 <br>
-                <time datetime="2016-1-1">{{post.tgl_terbit}}</time>
+                Published : {{post.tgl_terbit}}
               </div>
             </div>
           </div>
