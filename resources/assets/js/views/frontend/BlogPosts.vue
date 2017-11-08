@@ -49,6 +49,7 @@
       .then((response) => {
         this.loadingContent = ''
         this.posts = response.data
+        console.log(response.data)
       })
       .catch(function (error) {
         console.log(error);

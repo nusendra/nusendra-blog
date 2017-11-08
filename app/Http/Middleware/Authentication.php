@@ -20,7 +20,7 @@ class Authentication
       {
 
       }else {
-        return redirect('/login');
+        return redirect('/');
       }
         return $next($request);
     }
