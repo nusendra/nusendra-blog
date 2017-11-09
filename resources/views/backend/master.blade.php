@@ -88,7 +88,7 @@
             UTAMA
           </p>
           <ul class="menu-list">
-            <router-link to="/">Dashboard</router-link>
+            <router-link to="/dashboard">Dashboard</router-link>
           </ul>
           <p class="menu-label">
             MASTER DATA
