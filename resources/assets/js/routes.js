@@ -8,12 +8,13 @@ let routes = [
   { path : '/kategori/:id', component: require('./views/backend/KategoriStore.vue'), props:true },
   { path : '/post', component: require('./views/backend/Post.vue') },
   { path : '/post-create', component: require('./views/backend/PostStore.vue') },
+  { path : '/post/:id', component: require('./views/backend/PostStore.vue'), props:true },
 
   //frontend
   { path : '/', component: require('./views/frontend/Home') },
 ];
 
 export default new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes
 })

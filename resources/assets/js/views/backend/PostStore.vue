@@ -198,16 +198,39 @@
       			.catch(function(error) {
       			    console.log(error.response.data);
       			});
-          }
+          },
+          fetchKategori: function() {
+            axios.get('kategori')
+            .then((response) => {
+              this.options = response.data
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+          },
+          fetchPost: function() {
+            if(this.id > 0)
+            {
+              axios.get('post/' + this.id + '/edit')
+              .then((response) => {
+                this.judul = response.data.judul
+                this.isi = response.data.isi
+                this.ringkasan = response.data.ringkasan
+                this.slug = response.data.slug
+                this.terbit = response.data.status_terbit
+                this.tgl_terbit = response.data.tgl_terbit
+
+                console.log(response.data.kategoris)
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+            }
+          },
         },
         mounted(){
-          axios.get('kategori')
-          .then((response) => {
-            this.options = response.data
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+          this.fetchKategori()
+          this.fetchPost()
         }
 
     }

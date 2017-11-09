@@ -14,8 +14,10 @@ class PostController extends Controller
 {
     public function index()
     {
-        $model = Post::select('id','judul','ringkasan','tgl_terbit','user_id','featured_thumbnail')->with(['user' => function($query){
+        $model = Post::select('id','judul','ringkasan','tgl_terbit','user_id','featured_thumbnail','status_terbit')->with(['user' => function($query){
           $query->select('id','name');
+        },'kategoris' => function($q){
+          $q->select('kategori');
         }])->get();
         return $model;
     }
@@ -74,7 +76,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        //
+        return $post->load('kategoris');
     }
 
     public function update(Request $request, Post $post)
