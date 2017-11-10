@@ -12,7 +12,7 @@ use Carbon\Carbon;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $model = Post::select('id','judul','ringkasan','tgl_terbit','user_id','featured_thumbnail','status_terbit')->with(['user' => function($query){
           $query->select('id','name');

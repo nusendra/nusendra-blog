@@ -219,8 +219,7 @@
                 this.slug = response.data.slug
                 this.terbit = response.data.status_terbit
                 this.tgl_terbit = response.data.tgl_terbit
-
-                console.log(response.data.kategoris)
+                this.value = response.data.kategoris
               })
               .catch(function (error) {
                 console.log(error);

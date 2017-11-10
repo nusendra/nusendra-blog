@@ -19901,30 +19901,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      posts: '',
-      kategoris: []
+      posts: ''
     };
-  },
-  computed: {
-    anjing: function anjing() {
-      var items = this.kategoris.map(function (item) {
-        return item.kategori;
-      });
-      return items;
-    }
   },
   mounted: function mounted() {
     var _this = this;
 
     axios.get('post').then(function (response) {
-      _this.kategoris = response.data.kategoris;
       _this.posts = response.data;
     }).catch(function (error) {
       console.log(error);
@@ -19944,8 +19931,6 @@ var render = function() {
     "div",
     { staticClass: "container column is-full" },
     [
-      _c("pre", [_vm._v(_vm._s(_vm.$data))]),
-      _vm._v(" "),
       _c("router-link", { attrs: { to: "/post-create" } }, [
         _c("a", { staticClass: "button is-primary" }, [_vm._v("Add New")])
       ]),
@@ -19968,8 +19953,6 @@ var render = function() {
               _c("td", [_vm._v(_vm._s(post.tgl_terbit))]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(post.user.name))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(_vm.anjing))]),
               _vm._v(" "),
               _c(
                 "td",
@@ -20010,8 +19993,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Tgl Terbit")]),
         _vm._v(" "),
         _c("th", [_vm._v("Author")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Kategori")]),
         _vm._v(" "),
         _c("th", [_vm._v("Action")])
       ])
@@ -20256,8 +20237,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           _this3.slug = response.data.slug;
           _this3.terbit = response.data.status_terbit;
           _this3.tgl_terbit = response.data.tgl_terbit;
-
-          console.log(response.data.kategoris);
+          _this3.value = response.data.kategoris;
         }).catch(function (error) {
           console.log(error);
         });

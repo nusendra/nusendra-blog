@@ -10,6 +10,7 @@ class Post extends Model
   use SoftDeletes;
   protected $dates = ['deleted_at'];
   protected $guarded = ['id'];
+  protected $hidden = ['pivot'];
 
   public function getTglTerbitAttribute($value) {
     return $value ? date('d F Y', strtotime($value)) : NULL;
