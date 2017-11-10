@@ -23,7 +23,7 @@
             <td>{{post.status_terbit}}</td>
             <td>{{post.tgl_terbit}}</td>
             <td>{{post.user.name}}</td>
-            <td>{{kategori}}</td>
+            <td>{{anjing}}</td>
             <td>
               <router-link :to="'/post/' + post.id"><a>edit</a></router-link>
               <router-link to="/post"><a>hapus</a></router-link>
@@ -40,25 +40,18 @@
         return {
           posts: '',
           kategoris:[],
-          kats:''
         }
       },
       computed: {
-        kategori : {
-          get: function() {
-            return this.kats
-          },
-          set: function() {
-            this.kategoris.map(function(kat){
-              this.kats = kat.kategori
-            })
-          }
+        anjing() {
+          let items = this.kategoris.map(item => item.kategori)
+          return items
         }
       },
       mounted(){
         axios.get('post')
         .then((response) => {
-          this.kategori = response.data.kategoris
+          this.kategoris = response.data.kategoris
           this.posts = response.data
         })
         .catch(function (error) {
