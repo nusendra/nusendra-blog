@@ -1,28 +1,28 @@
 <template lang="html">
   <section class="container">
     {{loadingContent}}
+
     <div class="columns features" v-for="posts in chunkedPosts">
         <div class="column is-3" v-for="post in posts">
-          <div class="card" >
-            <div class="card-image">
-              <figure class="image is-3by2">
-                <img :src="'/image/' + post.featured_thumbnail" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <p class="title is-4">{{post.judul}}</p>
-                  <p class="subtitle is-6">by {{post.user.name}}</p>
+          <div class="box">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong><h3>{{post.judul}}</h3></strong><small>{{post.user.name}}</small>
+                    <br>
+                    <small>{{post.tgl_terbit}}</small>
+                    <p>
+                      {{post.ringkasan}}
+                      {{post.slug}}
+                    </p>
+                  </p>
                 </div>
+                <router-link :to="{ name: 'post', params: { slug: post.slug } }">
+                  <a class="button is-dark is-pulled-right">Baca Selanjutnya</a>
+                </router-link>
               </div>
-
-              <div class="content">
-                {{post.ringkasan}}
-                <br>
-                Published : {{post.tgl_terbit}}
-              </div>
-            </div>
+            </article>
           </div>
         </div>
     </div>

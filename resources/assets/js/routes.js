@@ -11,7 +11,8 @@ let routes = [
   { path : '/post/:id', component: require('./views/backend/PostStore.vue'), props:true },
 
   //frontend
-  { path : '/', component: require('./views/frontend/Home') },
+  { path : '/', component: require('./views/frontend/Home'), name: 'home' },
+  { path : '/post/:slug', component: require('./views/frontend/Post'), name: 'post', props:true },
 ];
 
 export default new VueRouter({

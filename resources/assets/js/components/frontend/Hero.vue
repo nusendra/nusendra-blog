@@ -2,11 +2,11 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
-        Nusendra.com
+        {{judul}}
       </h1>
       <h2 class="subtitle">
         <br>
-        Full Stack Web Developer | Desktop App Developer | Network Engineer | Blogger
+        {{ringkasan}}
       </h2>
     </div>
   </div>
@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  props: ['judul','ringkasan'],
 }
 </script>
 

@@ -24,7 +24,7 @@
           <div class="field-body">
             <div class="field">
               <p class="control">
-                <textarea class="textarea" type="text" v-model="isi"></textarea>
+                <wysiwyg v-model="isi" />
               </p>
             </div>
           </div>
@@ -36,12 +36,17 @@
           <div class="field-body">
             <div class="field">
               <p class="control">
-                <textarea class="textarea" type="text" v-model="ringkasan"></textarea>
+                <textarea class="textarea" type="text" v-model="ringkasan" maxlength="200"></textarea>
               </p>
             </div>
           </div>
+          <br>
         </div>
-        <div class="file has-name is-boxed">
+        <div class="field is-horizontal is-pulled-right">
+          <small>Total teks ringkasan : {{ringkasanLength}}</small>
+        </div>
+        <br>
+        <!-- <div class="file has-name is-boxed">
           <div class="field-label is-normal">
             <label class="label">Featured Thumbnail</label>
           </div>
@@ -59,7 +64,7 @@
               </span>
             </label>
           </div>
-        </div>
+        </div> -->
 
         <hr>
         <div class="field is-horizontal">
@@ -140,33 +145,38 @@
           return {
             judul:'',
             ringkasan:'',
-            image:'',
+            // image:'',
             slug:'',
             isi:'',
             terbit:true,
             tgl_terbit:'',
             statusResponse:false,
             value: [],
-            options: []
+            options: [],
+          }
+        },
+        computed: {
+          ringkasanLength: function() {
+            return this.ringkasan.length
           }
         },
         methods:{
-          onFileChange(e) {
-            var files = e.target.files || e.dataTransfer.files;
-            if (!files.length)
-              return;
-            this.createImage(files[0]);
-          },
-          createImage(file) {
-            var image = new Image();
-            var reader = new FileReader();
-            var vm = this;
-
-            reader.onload = (e) => {
-              vm.image = e.target.result;
-            };
-            reader.readAsDataURL(file);
-          },
+          // onFileChange(e) {
+          //   var files = e.target.files || e.dataTransfer.files;
+          //   if (!files.length)
+          //     return;
+          //   this.createImage(files[0]);
+          // },
+          // createImage(file) {
+          //   var image = new Image();
+          //   var reader = new FileReader();
+          //   var vm = this;
+          //
+          //   reader.onload = (e) => {
+          //     vm.image = e.target.result;
+          //   };
+          //   reader.readAsDataURL(file);
+          // },
           submit : function(e) {
             e.preventDefault()
             let array_select = [];
@@ -182,7 +192,7 @@
               status_terbit : this.terbit,
               tgl_terbit : this.tgl_terbit,
               kategori : array_select,
-              image : this.image
+              // image : this.image
       			})
       			.then(response => {
               this.statusResponse = true;
@@ -193,7 +203,7 @@
               this.terbit = true;
               this.tgl_terbit = '';
               this.value = [];
-              this.image = '';
+              // this.image = '';
       			})
       			.catch(function(error) {
       			    console.log(error.response.data);

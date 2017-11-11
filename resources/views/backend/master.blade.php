@@ -7,12 +7,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=7">
 
   <meta name="language" content="en-EN" />
-  <meta name="author" content="Irfan Maulana" />
+  <meta name="author" content="Nusendra Hanggarawan" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Nusendra.com</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.0.6/dist/vue-multiselect.min.css">
+  <link rel="stylesheet" type="text/css" href="css/app.css">
 
 </head>
 
