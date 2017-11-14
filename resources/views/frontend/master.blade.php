@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>Nusendra.com</title>
+  <title>@yield('title')</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
@@ -59,7 +59,21 @@
         </nav>
       </div>
     </section>
-      <router-view></router-view>
+      <section class="hero is-dark is-bold">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title">
+              @yield('hero-title')
+            </h1>
+            <h2 class="subtitle">
+              <br>
+              @yield('hero-description')
+            </h2>
+          </div>
+        </div>
+      </section>
+      @section('content')
+      @show
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
