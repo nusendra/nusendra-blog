@@ -59,6 +59,7 @@
         </nav>
       </div>
     </section>
+
       <section class="hero is-dark is-bold">
         <div class="hero-body">
           <div class="container has-text-centered">
@@ -72,8 +73,14 @@
           </div>
         </div>
       </section>
+        <div class="box cta">
+          <p class="has-text-centered">
+            <span class="tag is-danger">Info</span> Website ini masih dalam masa pengembangan. Informasi lebih lanjut silakan kirim email ke admin@nusendra.com
+          </p>
+        </div>
       @section('content')
       @show
+
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
@@ -105,4 +112,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
-<script src="js/app.js" charset="utf-8"></script>
+<script src="js/frontend.js" charset="utf-8"></script>

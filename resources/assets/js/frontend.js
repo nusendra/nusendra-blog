@@ -1,20 +1,8 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 import axios from 'axios'
 import Bulma from 'bulma'
-import VueSlugify from 'vue-slugify'
-import Multiselect from 'vue-multiselect'
-import Datepicker from 'vue-bulma-datepicker'
-import wysiwyg from "vue-wysiwyg";
 
 window.Vue = Vue;
-Vue.use(VueRouter);
-Vue.use(VueSlugify);
-Vue.use(wysiwyg, {});
-
-Vue.component('multiselect', Multiselect)
-Vue.component('datepicker', Datepicker)
-
 
 window.axios = axios;
 
@@ -28,9 +16,6 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
-import router from './routes';
-
 new Vue({
     el: '#app',
-    router
 });

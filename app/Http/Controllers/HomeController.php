@@ -9,8 +9,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $post = Post::all()
-        return view('frontend.page.home',compact('post'));
+      $posts = Post::select('id','judul','ringkasan','tgl_terbit','user_id','status_terbit','slug')->with(['user' => function($query){
+        $query->select('id','name');
+      },'kategoris' => function($q){
+        $q->select('kategori');
+      }])->get();
+      return view('frontend.page.home',compact('posts'));
     }
 
 
