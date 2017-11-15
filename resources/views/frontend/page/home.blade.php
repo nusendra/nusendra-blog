@@ -7,7 +7,7 @@
 .equal-height {
    display:flex;
    flex-direction: column;
-   height: 50%;
+   height: 35%;
 }
 </style>
 

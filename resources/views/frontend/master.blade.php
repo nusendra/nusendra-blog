@@ -80,8 +80,25 @@
         </div>
       @section('content')
       @show
-
+      <br>
     <footer class="footer">
+      <div class="columns">
+        <div class="column">
+          <font size="8"><strong>Nusendra.com</strong></font>
+          <p>
+            Personal web blog yang memuat konten seputar pemrograman (web development), network engineering (mikrotik) dan opini pribadi. 
+          </p>
+        </div>
+        <div class="column">
+          Second column
+        </div>
+        <div class="column">
+          First column
+        </div>
+        <div class="column">
+          Second column
+        </div>
+      </div>
       <div class="container">
         <div class="content has-text-centered">
           <p>
