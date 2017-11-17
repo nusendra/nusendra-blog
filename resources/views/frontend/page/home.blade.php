@@ -12,8 +12,7 @@
             <article class="tile is-child box">
               <p class="title is-5">{{$post->judul}}</p>
               <p class="subtitle is-6"><small>{{$post->tgl_terbit}}</small></p>
-              <p>{{$post->ringkasan}}</p>
-              <a class="button is-dark">Dark</a>
+              <p>{{$post->ringkasan}}</p><a href="/post/{{$post->slug}}">Read more ...</a> 
             </article>
           </div>
         @endforeach

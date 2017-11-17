@@ -21,7 +21,7 @@
 </head>
 <body>
   <div id="app">
-    <section class="hero is-dark is-bold">
+    <section class="hero is-link is-bold">
       <div class="hero-head">
         <nav class="navbar">
           <div class="container">
@@ -41,7 +41,7 @@
                   Home
                 </a>
                 <a class="navbar-item">
-                  Skillset
+                  Skill Set
                 </a>
                 <a class="navbar-item">
                   Portofolio
@@ -70,7 +70,7 @@
       </div>
     </section>
 
-      <section class="hero is-dark is-bold">
+      <section class="hero is-info is-bold">
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title">
@@ -92,30 +92,52 @@
       @show
       <br>
     <footer class="footer">
-      <div class="columns">
-        <div class="column">
-          <font size="8"><strong>Nusendra.com</strong></font>
-          <p>
-            Personal web blog yang memuat konten seputar pemrograman (web development), network engineering (mikrotik) dan opini pribadi.
-          </p>
-        </div>
-        <div class="column">
-          Second column
-        </div>
-        <div class="column">
-          First column
-        </div>
-        <div class="column">
-          Second column
+      <div class="container">
+        <div class="columns">
+          <div class="column is-4">
+            <h1 class="title is-3">
+              <strong>Nusendra.com</strong>
+            </h1>
+            <p>
+              Personal web blog yang memuat konten seputar pemrograman (web development), network engineering (mikrotik) dan opini pribadi.
+            </p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/andraeinstein" class="social-icon"> <i class="fa fa-facebook"></i></a>&nbsp;
+              <a href="https://twitter.com/nusendra_" class="social-icon"> <i class="fa fa-twitter"></i></a>&nbsp;
+              <a href="https://www.youtube.com/channel/UCPs91pCgbgtcSdnczFSAkdA" class="social-icon"> <i class="fa fa-youtube"></i></a>&nbsp;
+              <a href="https://www.linkedin.com/in/nusendra-hanggarawan-79854990/" class="social-icon"> <i class="fa fa-linkedin"></i></a>&nbsp;
+              <a href="https://t.me/nusendra" class="social-icon"> <i class="fa fa-telegram"></i></a>
+            </div>
+          </div>
+          <div class="column is-4">
+            <h1 class="title is-6">
+              <strong>Who am I ?</strong>
+            </h1>
+            <span class="tag is-dark">Web Dev</span>
+            <span class="tag is-danger">Desktop App Dev</span>
+            <span class="tag is-primary">Network Engineer</span>
+            <span class="tag is-link">Blogger</span>
+            <span class="tag is-info">Husband</span>
+            <span class="tag is-success">Freelancer</span>
+          </div>
+          <div class="column is-4">
+            <h1 class="title is-6">
+              <strong>Contact me !</strong>
+            </h1>
+            <ul>
+              <li><i class="fa fa-home"></i> Gresik, Jawa Timur, Indonesia</li>
+              <li><i class="fa fa-envelope-open-o"></i> admin@nusendra.com</li>
+              <li><i class="fa fa-mobile"></i> +62 857 3334 5727</li>
+            </ul>
+          </div>
         </div>
       </div>
+      <br><br>
       <div class="container">
         <div class="content has-text-centered">
+
           <p>
-            <strong>Nusendra.com</strong> This Web is built with Laravel & VueJS
-          </p>
-          <p>
-            2017
+            © 2017 <strong>Nusendra.com</strong> Made with <span style="color:red;margin-right: 5px;">❤️</span> from Gresik, Indonesia.
           </p>
         </div>
       </div>
