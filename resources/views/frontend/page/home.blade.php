@@ -1,42 +1,23 @@
 @extends('frontend.master')
-@section('title','Nusendra.com - ')
+@section('title','Nusendra.com - Full Stack Web Developer')
 @section('hero-title','Nusendra.com')
 @section('hero-description','Full Stack Web Developer | Desktop App Developer | Network Engineer | Blogger')
 
-<style media="screen">
-.equal-height {
-   display:flex;
-   flex-direction: column;
-   height: 35%;
-}
-</style>
-
 @section('content')
   <section class="container">
-      @foreach ($posts->chunk(3) as $value)
-        <div class="columns">
-          @foreach ($value as $post)
-            <div class="column is-4">
-              <div class="box equal-height">
-                <article class="media">
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong><h3>{{$post->judul}}</h3></strong><small>{{$post->user->name}}</small>
-                        <br>
-                        <small>{{$post->tgl_terbit}}</small>
-                        <br><br>
-                        <p>
-                          {{$post->ringkasan}} <a href="">Read More ... </a>
-                        </p>
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          @endforeach
-        </div>
-      @endforeach
+    <div class="tile is-ancestor">
+      <div class="columns is-multiline">
+        @foreach ($posts as $post)
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box">
+              <p class="title is-5">{{$post->judul}}</p>
+              <p class="subtitle is-6"><small>{{$post->tgl_terbit}}</small></p>
+              <p>{{$post->ringkasan}}</p>
+              <a class="button is-dark">Dark</a>
+            </article>
+          </div>
+        @endforeach
+      </div><br>
+    </div>
   </section>
 @endsection
