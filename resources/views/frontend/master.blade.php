@@ -7,7 +7,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title')</title>
   <meta name="author" content="Nusendra Hanggarawan">
-  <meta name="description" content="indonesian web developer, full stack web developer, web developer, programmer, developer, desktop developer,backend developer, web programmer, frontend developer, laravel, php, vuejs, c#, laravel developer, backend programmer, tutorial website, jasa web aplikasi, jasa web ecommerce, jasa web company profile, jasa setting mikrotik, jasa setting mikrotik surabaya, setting mikrotik gresik, jasa pembuatan website, jasa pembuatan web aplikasi, jasa pembuatan website gresik, jasa pembuatan website surabaya, blogger">
+  <meta name="description" content="Personal web blog yang memuat konten seputar pemrograman (full stack web development), network engineering (mikrotik) dan opini pribadi. ">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@nusendra_">
   <meta name="twitter:creator" content="@nusendra_">
@@ -21,7 +21,7 @@
 </head>
 <body>
   <div id="app">
-    <section class="hero is-link is-bold">
+    <section class="hero is-info is-bold">
       <div class="hero-head">
         <nav class="navbar">
           <div class="container">
@@ -70,7 +70,7 @@
       </div>
     </section>
 
-      <section class="hero is-info is-bold">
+      <section class="hero is-dark is-bold">
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title">
@@ -91,59 +91,59 @@
       @section('content')
       @show
       <br>
-    <footer class="footer">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-4">
-            <h1 class="title is-3">
-              <strong>Nusendra.com</strong>
-            </h1>
-            <p>
-              Personal web blog yang memuat konten seputar pemrograman (web development), network engineering (mikrotik) dan opini pribadi.
-            </p>
-            <div class="social-icons">
-              <a href="https://www.facebook.com/andraeinstein" class="social-icon"> <i class="fa fa-facebook"></i></a>&nbsp;
-              <a href="https://twitter.com/nusendra_" class="social-icon"> <i class="fa fa-twitter"></i></a>&nbsp;
-              <a href="https://www.youtube.com/channel/UCPs91pCgbgtcSdnczFSAkdA" class="social-icon"> <i class="fa fa-youtube"></i></a>&nbsp;
-              <a href="https://www.linkedin.com/in/nusendra-hanggarawan-79854990/" class="social-icon"> <i class="fa fa-linkedin"></i></a>&nbsp;
-              <a href="https://t.me/nusendra" class="social-icon"> <i class="fa fa-telegram"></i></a>
-            </div>
-          </div>
-          <div class="column is-4">
-            <h1 class="title is-6">
-              <strong>Who am I ?</strong>
-            </h1>
-            <span class="tag is-dark">Web Dev</span>
-            <span class="tag is-danger">Desktop App Dev</span>
-            <span class="tag is-primary">Network Engineer</span>
-            <span class="tag is-link">Blogger</span>
-            <span class="tag is-info">Husband</span>
-            <span class="tag is-success">Freelancer</span>
-          </div>
-          <div class="column is-4">
-            <h1 class="title is-6">
-              <strong>Contact me !</strong>
-            </h1>
-            <ul>
-              <li><i class="fa fa-home"></i> Gresik, Jawa Timur, Indonesia</li>
-              <li><i class="fa fa-envelope-open-o"></i> admin@nusendra.com</li>
-              <li><i class="fa fa-mobile"></i> +62 857 3334 5727</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <br><br>
-      <div class="container">
-        <div class="content has-text-centered">
-
-          <p>
-            © 2017 <strong>Nusendra.com</strong> Made with <span style="color:red;margin-right: 5px;">❤️</span> from Gresik, Indonesia.
-          </p>
-        </div>
-      </div>
-    </footer>
   </div>
 </body>
+<footer class="footer">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-4">
+        <h1 class="title is-3">
+          <strong>Nusendra.com</strong>
+        </h1>
+        <p>
+          Personal web blog yang memuat konten seputar pemrograman (web development), network engineering (mikrotik) dan opini pribadi.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/andraeinstein" class="social-icon"> <i class="fa fa-facebook"></i></a>&nbsp;
+          <a href="https://twitter.com/nusendra_" class="social-icon"> <i class="fa fa-twitter"></i></a>&nbsp;
+          <a href="https://www.youtube.com/channel/UCPs91pCgbgtcSdnczFSAkdA" class="social-icon"> <i class="fa fa-youtube"></i></a>&nbsp;
+          <a href="https://www.linkedin.com/in/nusendra-hanggarawan-79854990/" class="social-icon"> <i class="fa fa-linkedin"></i></a>&nbsp;
+          <a href="https://t.me/nusendra" class="social-icon"> <i class="fa fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="column is-4">
+        <h1 class="title is-6">
+          <strong>Who am I ?</strong>
+        </h1>
+        <span class="tag is-dark">Web Dev</span>
+        <span class="tag is-danger">Desktop App Dev</span>
+        <span class="tag is-primary">Network Engineer</span>
+        <span class="tag is-link">Blogger</span>
+        <span class="tag is-info">Husband</span>
+        <span class="tag is-success">Freelancer</span>
+      </div>
+      <div class="column is-4">
+        <h1 class="title is-6">
+          <strong>Contact me !</strong>
+        </h1>
+        <ul>
+          <li><i class="fa fa-home"></i> Gresik, Jawa Timur, Indonesia</li>
+          <li><i class="fa fa-envelope-open-o"></i> admin@nusendra.com</li>
+          <li><i class="fa fa-mobile"></i> +62 857 3334 5727</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="container">
+    <div class="content has-text-centered">
+
+      <p>
+        © 2017 <strong>Nusendra.com</strong> Made with <span style="color:red;margin-right: 5px;">❤️</span> from Gresik, Indonesia.
+      </p>
+    </div>
+  </div>
+</footer>
 </html>
 
 <script type="text/javascript">

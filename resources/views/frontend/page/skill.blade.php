@@ -1,9 +1,9 @@
 @extends('frontend.master')
-@section('title','Nusendra.com - Full Stack Web Developer')
-@section('hero-title','Nusendra.com')
-@section('hero-description','Full Stack Web Developer | Desktop App Developer | Network Engineer | Blogger')
+@section('title','Nusendra.com - Skills')
+@section('hero-title','Skill Set')
+{{-- @section('hero-description','Full Stack Web Developer | Desktop App Developer | Network Engineer | Blogger') --}}
 
-@section('content')
+{{-- @section('content')
   <section class="container section">
     <div class="tile is-ancestor">
       <div class="columns is-multiline">
@@ -19,4 +19,4 @@
       </div><br>
     </div>
   </section>
-@endsection
+@endsection --}}

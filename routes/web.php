@@ -1,5 +1,6 @@
 <?php
 Route::resource('/','HomeController');
+Route::view('skills','frontend.page.skill');
 
 Route::group(['middleware' => 'OnlyAjax'],function(){
   Route::resource('post','PostController');
