@@ -37,7 +37,7 @@
             </div>
             <div id="navbarMenu" class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item is-active">
+                <a class="navbar-item is-active" href="/">
                   Home
                 </a>
                 <a class="navbar-item">
@@ -52,7 +52,7 @@
                 <a class="navbar-item">
                   ToS
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="disclaimer">
                   Disclaimer
                 </a>
                 <span class="navbar-item">
