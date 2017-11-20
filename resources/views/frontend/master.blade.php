@@ -40,7 +40,7 @@
                 <a class="navbar-item is-active" href="/">
                   Home
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="skills">
                   Skill Set
                 </a>
                 <a class="navbar-item">
@@ -49,14 +49,11 @@
                 <a class="navbar-item">
                   Contact
                 </a>
-                <a class="navbar-item">
-                  ToS
-                </a>
                 <a class="navbar-item" href="disclaimer">
                   Disclaimer
                 </a>
                 <span class="navbar-item">
-                  <a class="button is-white is-outlined is-small" href="https://github.com/dansup/bulma-templates/blob/master/templates/hero.html">
+                  <a class="button is-white is-outlined is-small" href="https://github.com/nusendra">
                     <span class="icon">
                       <i class="fa fa-github"></i>
                     </span>
