@@ -45,7 +45,7 @@
       }
     },
     mounted(){
-      axios.get('post')
+      axios.get('backend-post')
       .then((response) => {
         this.loadingContent = ''
         this.posts = response.data

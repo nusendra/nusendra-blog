@@ -40,16 +40,19 @@
                 <a class="navbar-item" href="/">
                   Home
                 </a>
-                <a class="navbar-item" href="skills">
+                <a class="navbar-item" href="{{route('skills')}}">
                   Skill Set
                 </a>
-                <a class="navbar-item" href="portofolio">
+                {{-- <a class="navbar-item" href="{{route('portofolio')}}">
                   Portofolio
-                </a>
-                <a class="navbar-item" href="contact">
+                </a> --}}
+                <a class="navbar-item" href="{{route('contact')}}">
                   Contact
                 </a>
-                <a class="navbar-item" href="disclaimer">
+                <a class="navbar-item" href="{{route('tos')}}">
+                  ToS
+                </a>
+                <a class="navbar-item" href="{{route('disclaimer')}}">
                   Disclaimer
                 </a>
                 <span class="navbar-item">
@@ -85,10 +88,10 @@
             <span class="tag is-danger">Info</span> Website ini masih dalam masa pengembangan. Informasi lebih lanjut silakan kirim email ke admin@nusendra.com
           </p>
         </div>
+      </div>
       @section('content')
       @show
       <br>
-  </div>
 </body>
 <footer class="footer">
   <div class="container">
@@ -144,18 +147,9 @@
 </html>
 
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
-  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  if ($navbarBurgers.length > 0) {
-    $navbarBurgers.forEach(function ($el) {
-      $el.addEventListener('click', function () {
-        var target = $el.dataset.target;
-        var $target = document.getElementById(target);
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-      });
-    });
-  }
-});
+
 </script>
-<script src="js/frontend.js" charset="utf-8"></script>
+<script>
+
+</script>
+<script src="{{ URL::asset('js/frontend.js') }}" charset="utf-8"></script>

@@ -19522,7 +19522,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('kategori').then(function (response) {
+    axios.get('backend-kategori').then(function (response) {
       _this.kategoris = response.data;
     }).catch(function (error) {
       console.log(error);
@@ -19656,7 +19656,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     submit: function submit() {
       var _this = this;
 
-      axios.post('kategori', {
+      axios.post('backend-kategori', {
         id: this.id,
         kategori: this.kategori
       }).then(function (response) {
@@ -19671,7 +19671,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var _this2 = this;
 
     if (this.id > 0) {
-      axios.get('kategori/' + this.id + '/edit').then(function (response) {
+      axios.get('backend-kategori/' + this.id + '/edit').then(function (response) {
         _this2.kategori = response.data;
       }).catch(function (error) {
         console.log(error);
@@ -19908,10 +19908,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       posts: ''
     };
   },
+  methods: {
+    hapus: function hapus(id) {
+      axios.delete('/backend-post/' + id).then(function (response) {
+        console.log("terhapus");
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('post').then(function (response) {
+    axios.get('backend-post').then(function (response) {
       _this.posts = response.data;
     }).catch(function (error) {
       console.log(error);
@@ -19961,9 +19970,17 @@ var render = function() {
                     _c("a", [_vm._v("edit")])
                   ]),
                   _vm._v(" "),
-                  _c("router-link", { attrs: { to: "/post" } }, [
-                    _c("a", [_vm._v("hapus")])
-                  ])
+                  _c(
+                    "a",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.hapus(post.id)
+                        }
+                      }
+                    },
+                    [_vm._v("hapus")]
+                  )
                 ],
                 1
               )
@@ -20203,7 +20220,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.value.map(function (value, key) {
         array_select.push(value.id);
       });
-      axios.post('post', {
+      axios.post('backend-post', {
         id: this.id,
         judul: this.judul,
         ringkasan: this.ringkasan,
@@ -20230,7 +20247,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     fetchKategori: function fetchKategori() {
       var _this2 = this;
 
-      axios.get('kategori').then(function (response) {
+      axios.get('backend-kategori').then(function (response) {
         _this2.options = response.data;
       }).catch(function (error) {
         console.log(error);
@@ -20240,7 +20257,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this3 = this;
 
       if (this.id > 0) {
-        axios.get('post/' + this.id + '/edit').then(function (response) {
+        axios.get('backend-post/' + this.id + '/edit').then(function (response) {
           _this3.judul = response.data.judul;
           _this3.isi = response.data.isi;
           _this3.ringkasan = response.data.ringkasan;

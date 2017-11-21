@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
@@ -69,9 +70,11 @@ class PostController extends Controller
       return $status;
     }
 
-    public function show(Post $post)
+    public function show($slug)
     {
-        //
+        $post = Post::where('slug',$slug)->firstOrFail();
+        $kategori = Kategori::select('id','kategori')->get();
+        return view('frontend.page.post',compact('post','kategori'));
     }
 
     public function edit(Post $post)
@@ -84,8 +87,10 @@ class PostController extends Controller
         //
     }
 
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        $model = Post::find($id);
+        $model->delete();
+        return 1;
     }
 }

@@ -32,7 +32,7 @@
         }
       },
       mounted(){
-        axios.get('kategori')
+        axios.get('backend-kategori')
         .then((response) => {
           this.kategoris = response.data
         })

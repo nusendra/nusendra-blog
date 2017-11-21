@@ -1,12 +1,14 @@
 <?php
 Route::resource('/','HomeController');
-Route::view('skills','frontend.page.skill');
-Route::view('disclaimer','frontend.page.disclaimer');
-Route::view('contact','frontend.page.contact');
+Route::view('/skills','frontend.page.skill')->name('skills');
+Route::view('/disclaimer','frontend.page.disclaimer')->name('disclaimer');
+Route::view('/contact','frontend.page.contact')->name('contact');
+Route::view('/terms-of-service','frontend.page.tos')->name('tos');
+Route::get('/post/{slug}','PostController@show');
 
 Route::group(['middleware' => 'OnlyAjax'],function(){
-  Route::resource('post','PostController');
-  Route::resource('kategori','KategoriController');
+  Route::resource('/backend-post','PostController');
+  Route::resource('/backend-kategori','KategoriController');
 });
 
 Route::group(['middleware' => 'Authentication'], function(){

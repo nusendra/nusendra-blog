@@ -183,7 +183,7 @@
             this.value.map(function(value,key){
               array_select.push(value.id)
             })
-            axios.post('post', {
+            axios.post('backend-post', {
       				id : this.id,
               judul : this.judul,
               ringkasan : this.ringkasan,
@@ -210,7 +210,7 @@
       			});
           },
           fetchKategori: function() {
-            axios.get('kategori')
+            axios.get('backend-kategori')
             .then((response) => {
               this.options = response.data
             })
@@ -221,7 +221,7 @@
           fetchPost: function() {
             if(this.id > 0)
             {
-              axios.get('post/' + this.id + '/edit')
+              axios.get('backend-post/' + this.id + '/edit')
               .then((response) => {
                 this.judul = response.data.judul
                 this.isi = response.data.isi

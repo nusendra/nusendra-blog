@@ -23,7 +23,7 @@
             <td>{{post.user.name}}</td>
             <td>
               <router-link :to="'/post/' + post.id"><a>edit</a></router-link>
-              <router-link to="/post"><a>hapus</a></router-link>
+              <a @click="hapus(post.id)">hapus</a>
             </td>
           </tr>
         </tbody>
@@ -38,8 +38,19 @@
           posts: '',
         }
       },
+      methods: {
+        hapus: function(id) {
+          axios.delete('/backend-post/' + id)
+          .then((response) => {
+            console.log("terhapus")
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        }
+      },
       mounted(){
-        axios.get('post')
+        axios.get('backend-post')
         .then((response) => {
           this.posts = response.data
         })

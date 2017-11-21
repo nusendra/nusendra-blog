@@ -39,7 +39,7 @@
         },
         methods:{
           submit : function() {
-            axios.post('kategori', {
+            axios.post('backend-kategori', {
       				id : this.id,
               kategori : this.kategori
       			})
@@ -55,7 +55,7 @@
         mounted(){
           if(this.id > 0)
           {
-            axios.get('kategori/' + this.id + '/edit')
+            axios.get('backend-kategori/' + this.id + '/edit')
             .then((response) => {
               this.kategori = response.data
             })
