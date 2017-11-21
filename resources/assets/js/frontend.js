@@ -17,5 +17,5 @@ if (token) {
 }
 
 new Vue({
-    el: '#app',
+  el: '#app',
 });

@@ -37,16 +37,16 @@
             </div>
             <div id="navbarMenu" class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item is-active" href="/">
+                <a class="navbar-item" href="/">
                   Home
                 </a>
                 <a class="navbar-item" href="skills">
                   Skill Set
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="portofolio">
                   Portofolio
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="contact">
                   Contact
                 </a>
                 <a class="navbar-item" href="disclaimer">
