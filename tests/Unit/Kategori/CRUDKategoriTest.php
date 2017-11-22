@@ -5,7 +5,6 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Validator;
 use App\Kategori;
 
@@ -17,7 +16,7 @@ class KategoriRule {
 
 class CRUDKategoriTest extends TestCase
 {
-    use DatabaseTransactions;
+    use RefreshDatabase;
 
     public function testCreate()
     {
@@ -38,7 +37,6 @@ class CRUDKategoriTest extends TestCase
       $this->assertDatabaseHas('kategoris',[
         'kategori' => 'Islam'
       ]);
-
-
     }
+
 }
