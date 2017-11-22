@@ -25,6 +25,7 @@
             <div class="field">
               <p class="control">
                 <wysiwyg v-model="isi" />
+                <!-- <textarea class="textarea" type="text" v-model="isi"></textarea> -->
               </p>
             </div>
           </div>
@@ -223,6 +224,7 @@
             {
               axios.get('backend-post/' + this.id + '/edit')
               .then((response) => {
+                // console.log(response)
                 this.judul = response.data.judul
                 this.isi = response.data.isi
                 this.ringkasan = response.data.ringkasan

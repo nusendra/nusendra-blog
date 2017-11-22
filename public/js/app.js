@@ -20168,6 +20168,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -20258,6 +20259,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       if (this.id > 0) {
         axios.get('backend-post/' + this.id + '/edit').then(function (response) {
+          // console.log(response)
           _this3.judul = response.data.judul;
           _this3.isi = response.data.isi;
           _this3.ringkasan = response.data.ringkasan;
