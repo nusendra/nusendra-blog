@@ -1,21 +1,22 @@
-@extends('layouts.app')
+@extends('frontend.master')
+@section('title','Nusendra.com - Full Stack Web Developer')
+@section('hero-title','Nusendra.com')
+@section('hero-description','Full Stack Web Developer | Desktop App Developer | Network Engineer | Blogger')
 
 @section('content')
-<div class="container">
+<div class="container section">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
 
-                <div class="panel-body">
+                <div class="panel-body field">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" class="input" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -24,12 +25,12 @@
                                 @endif
                             </div>
                         </div>
-
+                        <br>
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" class="input" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -38,7 +39,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        <br>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
@@ -51,7 +52,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="button">
                                     Login
                                 </button>
 
@@ -63,7 +64,6 @@
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 @endsection
