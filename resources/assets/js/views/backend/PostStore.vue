@@ -24,8 +24,7 @@
           <div class="field-body">
             <div class="field">
               <p class="control">
-                <wysiwyg v-model="isi" />
-                <!-- <textarea class="textarea" type="text" v-model="isi"></textarea> -->
+                <froala :tag="'textarea'" v-model="isi"></froala>
               </p>
             </div>
           </div>
