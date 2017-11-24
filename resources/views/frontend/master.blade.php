@@ -70,28 +70,28 @@
       </div>
     </section>
 
-      <section class="hero is-dark is-bold">
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="title">
-              @yield('hero-title')
-            </h1>
-            <h2 class="subtitle">
-              <br>
-              @yield('hero-description')
-            </h2>
-          </div>
-        </div>
-      </section>
-        <div class="box cta">
-          <p class="has-text-centered">
-            <span class="tag is-danger">Info</span> Website ini masih dalam masa pengembangan. Informasi lebih lanjut silakan kirim email ke admin@nusendra.com
-          </p>
+    <section class="hero is-dark is-bold">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            @yield('hero-title')
+          </h1>
+          <h2 class="subtitle">
+            <br>
+            @yield('hero-description')
+          </h2>
         </div>
       </div>
-      @section('content')
-      @show
-      <br>
+    </section>
+    <div class="box cta">
+      <p class="has-text-centered">
+        <span class="tag is-danger">Info</span> Website ini masih dalam masa pengembangan. Informasi lebih lanjut silakan kirim email ke admin@nusendra.com
+      </p>
+    </div>
+  </div>
+  @section('content')
+  @show
+  <br>
 </body>
 <footer class="footer">
   <div class="container">

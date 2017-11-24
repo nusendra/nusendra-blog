@@ -2,6 +2,8 @@ import Vue from 'vue'
 import axios from 'axios'
 import Bulma from 'bulma'
 
+Vue.use(require('vue-moment'));
+
 window.Vue = Vue;
 
 window.axios = axios;
@@ -16,6 +18,7 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
-new Vue({
+
+var vm = new Vue({
   el: '#app',
 });

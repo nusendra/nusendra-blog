@@ -5,6 +5,7 @@ Route::view('/disclaimer','frontend.page.disclaimer')->name('disclaimer');
 Route::view('/contact','frontend.page.contact')->name('contact');
 Route::view('/terms-of-service','frontend.page.tos')->name('tos');
 Route::get('/post/{slug}','PostController@show');
+Route::get('/kategori/{kategori}','KategoriController@show');
 
 Route::group(['middleware' => 'OnlyAjax'],function(){
   Route::resource('/backend-post','PostController');
