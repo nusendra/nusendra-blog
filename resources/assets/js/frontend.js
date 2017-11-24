@@ -18,7 +18,11 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
+let vm = new Vue({
+    el: '#app',
+    data() {
+        return {
 
-var vm = new Vue({
-  el: '#app',
+        };
+    },
 });

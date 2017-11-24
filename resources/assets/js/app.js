@@ -5,7 +5,7 @@ import Bulma from 'bulma'
 import VueSlugify from 'vue-slugify'
 import Multiselect from 'vue-multiselect'
 import Datepicker from 'vue-bulma-datepicker'
-import wysiwyg from "vue-wysiwyg";
+import wysiwyg from "vue-wysiwyg"
 
 window.Vue = Vue;
 Vue.use(VueRouter);
@@ -14,7 +14,6 @@ Vue.use(wysiwyg, {});
 
 Vue.component('multiselect', Multiselect)
 Vue.component('datepicker', Datepicker)
-
 
 window.axios = axios;
 
