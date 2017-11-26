@@ -15,6 +15,7 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+        '290dd4ba42f11019134caca05dbefe3f' => __DIR__ . '/..' . '/teamtnt/tntsearch/helper/helpers.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
     );
@@ -37,6 +38,8 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
+            'TeamTNT\\TNTSearch\\' => 18,
+            'TeamTNT\\Scout\\' => 14,
         ),
         'S' => 
         array (
@@ -74,6 +77,7 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'Laravel\\Scout\\' => 14,
             'Laravel\\Dusk\\' => 13,
         ),
         'I' => 
@@ -139,6 +143,14 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'TeamTNT\\TNTSearch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/teamtnt/tntsearch/src',
+        ),
+        'TeamTNT\\Scout\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/teamtnt/laravel-scout-tntsearch-driver/src',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -227,6 +239,10 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Laravel\\Scout\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/scout/src',
         ),
         'Laravel\\Dusk\\' => 
         array (
@@ -2046,6 +2062,20 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         'Laravel\\Dusk\\Http\\Controllers\\UserController' => __DIR__ . '/..' . '/laravel/dusk/src/Http/Controllers/UserController.php',
         'Laravel\\Dusk\\Page' => __DIR__ . '/..' . '/laravel/dusk/src/Page.php',
         'Laravel\\Dusk\\TestCase' => __DIR__ . '/..' . '/laravel/dusk/src/TestCase.php',
+        'Laravel\\Scout\\Builder' => __DIR__ . '/..' . '/laravel/scout/src/Builder.php',
+        'Laravel\\Scout\\Console\\FlushCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/FlushCommand.php',
+        'Laravel\\Scout\\Console\\ImportCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/ImportCommand.php',
+        'Laravel\\Scout\\EngineManager' => __DIR__ . '/..' . '/laravel/scout/src/EngineManager.php',
+        'Laravel\\Scout\\Engines\\AlgoliaEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/AlgoliaEngine.php',
+        'Laravel\\Scout\\Engines\\Engine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/Engine.php',
+        'Laravel\\Scout\\Engines\\NullEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/NullEngine.php',
+        'Laravel\\Scout\\Events\\ModelsFlushed' => __DIR__ . '/..' . '/laravel/scout/src/Events/ModelsFlushed.php',
+        'Laravel\\Scout\\Events\\ModelsImported' => __DIR__ . '/..' . '/laravel/scout/src/Events/ModelsImported.php',
+        'Laravel\\Scout\\Jobs\\MakeSearchable' => __DIR__ . '/..' . '/laravel/scout/src/Jobs/MakeSearchable.php',
+        'Laravel\\Scout\\ModelObserver' => __DIR__ . '/..' . '/laravel/scout/src/ModelObserver.php',
+        'Laravel\\Scout\\ScoutServiceProvider' => __DIR__ . '/..' . '/laravel/scout/src/ScoutServiceProvider.php',
+        'Laravel\\Scout\\Searchable' => __DIR__ . '/..' . '/laravel/scout/src/Searchable.php',
+        'Laravel\\Scout\\SearchableScope' => __DIR__ . '/..' . '/laravel/scout/src/SearchableScope.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -3792,6 +3822,39 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         'Symfony\\Component\\VarDumper\\Test\\VarDumperTestTrait' => __DIR__ . '/..' . '/symfony/var-dumper/Test/VarDumperTestTrait.php',
         'Symfony\\Component\\VarDumper\\VarDumper' => __DIR__ . '/..' . '/symfony/var-dumper/VarDumper.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
+        'TeamTNT\\Scout\\Console\\ImportCommand' => __DIR__ . '/..' . '/teamtnt/laravel-scout-tntsearch-driver/src/Console/ImportCommand.php',
+        'TeamTNT\\Scout\\Engines\\TNTSearchEngine' => __DIR__ . '/..' . '/teamtnt/laravel-scout-tntsearch-driver/src/Engines/TNTSearchEngine.php',
+        'TeamTNT\\Scout\\TNTSearchScoutServiceProvider' => __DIR__ . '/..' . '/teamtnt/laravel-scout-tntsearch-driver/src/TNTSearchScoutServiceProvider.php',
+        'TeamTNT\\TNTSearch\\Connectors\\Connector' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Connectors/Connector.php',
+        'TeamTNT\\TNTSearch\\Connectors\\ConnectorInterface' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Connectors/ConnectorInterface.php',
+        'TeamTNT\\TNTSearch\\Connectors\\FileSystemConnector' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Connectors/FileSystemConnector.php',
+        'TeamTNT\\TNTSearch\\Connectors\\MySqlConnector' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Connectors/MySqlConnector.php',
+        'TeamTNT\\TNTSearch\\Connectors\\PostgresConnector' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Connectors/PostgresConnector.php',
+        'TeamTNT\\TNTSearch\\Connectors\\SQLiteConnector' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Connectors/SQLiteConnector.php',
+        'TeamTNT\\TNTSearch\\Connectors\\SqlServerConnector' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Connectors/SqlServerConnector.php',
+        'TeamTNT\\TNTSearch\\Exceptions\\IndexNotFoundException' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Exceptions/IndexNotFoundException.php',
+        'TeamTNT\\TNTSearch\\FileReaders\\FileReaderInterface' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/FileReaders/FileReaderInterface.php',
+        'TeamTNT\\TNTSearch\\FileReaders\\TextFileReader' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/FileReaders/TextFileReader.php',
+        'TeamTNT\\TNTSearch\\Indexer\\TNTGeoIndexer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Indexer/TNTGeoIndexer.php',
+        'TeamTNT\\TNTSearch\\Indexer\\TNTIndexer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Indexer/TNTIndexer.php',
+        'TeamTNT\\TNTSearch\\Spell\\JaroWinklerDistance' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Spell/JaroWinklerDistance.php',
+        'TeamTNT\\TNTSearch\\Stemmer\\ArabicStemmer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Stemmer/ArabicStemmer.php',
+        'TeamTNT\\TNTSearch\\Stemmer\\CroatianStemmer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Stemmer/CroatianStemmer.php',
+        'TeamTNT\\TNTSearch\\Stemmer\\GermanStemmer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Stemmer/GermanStemmer.php',
+        'TeamTNT\\TNTSearch\\Stemmer\\ItalianStemmer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Stemmer/ItalianStemmer.php',
+        'TeamTNT\\TNTSearch\\Stemmer\\NoStemmer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Stemmer/NoStemmer.php',
+        'TeamTNT\\TNTSearch\\Stemmer\\PorterStemmer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Stemmer/PorterStemmer.php',
+        'TeamTNT\\TNTSearch\\Stemmer\\RussianStemmer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Stemmer/RussianStemmer.php',
+        'TeamTNT\\TNTSearch\\Stemmer\\Stemmer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Stemmer/Stemmer.php',
+        'TeamTNT\\TNTSearch\\Stemmer\\UkrainianStemmer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Stemmer/UkrainianStemmer.php',
+        'TeamTNT\\TNTSearch\\Support\\Collection' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Support/Collection.php',
+        'TeamTNT\\TNTSearch\\Support\\Expression' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Support/Expression.php',
+        'TeamTNT\\TNTSearch\\Support\\Highlighter' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Support/Highlighter.php',
+        'TeamTNT\\TNTSearch\\Support\\Tokenizer' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Support/Tokenizer.php',
+        'TeamTNT\\TNTSearch\\Support\\TokenizerInterface' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/Support/TokenizerInterface.php',
+        'TeamTNT\\TNTSearch\\TNTFuzzyMatch' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/TNTFuzzyMatch.php',
+        'TeamTNT\\TNTSearch\\TNTGeoSearch' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/TNTGeoSearch.php',
+        'TeamTNT\\TNTSearch\\TNTSearch' => __DIR__ . '/..' . '/teamtnt/tntsearch/src/TNTSearch.php',
         'Tests\\Browser\\ExampleTest' => __DIR__ . '/../..' . '/tests/Browser/ExampleTest.php',
         'Tests\\Browser\\Pages\\HomePage' => __DIR__ . '/../..' . '/tests/Browser/Pages/HomePage.php',
         'Tests\\Browser\\Pages\\Page' => __DIR__ . '/../..' . '/tests/Browser/Pages/Page.php',

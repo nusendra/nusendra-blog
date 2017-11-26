@@ -61,7 +61,6 @@ class PostController extends Controller
           ]
         );
 
-
         $post->kategoris()->sync($request->kategori);
         $status = 1;
       }else{
