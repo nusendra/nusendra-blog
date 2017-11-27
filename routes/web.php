@@ -7,6 +7,8 @@ Route::view('/terms-of-service','frontend.page.tos')->name('tos');
 Route::get('/post/{slug}','PostController@show');
 Route::get('/kategori/{kategori}','KategoriController@show');
 
+Route::post('post-search','PostController@search');
+
 Route::group(['middleware' => 'OnlyAjax'],function(){
   Route::resource('/backend-post','PostController');
   Route::resource('/backend-kategori','KategoriController');

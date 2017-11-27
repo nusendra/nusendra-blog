@@ -134,114 +134,115 @@
 </template>
 
 <script>
-  import Sukses from '../../components/alert/Sukses';
+import Sukses from "../../components/alert/Sukses";
 
-    export default {
-        props: ['id'],
-        components: {
-          'sukses':Sukses,
-        },
-        data: function() {
-          return {
-            judul:'',
-            ringkasan:'',
-            // image:'',
-            slug:'',
-            isi:'',
-            terbit:true,
-            tgl_terbit:'',
-            statusResponse:false,
-            value: [],
-            options: [],
-          }
-        },
-        computed: {
-          ringkasanLength: function() {
-            return this.ringkasan.length
-          }
-        },
-        methods:{
-          // onFileChange(e) {
-          //   var files = e.target.files || e.dataTransfer.files;
-          //   if (!files.length)
-          //     return;
-          //   this.createImage(files[0]);
-          // },
-          // createImage(file) {
-          //   var image = new Image();
-          //   var reader = new FileReader();
-          //   var vm = this;
-          //
-          //   reader.onload = (e) => {
-          //     vm.image = e.target.result;
-          //   };
-          //   reader.readAsDataURL(file);
-          // },
-          submit : function(e) {
-            e.preventDefault()
-            let array_select = [];
-            this.value.map(function(value,key){
-              array_select.push(value.id)
-            })
-            axios.post('backend-post', {
-      				id : this.id,
-              judul : this.judul,
-              ringkasan : this.ringkasan,
-              slug : this.slug,
-              isi : this.isi,
-              status_terbit : this.terbit,
-              tgl_terbit : this.tgl_terbit,
-              kategori : array_select,
-              // image : this.image
-      			})
-      			.then(response => {
-              this.statusResponse = true;
-              this.judul = '';
-              this.ringkasan = '';
-              this.slug = '';
-              this.isi = '';
-              this.terbit = true;
-              this.tgl_terbit = '';
-              this.value = [];
-              // this.image = '';
-      			})
-      			.catch(function(error) {
-      			    console.log(error.response.data);
-      			});
-          },
-          fetchKategori: function() {
-            axios.get('backend-kategori')
-            .then((response) => {
-              this.options = response.data
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-          },
-          fetchPost: function() {
-            if(this.id > 0)
-            {
-              axios.get('backend-post/' + this.id + '/edit')
-              .then((response) => {
-                // console.log(response)
-                this.judul = response.data.judul
-                this.isi = response.data.isi
-                this.ringkasan = response.data.ringkasan
-                this.slug = response.data.slug
-                this.terbit = response.data.status_terbit
-                this.tgl_terbit = response.data.tgl_terbit
-                this.value = response.data.kategoris
-              })
-              .catch(function (error) {
-                console.log(error);
-              });
-            }
-          },
-        },
-        mounted(){
-          this.fetchKategori()
-          this.fetchPost()
-        }
-
+export default {
+  props: ["id"],
+  components: {
+    sukses: Sukses
+  },
+  data: function() {
+    return {
+      judul: "",
+      ringkasan: "",
+      // image:'',
+      slug: "",
+      isi: "",
+      terbit: true,
+      tgl_terbit: "",
+      statusResponse: false,
+      value: [],
+      options: []
+    };
+  },
+  computed: {
+    ringkasanLength: function() {
+      return this.ringkasan.length;
     }
+  },
+  methods: {
+    // onFileChange(e) {
+    //   var files = e.target.files || e.dataTransfer.files;
+    //   if (!files.length)
+    //     return;
+    //   this.createImage(files[0]);
+    // },
+    // createImage(file) {
+    //   var image = new Image();
+    //   var reader = new FileReader();
+    //   var vm = this;
+    //
+    //   reader.onload = (e) => {
+    //     vm.image = e.target.result;
+    //   };
+    //   reader.readAsDataURL(file);
+    // },
+    submit: function(e) {
+      e.preventDefault();
+      let array_select = [];
+      this.value.map(function(value, key) {
+        array_select.push(value.id);
+      });
+      axios
+        .post("backend-post", {
+          id: this.id,
+          judul: this.judul,
+          ringkasan: this.ringkasan,
+          slug: this.slug,
+          isi: this.isi,
+          status_terbit: this.terbit,
+          tgl_terbit: this.tgl_terbit,
+          kategori: array_select
+          // image : this.image
+        })
+        .then(response => {
+          this.statusResponse = true;
+          this.judul = "";
+          this.ringkasan = "";
+          this.slug = "";
+          this.isi = "";
+          this.terbit = true;
+          this.tgl_terbit = "";
+          this.value = [];
+          // this.image = '';
+        })
+        .catch(function(error) {
+          console.log(error.response.data);
+        });
+    },
+    fetchKategori: function() {
+      axios
+        .get("backend-kategori")
+        .then(response => {
+          this.options = response.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    fetchPost: function() {
+      if (this.id > 0) {
+        axios
+          .get("backend-post/" + this.id + "/edit")
+          .then(response => {
+            // console.log(response)
+            this.judul = response.data.judul;
+            this.isi = response.data.isi;
+            this.ringkasan = response.data.ringkasan;
+            this.slug = response.data.slug;
+            this.terbit = response.data.status_terbit;
+            this.tgl_terbit = response.data.tgl_terbit;
+            this.value = response.data.kategoris;
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+      }
+    }
+  },
+  mounted() {
+    this.fetchKategori();
+    this.fetchPost();
+  }
+};
 </script>
