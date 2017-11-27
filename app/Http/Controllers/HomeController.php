@@ -13,7 +13,7 @@ class HomeController extends Controller
         $query->select('id','name');
       },'kategoris' => function($q){
         $q->select('kategori');
-      }])->orderBy('tgl_terbit','desc')->get();
+      }])->where('status_terbit',1)->orderBy('tgl_terbit','desc')->get();
       return view('frontend.page.home',compact('posts'));
     }
 
