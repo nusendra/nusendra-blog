@@ -18,11 +18,11 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
-let vm = new Vue({
-    el: '#app',
-    data() {
-        return {
+import Pencarian from "./components/frontend/Pencarian";
 
-        };
+new Vue({
+    el: "#app",
+    components: {
+        pencarian: Pencarian
     },
-});
+})

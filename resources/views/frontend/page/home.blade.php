@@ -5,6 +5,14 @@
 
 @section('content')
   <section class="container section">
+    <div class="field">
+      <div class="field-label is-normal">
+      </div>
+      <div class="control">
+        <pencarian kata=""></pencarian>
+      </div>
+    </div>
+    <p><br></p>
     <div class="tile is-ancestor">
       <div class="columns is-multiline">
         @foreach ($posts as $post)

@@ -76,6 +76,12 @@ class PostController extends Controller
         return view('frontend.page.post',compact('post','kategori'));
     }
 
+    public function search(Request $request)
+    {
+        $post = Post::search($request->param)->get();
+        return $post;
+    }
+
     public function edit($id)
     {
         $model = Post::findOrFail($id);
