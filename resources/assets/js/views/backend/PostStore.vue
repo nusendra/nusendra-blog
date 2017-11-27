@@ -1,7 +1,7 @@
 <template>
   <div class="field columns">
 
-    <div class="column is-three-quarters">
+    <div class="column">
 
       <sukses pesan="Proses Berhasil" :alert="statusResponse"></sukses>
       <form enctype="multipart/form-data">
