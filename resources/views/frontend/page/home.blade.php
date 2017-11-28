@@ -26,6 +26,7 @@
               @foreach($post->kategoris->pluck('kategori') as $p)
                 <a href="/kategori/{{$p}}"><span class="tag is-light">{{$p}}</span></a>
               @endforeach
+              <span class="pull-right"><small>{{number_format($post->view_counter)}} views</small></span>
               </p>
             </article>
           </div>
