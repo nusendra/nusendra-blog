@@ -11,7 +11,8 @@
         "laravel/framework": "5.5.*",
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
-        "teamtnt/laravel-scout-tntsearch-driver": "^3.0"
+        "teamtnt/laravel-scout-tntsearch-driver": "^3.0",
+        "tymon/jwt-auth": "^0.5.12"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
