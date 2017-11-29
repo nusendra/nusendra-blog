@@ -170,7 +170,6 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
-        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -229,7 +228,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
     ],
 
 ];
