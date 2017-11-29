@@ -1,5 +1,5 @@
 @extends('frontend.master')
-@section('title','Nusendra.com - Blog Post')
+@section('title',$post->judul . ' - Nusendra.com')
 @section('description',$post->ringkasan)
 @section('hero-title',$post->judul)
 @section('hero-description',$post->ringkasan)
