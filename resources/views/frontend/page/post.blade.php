@@ -1,4 +1,8 @@
-@extends('frontend.master') @section('title','Nusendra.com - Blog Post') @section('hero-title',$post->judul) @section('hero-description',$post->ringkasan)
+@extends('frontend.master')
+@section('title','Nusendra.com - Blog Post')
+@section('description',$post->ringkasan)
+@section('hero-title',$post->judul)
+@section('hero-description',$post->ringkasan)
 @section('content')
 
 <section class="container section">

@@ -1,5 +1,6 @@
 @extends('frontend.master')
 @section('title','Nusendra.com - Full Stack Web Developer')
+@section('description','Personal web blog yang memuat konten seputar pemrograman (full stack web development), network engineering (mikrotik) dan opini pribadi.')
 @section('hero-title','Nusendra.com')
 @section('hero-description','Full Stack Web Developer | Desktop App Developer | Network Engineer | Blogger')
 

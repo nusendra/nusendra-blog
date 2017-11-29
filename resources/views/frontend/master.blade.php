@@ -7,7 +7,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title')</title>
   <meta name="author" content="Nusendra Hanggarawan">
-  <meta name="description" content="Personal web blog yang memuat konten seputar pemrograman (full stack web development), network engineering (mikrotik) dan opini pribadi. ">
+  <meta name="description" content="@yield('description')">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@nusendra_">
   <meta name="twitter:creator" content="@nusendra_">
