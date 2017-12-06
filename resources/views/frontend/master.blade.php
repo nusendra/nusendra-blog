@@ -87,9 +87,9 @@
         <span class="tag is-danger">Info</span> Website ini masih dalam masa pengembangan. Informasi lebih lanjut silakan kirim email ke admin@nusendra.com
       </p>
     </div>
+  </div>
   @section('content')
   @show
-  </div>
   <br>
 </body>
 <footer class="footer">
