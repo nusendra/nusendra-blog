@@ -48,7 +48,7 @@ trait MakesAssertions
 
         $pattern = str_replace('\*', '.*', $pattern);
 
-        PHPUnit::assertRegExp('/^'.$pattern.'/u', parse_url(
+        PHPUnit::assertRegExp('/^'.$pattern.'$/u', parse_url(
             $this->driver->getCurrentURL()
         )['path']);
 
@@ -81,6 +81,53 @@ trait MakesAssertions
         PHPUnit::assertNotEquals($path, parse_url(
             $this->driver->getCurrentURL()
         )['path']);
+
+        return $this;
+    }
+
+    /**
+     * Assert that the current URL fragment matches the given pattern.
+     *
+     * @param  string  $fragment
+     * @return $this
+     */
+    public function assertFragmentIs($fragment)
+    {
+        $pattern = preg_quote($fragment, '/');
+
+        PHPUnit::assertRegExp('/^'.str_replace('\*', '.*', $pattern).'$/u', (string) parse_url(
+            $this->driver->executeScript('return window.location.href;')
+        , PHP_URL_FRAGMENT));
+
+        return $this;
+    }
+
+    /**
+     * Assert that the current URL fragment begins with given fragment.
+     *
+     * @param  string  $fragment
+     * @return $this
+     */
+    public function assertFragmentBeginsWith($fragment)
+    {
+        PHPUnit::assertStringStartsWith($fragment, (string) parse_url(
+            $this->driver->executeScript('return window.location.href;'), PHP_URL_FRAGMENT
+        ));
+
+        return $this;
+    }
+
+    /**
+     * Assert that the current URL fragment does not match the given fragment.
+     *
+     * @param  string  $fragment
+     * @return $this
+     */
+    public function assertFragmentIsNot($fragment)
+    {
+        PHPUnit::assertNotEquals($fragment, (string) parse_url(
+            $this->driver->executeScript('return window.location.href;'), PHP_URL_FRAGMENT
+        ));
 
         return $this;
     }
