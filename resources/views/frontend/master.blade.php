@@ -114,14 +114,13 @@
       </div>
       <div class="column is-4">
         <h1 class="title is-6">
-          <strong>Who am I ?</strong>
+          <strong>Popular Posts</strong>
         </h1>
-        <span class="tag is-dark">Web Dev</span>
-        <span class="tag is-danger">Desktop App Dev</span>
-        <span class="tag is-primary">Network Engineer</span>
-        <span class="tag is-link">Blogger</span>
-        <span class="tag is-info">Husband</span>
-        <span class="tag is-success">Freelancer</span>
+        <ul>
+          @foreach ($popular_posts as $value)
+            <li><a href="/post/{{$value->slug}}">({{$value->view_counter}}) {{$value->judul}}</a></li>
+          @endforeach
+        </ul>
       </div>
       <div class="column is-4">
         <h1 class="title is-6">

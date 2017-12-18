@@ -14,6 +14,7 @@ class HomeController extends Controller
         },'kategoris' => function ($q) {
             $q->select('kategori');
         }])->where('status_terbit', 1)->orderBy('tgl_terbit', 'desc')->take(9)->get();
-        return view('frontend.page.home', compact('posts'));
+        $popular_posts = Post::select('id','judul','slug','view_counter')->orderBy('view_counter','desc')->take(5)->get();
+        return view('frontend.page.home', compact('posts','popular_posts'));
     }
 }
