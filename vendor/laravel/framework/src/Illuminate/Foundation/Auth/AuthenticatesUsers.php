@@ -17,7 +17,8 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+        $popular_posts = \App\Post::select('id','judul','slug','view_counter')->orderBy('view_counter','desc')->take(5)->get();
+        return view('auth.login',compact('popular_posts'));
     }
 
     /**
