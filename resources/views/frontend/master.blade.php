@@ -95,7 +95,7 @@
   <br>
 </body>
 <footer class="footer">
-  <div class="container">
+  <div class="container" id="el">
     <div class="columns">
       <div class="column is-4">
         <h1 class="title is-3">
@@ -117,9 +117,7 @@
           <strong>Popular Posts</strong>
         </h1>
         <ul>
-          @foreach ($popular_posts as $value)
-            <li><a href="/post/{{$value->slug}}">({{$value->view_counter}}) {{$value->judul}}</a></li>
-          @endforeach
+            <li v-for="post in posts"><a :href="'/post/' + post.slug">(@{{post.view_counter}}) @{{post.judul}}</a></li>
         </ul>
       </div>
       <div class="column is-4">
@@ -145,7 +143,20 @@
   </div>
 </footer>
 </html>
-
+<script src="{{ URL::asset('js/frontend.js') }}" charset="utf-8"></script>
+<script>
+  var vm = new Vue({
+    el:"#el",
+    data: {
+      posts: []
+    },
+    mounted () {
+      axios.get('/get-popular-posts').then(response => {
+        this.posts = response.data
+      })
+    }
+  })
+</script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function () {
   var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -161,4 +172,3 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
-<script src="{{ URL::asset('js/frontend.js') }}" charset="utf-8"></script>

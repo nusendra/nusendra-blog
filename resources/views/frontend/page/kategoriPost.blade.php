@@ -1,6 +1,6 @@
 @extends('frontend.master') @section('title','Nusendra.com - Post Kategori') @section('hero-title',$kategori) @section('hero-description','Daftar
 lengkap berbagai post / blog pada kategori ' . $kategori) @section('content')
-<div id="el">
+<div>
 	<section class="container section">
 		@foreach($posts as $post)
 		<article class="media">

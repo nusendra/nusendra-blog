@@ -75,8 +75,7 @@ class PostController extends Controller
         $kategori = Kategori::select('id', 'kategori')->get();
         $post->view_counter = $post->view_counter + 1;
         $post->save();
-        $popular_posts = Post::select('id','judul','slug','view_counter')->orderBy('view_counter','desc')->take(5)->get();
-        return view('frontend.page.post', compact('post', 'kategori','popular_posts'));
+        return view('frontend.page.post', compact('post', 'kategori'));
     }
 
     public function search(Request $request)
