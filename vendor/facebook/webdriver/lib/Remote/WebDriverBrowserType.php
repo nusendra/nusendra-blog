@@ -16,9 +16,7 @@
 namespace Facebook\WebDriver\Remote;
 
 /**
- * All the browsers supported by selenium.
- *
- * @codeCoverageIgnore
+ * All the browsers supported by selenium
  */
 class WebDriverBrowserType
 {

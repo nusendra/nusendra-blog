@@ -26,7 +26,7 @@ class WebDriverDispatcher
     /**
      * @var EventFiringWebDriver
      */
-    protected $driver;
+    protected $driver = null;
 
     /**
      * this is needed so that EventFiringWebElement can pass the driver to the

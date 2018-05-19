@@ -125,7 +125,7 @@ class HasManyThrough extends Relation
      */
     public function getQualifiedParentKeyName()
     {
-        return $this->parent->getTable().'.'.$this->secondLocalKey;
+        return $this->parent->qualifyColumn($this->secondLocalKey);
     }
 
     /**
@@ -354,16 +354,9 @@ class HasManyThrough extends Relation
      */
     public function get($columns = ['*'])
     {
-        // First we'll add the proper select columns onto the query so it is run with
-        // the proper columns. Then, we will get the results and hydrate out pivot
-        // models with the result of those columns as a separate model relation.
-        $columns = $this->query->getQuery()->columns ? [] : $columns;
+        $builder = $this->prepareQueryBuilder($columns);
 
-        $builder = $this->query->applyScopes();
-
-        $models = $builder->addSelect(
-            $this->shouldSelect($columns)
-        )->getModels();
+        $models = $builder->getModels();
 
         // If we actually found models we will also eager load any relationships that
         // have been specified as needing to be eager loaded. This will solve the
@@ -420,6 +413,49 @@ class HasManyThrough extends Relation
         }
 
         return array_merge($columns, [$this->getQualifiedFirstKeyName()]);
+    }
+
+    /**
+     * Chunk the results of the query.
+     *
+     * @param  int  $count
+     * @param  callable  $callback
+     * @return bool
+     */
+    public function chunk($count, callable $callback)
+    {
+        return $this->prepareQueryBuilder()->chunk($count, $callback);
+    }
+
+    /**
+     * Execute a callback over each item while chunking.
+     *
+     * @param  callable  $callback
+     * @param  int  $count
+     * @return bool
+     */
+    public function each(callable $callback, $count = 1000)
+    {
+        return $this->chunk($count, function ($results) use ($callback) {
+            foreach ($results as $key => $value) {
+                if ($callback($value, $key) === false) {
+                    return false;
+                }
+            }
+        });
+    }
+
+    /**
+     * Prepare the query builder for query execution.
+     *
+     * @param  array  $columns
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    protected function prepareQueryBuilder($columns = ['*'])
+    {
+        return $this->query->applyScopes()->addSelect(
+            $this->shouldSelect($this->query->getQuery()->columns ? [] : $columns)
+        );
     }
 
     /**
@@ -495,7 +531,7 @@ class HasManyThrough extends Relation
      */
     public function getQualifiedFirstKeyName()
     {
-        return $this->throughParent->getTable().'.'.$this->firstKey;
+        return $this->throughParent->qualifyColumn($this->firstKey);
     }
 
     /**
@@ -505,7 +541,7 @@ class HasManyThrough extends Relation
      */
     public function getQualifiedForeignKeyName()
     {
-        return $this->related->getTable().'.'.$this->secondKey;
+        return $this->related->qualifyColumn($this->secondKey);
     }
 
     /**
@@ -515,6 +551,6 @@ class HasManyThrough extends Relation
      */
     public function getQualifiedLocalKeyName()
     {
-        return $this->farParent->getTable().'.'.$this->localKey;
+        return $this->farParent->qualifyColumn($this->localKey);
     }
 }

@@ -12,6 +12,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Routing\UrlRoutable;
 use Illuminate\Contracts\Queue\QueueableEntity;
 use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Contracts\Queue\QueueableCollection;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\ConnectionResolverInterface as Resolver;
 
@@ -229,7 +230,10 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             if ($this->isFillable($key)) {
                 $this->setAttribute($key, $value);
             } elseif ($totallyGuarded) {
-                throw new MassAssignmentException($key);
+                throw new MassAssignmentException(sprintf(
+                    'Add [%s] to fillable property to allow mass assignment on [%s].',
+                    $key, get_class($this)
+                ));
             }
         }
 
@@ -247,6 +251,21 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         return static::unguarded(function () use ($attributes) {
             return $this->fill($attributes);
         });
+    }
+
+    /**
+     * Qualify the given column name by the model's table.
+     *
+     * @param  string  $column
+     * @return string
+     */
+    public function qualifyColumn($column)
+    {
+        if (Str::contains($column, '.')) {
+            return $column;
+        }
+
+        return $this->getTable().'.'.$column;
     }
 
     /**
@@ -386,16 +405,16 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     {
         $relations = is_string($relations) ? func_get_args() : $relations;
 
-        return $this->load(array_filter($relations, function ($relation) {
-            return ! $this->relationLoaded($relation);
-        }));
+        $this->newCollection([$this])->loadMissing($relations);
+
+        return $this;
     }
 
     /**
      * Increment a column's value by a given amount.
      *
      * @param  string  $column
-     * @param  int  $amount
+     * @param  float|int  $amount
      * @param  array  $extra
      * @return int
      */
@@ -408,7 +427,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      * Decrement a column's value by a given amount.
      *
      * @param  string  $column
-     * @param  int  $amount
+     * @param  float|int  $amount
      * @param  array  $extra
      * @return int
      */
@@ -421,7 +440,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      * Run the increment or decrement method on the model.
      *
      * @param  string  $column
-     * @param  int  $amount
+     * @param  float|int  $amount
      * @param  array  $extra
      * @param  string  $method
      * @return int
@@ -445,7 +464,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      * Increment the underlying attribute value and sync with original.
      *
      * @param  string  $column
-     * @param  int  $amount
+     * @param  float|int  $amount
      * @param  array  $extra
      * @param  string  $method
      * @return void
@@ -886,11 +905,9 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function newQueryForRestoration($ids)
     {
-        if (is_array($ids)) {
-            return $this->newQueryWithoutScopes()->whereIn($this->getQualifiedKeyName(), $ids);
-        }
-
-        return $this->newQueryWithoutScopes()->whereKey($ids);
+        return is_array($ids)
+                ? $this->newQueryWithoutScopes()->whereIn($this->getQualifiedKeyName(), $ids)
+                : $this->newQueryWithoutScopes()->whereKey($ids);
     }
 
     /**
@@ -1018,6 +1035,8 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         );
 
         $this->load(collect($this->relations)->except('pivot')->keys()->toArray());
+
+        $this->syncOriginal();
 
         return $this;
     }
@@ -1206,7 +1225,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function getQualifiedKeyName()
     {
-        return $this->getTable().'.'.$this->getKeyName();
+        return $this->qualifyColumn($this->getKeyName());
     }
 
     /**
@@ -1276,6 +1295,36 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
+     * Get the queueable relationships for the entity.
+     *
+     * @return array
+     */
+    public function getQueueableRelations()
+    {
+        $relations = [];
+
+        foreach ($this->getRelations() as $key => $relation) {
+            if (method_exists($this, $key)) {
+                $relations[] = $key;
+            }
+
+            if ($relation instanceof QueueableCollection) {
+                foreach ($relation->getQueueableRelations() as $collectionValue) {
+                    $relations[] = $key.'.'.$collectionValue;
+                }
+            }
+
+            if ($relation instanceof QueueableEntity) {
+                foreach ($relation->getQueueableRelations() as $entityKey => $entityValue) {
+                    $relations[] = $key.'.'.$entityValue;
+                }
+            }
+        }
+
+        return array_unique($relations);
+    }
+
+    /**
      * Get the queueable connection for the entity.
      *
      * @return mixed
@@ -1323,7 +1372,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function getForeignKey()
     {
-        return Str::snake(class_basename($this)).'_'.$this->primaryKey;
+        return Str::snake(class_basename($this)).'_'.$this->getKeyName();
     }
 
     /**

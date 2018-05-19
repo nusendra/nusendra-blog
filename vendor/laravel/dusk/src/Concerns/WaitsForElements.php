@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Facebook\WebDriver\Exception\TimeOutException;
 use Facebook\WebDriver\Exception\NoSuchElementException;
+use Facebook\WebDriver\WebDriverExpectedCondition;
 
 trait WaitsForElements
 {
@@ -99,6 +100,19 @@ trait WaitsForElements
     }
 
     /**
+     * Wait for the given location using a named route.
+     *
+     * @param  string  $route
+     * @param  array  $parameters
+     * @param  int  $seconds
+     * @return $this
+     */
+    public function waitForRoute($route, $parameters = [], $seconds = null)
+    {
+        return $this->waitForLocation(route($route, $parameters), $seconds);
+    }
+
+    /**
      * Wait until the given script returns true.
      *
      * @param  string  $script
@@ -118,6 +132,23 @@ trait WaitsForElements
         return $this->waitUsing($seconds, 100, function () use ($script) {
             return $this->driver->executeScript($script);
         });
+    }
+
+    /**
+     * Wait for a JavaScript dialog to open.
+     *
+     * @param  int  $seconds
+     * @return $this
+     */
+    public function waitForDialog($seconds = null)
+    {
+        $seconds = is_null($seconds) ? static::$waitSeconds : $seconds;
+
+        $this->driver->wait($seconds, 100)->until(
+            WebDriverExpectedCondition::alertIsPresent(), "Waited {$seconds} seconds for dialog."
+        );
+
+        return $this;
     }
 
     /**

@@ -24,13 +24,7 @@ namespace Facebook\WebDriver;
  */
 class WebDriverBy
 {
-    /**
-     * @var string
-     */
     private $mechanism;
-    /**
-     * @var string
-     */
     private $value;
 
     protected function __construct($mechanism, $value)

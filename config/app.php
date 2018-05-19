@@ -168,8 +168,6 @@ return [
          * Package Service Providers...
          */
         Intervention\Image\ImageServiceProvider::class,
-        Laravel\Scout\ScoutServiceProvider::class,
-        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
         /*
          * Application Service Providers...
