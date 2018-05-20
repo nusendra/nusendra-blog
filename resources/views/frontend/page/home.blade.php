@@ -34,5 +34,6 @@
       @endforeach
     </div>
   </div>
+  {{-- <a class="load-more-btn" href="#"><b>LOAD MORE</b></a> --}}
 </section>
 @endsection

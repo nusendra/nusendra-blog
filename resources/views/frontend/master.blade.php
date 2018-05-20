@@ -34,9 +34,9 @@
         <a href="#" class="logo"><img src="{{URL::asset('image/logo.png')}}" alt="Logo Image"></a>
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
         <ul class="main-menu visible-on-click" id="main-menu">
-          <li><a href="https://nusendra.com">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="{{route('skills')}}">Skills</a></li>
-          <li><a href="{{route('contact')}}">Contact</a></li>
+          {{-- <li><a href="{{route('contact')}}">Contact</a></li> --}}
           <li><a href="{{route('tos')}}">TOS</a></li>
           <li><a href="{{route('disclaimer')}}">Disclaimer</a></li>
           <li><a href="https://github.com/nusendra"><span class="icon"><i class="fa fa-github"></i></span></a></li>
@@ -47,7 +47,6 @@
   @section('content')
   @show
   <br>
-  <a class="load-more-btn" href="#"><b>LOAD MORE</b></a>
 </body>
 
 <footer>
@@ -56,12 +55,10 @@
       <div class="col-lg-4 col-md-6">
         <div class="footer-section">
           <a class="logo" href="#"><img src="{{URL::asset('image/logo.png')}}" alt="Logo Image"></a>
-          <p class="copyright">Personal web blog yang memuat konten seputar pemrograman (web development) dan opini pribadi.</p>
-          </ul>
-
+          <p class="copyright"><strong>Nusendra.com</strong> adalah Personal web blog yang memuat konten seputar pemrograman (web development) dan opini pribadi.</p>
         </div><!-- footer-section -->
       </div><!-- col-lg-4 col-md-6 -->
-
+      
       {{-- <div class="col-lg-4 col-md-6">
           <div class="footer-section">
           <h4 class="title"><b>CATAGORIES</b></h4>

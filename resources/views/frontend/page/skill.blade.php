@@ -5,54 +5,26 @@
 
 @section('content')
   <section class="container section">
-    <div class="columns">
-      <div class="column">
-        <h1 class="title is-4">
-          <strong>Web Development</strong>
-        </h1>
-        PHP - Laravel
-        <progress class="progress is-success" value="90" max="100">90%</progress>
-        PHP - CodeIgniter
-        <progress class="progress is-info" value="70" max="100">70%</progress>
-        ASP.NET
-        <progress class="progress is-warning" value="55" max="100">55%</progress>
-        Javascript - Vue.JS
-        <progress class="progress is-info" value="80" max="100">80%</progress>
-        Javascript - JQuery
-        <progress class="progress is-info" value="85" max="100">85%</progress>
-        Javascript - Progressive Web Apps
-        <progress class="progress is-danger" value="40" max="100">40%</progress>
-        CSS - Bootstrap & Bulma
-        <progress class="progress is-info" value="78" max="100">78%</progress>
-        SEO
-        <progress class="progress is-info" value="70" max="100">70%</progress>
-      </div>
-      <div class="column">
-        <h1 class="title is-4">
-          <strong>Desktop App Development</strong>
-        </h1>
-        C#.NET - Visual Studio
-        <progress class="progress is-success" value="90" max="100">89%</progress>
-        VB.NET - Visual Studio
-        <progress class="progress is-success" value="95" max="100">95%</progress>
-        WPF - Visual Studio
-        <progress class="progress is-warning" value="65" max="100">65%</progress>
-      </div>
-      <div class="column">
-        <h1 class="title is-4">
-          <strong>Other Skills</strong>
-        </h1>
-        Design - Photoshop
-        <progress class="progress is-success" value="85" max="100">85%</progress>
-        Design - Corel Draw
-        <progress class="progress is-info" value="60" max="100">60%</progress>
-        Geographic Information System - ArcGIS
-        <progress class="progress is-info" value="70" max="100">70%</progress>
-        Networking - Mikrotik
-        <progress class="progress is-info" value="85" max="100">85%</progress>
-        Spread Sheet - Microsoft Office / Libre Office
-        <progress class="progress is-success" value="98" max="100">98%</progress>
-      </div>
-    </div>
+    <p>
+      Saya gak akan sebutin berapa persen skill saya di bidang ini dan di bidang itu seperti kebanyakan orang ketika bikin CV.
+      Yang jelas, <i> I'm good enough with PHP and Javascript</i>. Untuk PHP sendiri saya pakai framework <code>Laravel</code> (untuk full stack) dan <code>Lumen</code> (microservice) sebagai backend nya.
+      Untuk backend di javaScript, saya pakai <code>nodeJS</code> dengan <code>ExpressJS</code> sebagai framework nya. Kalau urusan frontend, saya memakai javascript juga dengan <code>VueJS</code> sebagai framework utama saya.
+      Lebih jauh lagi, saya menggunakan <code>NuxtJS</code> untuk handle SSR dan mempermudah dalam ngoding vuejs. Sebagai catatan, saya gak begitu jago kalau urusan design / styling (CSS).
+    </p>
+    <p>
+      Database sendiri saya lebih kearah <i>relational database</i> karena udah terbiasa ngerjain project yang butuh relasi antar banyak table. Untuk noSQL sendiri (MongoDB) saya tidak terlalu mendalami.
+    </p>
+    <p>
+      <code>#FYI</code> saya sekarang sedang mengerjakan sistem ERP untuk perusahaan tempat saya bekerja, menggunakan teknologi NuxtJS sebagai frontendnya dan Lumen sebagai backend nya.
+    </p>
   </section>
 @endsection
+
+<style>
+  .container p {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      line-height: 2.3rem;
+      margin-bottom : 3%;
+  }
+  </style>
