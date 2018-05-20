@@ -18,142 +18,99 @@
   <meta property="og:title" content="Nusendra - Full Stack Web Developer">
   <meta property="og:description" content="indonesian web developer, full stack web developer, web developer, programmer, developer, desktop developer,backend developer, web programmer, frontend developer, laravel, php, vuejs, c#, laravel developer, backend programmer, tutorial website, jasa web aplikasi, jasa web ecommerce, jasa web company profile, jasa setting mikrotik, jasa setting mikrotik surabaya, setting mikrotik gresik, jasa pembuatan website, jasa pembuatan web aplikasi, jasa pembuatan website gresik, jasa pembuatan website surabaya, blogger">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <meta name="google-site-verification" content="FTUgjnGVYX1mfONGgk5FZkmKgeTti6_LLJ3q_-WiUE0" />
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<link href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet">
+	<link href="{{URL::asset('css/ionicons.css')}}" rel="stylesheet">
+	<link href="{{URL::asset('css/styles.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('css/responsive.css')}}" rel="stylesheet">
+  
 </head>
 <body>
   <div id="app">
-    <section class="hero is-info is-bold">
-      <div class="hero-head">
-        <nav class="navbar">
-          <div class="container">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="../">
-                <img src="/image/logo.png" alt="Logo">
-              </a>
-              <span class="navbar-burger burger" data-target="navbarMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-            <div id="navbarMenu" class="navbar-menu">
-              <div class="navbar-end">
-                <a class="navbar-item" href="/">
-                  Home
-                </a>
-                <a class="navbar-item" href="{{route('skills')}}">
-                  Skill Set
-                </a>
-                {{-- <a class="navbar-item" href="{{route('portofolio')}}">
-                  Portofolio
-                </a> --}}
-                <a class="navbar-item" href="{{route('contact')}}">
-                  Contact
-                </a>
-                <a class="navbar-item" href="{{route('tos')}}">
-                  ToS
-                </a>
-                <a class="navbar-item" href="{{route('disclaimer')}}">
-                  Disclaimer
-                </a>
-                <span class="navbar-item">
-                  <a class="button is-white is-outlined is-small" href="https://github.com/nusendra">
-                    <span class="icon">
-                      <i class="fa fa-github"></i>
-                    </span>
-                    <span>My Github</span>
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </nav>
+    <header>
+      <div class="container-fluid position-relative no-side-padding">
+        <a href="#" class="logo"><img src="{{URL::asset('image/logo.png')}}" alt="Logo Image"></a>
+        <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
+        <ul class="main-menu visible-on-click" id="main-menu">
+          <li><a href="https://nusendra.com">Home</a></li>
+          <li><a href="{{route('skills')}}">Skills</a></li>
+          <li><a href="{{route('contact')}}">Contact</a></li>
+          <li><a href="{{route('tos')}}">TOS</a></li>
+          <li><a href="{{route('disclaimer')}}">Disclaimer</a></li>
+          <li><a href="https://github.com/nusendra"><span class="icon"><i class="fa fa-github"></i></span></a></li>
+        </ul>
+        {{-- <div class="src-area">
+          <form>
+            <button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+            <input class="src-input" type="text" placeholder="Type of search">
+          </form>
+        </div> --}}
       </div>
-    </section>
-    <section class="hero is-light is-bold">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">
-            @yield('hero-title')
-          </h1>
-          <h2 class="subtitle">
-            <br>
-            @yield('hero-description')
-          </h2>
-        </div>
-      </div>
-    </section>
-    <div class="box cta">
-      <p class="has-text-centered">
-        <span class="tag is-danger">Info</span> Website ini masih dalam masa pengembangan. Informasi lebih lanjut silakan kirim email ke admin@nusendra.com
-      </p>
-    </div>
+    </header>    
   </div>
   @section('content')
   @show
   <br>
 </body>
-<footer class="footer">
-  <div class="container" id="el">
-    <div class="columns">
-      <div class="column is-4">
-        <h1 class="title is-3">
-          <strong>Nusendra.com</strong>
-        </h1>
-        <p>
-          Personal web blog yang memuat konten seputar pemrograman (web development), network engineering (mikrotik) dan opini pribadi.
-        </p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/andraeinstein" class="social-icon"> <i class="fa fa-facebook"></i></a>&nbsp;
-          <a href="https://twitter.com/nusendra_" class="social-icon"> <i class="fa fa-twitter"></i></a>&nbsp;
-          <a href="https://www.youtube.com/channel/UCPs91pCgbgtcSdnczFSAkdA" class="social-icon"> <i class="fa fa-youtube"></i></a>&nbsp;
-          <a href="https://www.linkedin.com/in/nusendra-hanggarawan-79854990/" class="social-icon"> <i class="fa fa-linkedin"></i></a>&nbsp;
-          <a href="https://t.me/nusendra" class="social-icon"> <i class="fa fa-telegram"></i></a>
-        </div>
-      </div>
-      <div class="column is-4">
-        <h1 class="title is-6">
-          <strong>Popular Posts</strong>
-        </h1>
-        <ul>
-            <li v-for="post in posts"><a :href="'/post/' + post.slug">(@{{post.view_counter}}) @{{post.judul}}</a></li>
-        </ul>
-      </div>
-      <div class="column is-4">
-        <h1 class="title is-6">
-          <strong>Contact me !</strong>
-        </h1>
-        <ul>
-          <li><i class="fa fa-home"></i> Gresik, Jawa Timur, Indonesia</li>
-          <li><i class="fa fa-envelope-open-o"></i> admin@nusendra.com</li>
-          <li><i class="fa fa-mobile"></i> +62 857 3334 5727</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <br><br>
-  <div class="container">
-    <div class="content has-text-centered">
 
-      <p>
-        © 2017 <strong>Nusendra.com</strong> Made with <span style="color:red;margin-right: 5px;">❤️</span> from Gresik, Indonesia.
-      </p>
-    </div>
-  </div>
+<footer>
+  <div class="container" id="el">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-section">
+          <a class="logo" href="#"><img src="{{URL::asset('image/logo.png')}}" alt="Logo Image"></a>
+          <p class="copyright">Personal web blog yang memuat konten seputar pemrograman (web development) dan opini pribadi.</p>
+          </ul>
+
+        </div><!-- footer-section -->
+      </div><!-- col-lg-4 col-md-6 -->
+
+      {{-- <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+          <h4 class="title"><b>CATAGORIES</b></h4>
+          <ul>
+            <li><a href="#">BEAUTY</a></li>
+            <li><a href="#">HEALTH</a></li>
+            <li><a href="#">MUSIC</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">SPORT</a></li>
+            <li><a href="#">DESIGN</a></li>
+            <li><a href="#">TRAVEL</a></li>
+          </ul>
+        </div><!-- footer-section -->
+      </div><!-- col-lg-4 col-md-6 -->
+
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-section">
+
+          <h4 class="title"><b>SUBSCRIBE</b></h4>
+          <div class="input-area">
+            <form>
+              <input class="email-input" type="text" placeholder="Enter your email">
+              <button class="submit-btn" type="submit"><i class="icon ion-ios-email-outline"></i></button>
+            </form>
+          </div>
+
+        </div><!-- footer-section -->
+      </div><!-- col-lg-4 col-md-6 --> --}}
+      <div class="container">
+          <div class="content has-text-centered">
+            <p>© 2018 <strong>Nusendra.com</strong> Made with <span style="color:red;margin-right: 5px;">❤️</span> from Gresik, Indonesia.</p>
+          </div>
+        </div>
+    </div><!-- row -->
+  </div><!-- container -->
 </footer>
 </html>
 <script src="{{ URL::asset('js/frontend.js') }}" charset="utf-8"></script>
 <script>
   var vm = new Vue({
     el:"#el",
-    data: {
-      posts: []
-    },
     mounted () {
-      axios.get('/get-popular-posts').then(response => {
-        this.posts = response.data
-      })
+      console.log(" \n========================= \nWELCOME TO MY BLOG \nNusendra.com \n========================= ")
     }
   })
 </script>

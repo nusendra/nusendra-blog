@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import axios from 'axios'
-import Bulma from 'bulma'
 
 Vue.use(require('vue-moment'));
 
@@ -17,12 +16,3 @@ if (token) {
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
-
-// import Pencarian from "./components/frontend/Pencarian";
-
-// new Vue({
-//     el: "#app",
-//     components: {
-//         pencarian: Pencarian
-//     },
-// })

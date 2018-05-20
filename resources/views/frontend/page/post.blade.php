@@ -1,33 +1,28 @@
 @extends('frontend.master')
-@section('title',$post->judul . ' - Nusendra.com')
-@section('description',$post->ringkasan)
-@section('hero-title',$post->judul)
-@section('hero-description',$post->ringkasan)
+{{-- @section('title',$post->judul . ' - Nusendra.com')
+@section('description',$post->ringkasan) --}}
+
 @section('content')
-
-<section class="container section">
-	<div class="content columns">
-		<div class="column is-three-quarters">
-			{!! $post->isi !!}
-			<hr>
-			<div id="disqus_thread"></div>
-		</div>
-		<div class="column">
-			<nav class="panel">
-				<p class="panel-heading">Kategori Blog</p>
-				@foreach ($kategori as $value)
-				<a class="panel-block" href="/kategori/{{$value->kategori}}">
-					<span class="panel-icon">
-						<i class="fa fa-check"></i>
-					</span> {{$value->kategori}}</a>
-				@endforeach
-			</nav>
-		</div>
-	</div>
-</section>
-
+<section class="post-area brengsek">
+		<div class="container">
+			<div class="row">
+					<pre>{{$post}}</pre>
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<div class="main-post">
+						<div class="post-top-area">
+						<div class="judul">
+							<h2>{{ $post->judul }}</h2>
+							{{ $post->tgl_terbit }}
+						</div>
+							{!! $post->isi !!}
+						</div><!-- post-top-area -->
+					</div><!-- main-post -->
+				</div><!-- col-lg-8 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section>
 @endsection
-
 <script type="text/javascript">
 	(function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
@@ -37,3 +32,16 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 
 </script>
+
+<style>
+.judul {
+	font-family: "Times New Roman", Times, serif;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+.post-top-area p {
+		font-family: "Times New Roman", Times, serif;
+		font-size: 22px;
+		line-height: 2.3rem;
+}
+</style>
