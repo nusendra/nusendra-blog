@@ -20,13 +20,10 @@
           <div class="single-post post-style-2 post-style-3">
             <div class="blog-info">
               {{-- <h6 class="pre-title"><a href="/post/{{$post->slug}}"><b>HEALTH</b></a></h6> --}}
+              <h6 class="text-left  date" href="#">on {{$post->tgl_terbit}}</h6>
               <h4 class="title"><a href="/post/{{$post->slug}}"><b>{{$post->judul}}</b></a></h4>
               <p>{{$post->ringkasan}}</p>
-              <div class="avatar-area">
-                <div class="right-area">
-                  <h6 class="date" href="#">on {{$post->tgl_terbit}}</h6>
-                </div>
-              </div>
+              
               <ul class="post-footer">
                 <li><a href="#"><i class="ion-eye"></i>{{number_format($post->view_counter)}}</a></li>
               </ul>
@@ -36,7 +33,6 @@
       </div>
       @endforeach
     </div>
-    <a class="load-more-btn" href="#"><b>LOAD MORE</b></a>
   </div>
 </section>
 @endsection

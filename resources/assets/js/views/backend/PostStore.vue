@@ -1,8 +1,6 @@
 <template>
   <div class="field columns">
-
     <div class="column">
-
       <sukses pesan="Proses Berhasil" :alert="statusResponse"></sukses>
       <form enctype="multipart/form-data">
         <div class="field is-horizontal">
@@ -46,26 +44,6 @@
           <small>Total teks ringkasan : {{ringkasanLength}}</small>
         </div>
         <br>
-        <!-- <div class="file has-name is-boxed">
-          <div class="field-label is-normal">
-            <label class="label">Featured Thumbnail</label>
-          </div>
-          <div class="field-body">
-            <label class="file-label">
-              <input class="file-input" type="file" name="resume" v-on:change="onFileChange">
-              <span class="file-cta">
-                <span class="file-icon">
-                  <i class="fa fa-upload"></i>
-                </span>
-                <span class="file-label">
-                  Pilih Gambar
-                </span>
-                <img :src="image" alt="">
-              </span>
-            </label>
-          </div>
-        </div> -->
-
         <hr>
         <div class="field is-horizontal">
           <div class="field-label is-normal">
@@ -126,6 +104,7 @@
         <div class="field is-grouped">
           <div class="control">
             <button class="button is-link" @click="submit">Submit</button>
+            <div v-if="loading">Loading ....</div>
           </div>
         </div>
       </form>
@@ -143,6 +122,7 @@ export default {
   },
   data: function() {
     return {
+      loading: false,
       judul: "",
       ringkasan: "",
       // image:'',
@@ -161,23 +141,8 @@ export default {
     }
   },
   methods: {
-    // onFileChange(e) {
-    //   var files = e.target.files || e.dataTransfer.files;
-    //   if (!files.length)
-    //     return;
-    //   this.createImage(files[0]);
-    // },
-    // createImage(file) {
-    //   var image = new Image();
-    //   var reader = new FileReader();
-    //   var vm = this;
-    //
-    //   reader.onload = (e) => {
-    //     vm.image = e.target.result;
-    //   };
-    //   reader.readAsDataURL(file);
-    // },
     submit: function(e) {
+      this.loading = true
       e.preventDefault();
       let array_select = [];
       this.value.map(function(value, key) {
@@ -204,7 +169,7 @@ export default {
           this.terbit = true;
           this.tgl_terbit = "";
           this.value = [];
-          // this.image = '';
+          this.loading = false
         })
         .catch(function(error) {
           console.log(error.response.data);
@@ -241,8 +206,8 @@ export default {
     }
   },
   mounted() {
-    this.fetchKategori();
-    this.fetchPost();
+    this.fetchKategori()
+    this.fetchPost()
   }
 };
 </script>

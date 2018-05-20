@@ -53,4 +53,9 @@ s.setAttribute('data-timestamp', +new Date());
 		font-size: 22px;
 		line-height: 2.3rem;
 }
+ol li {
+	font-family: "Times New Roman", Times, serif;
+		font-size: 22px;
+		line-height: 2.3rem;
+}
 </style>

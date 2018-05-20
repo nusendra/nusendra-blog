@@ -1,5 +1,6 @@
 <template>
     <div class="container column is-full">
+      <div v-if="loading">Loading...</div>
       <router-link to="/post-create"><a class="button is-primary">Add New</a></router-link>
       <table class="table">
         <thead>
@@ -14,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="post in posts">
+          <tr v-for="(post, index) in posts" :key="index">
             <td>{{post.id}}</td>
             <td>{{post.judul}}</td>
             <td>{{post.ringkasan}}</td>
@@ -36,6 +37,7 @@
       data: function() {
         return {
           posts: '',
+          loading: true
         }
       },
       methods: {
@@ -53,6 +55,7 @@
         axios.get('backend-post')
         .then((response) => {
           this.posts = response.data
+          this.loading = false
         })
         .catch(function (error) {
           console.log(error);

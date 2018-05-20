@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-
+      <div v-if="loading">Loading...</div>
       <router-link to="/kategori-create"><a class="button is-primary">Add New</a></router-link>
       <table class="table">
         <thead>
@@ -11,7 +11,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="kategori in kategoris">
+          <tr v-for="(kategori, index) in kategoris" :key="index">
             <td>{{kategori.id}}</td>
             <td>{{kategori.kategori}}</td>
             <td>
@@ -28,13 +28,15 @@
     export default {
       data: function() {
         return {
-          kategoris: ''
+          kategoris: '',
+          loading: true
         }
       },
       mounted(){
         axios.get('backend-kategori')
         .then((response) => {
           this.kategoris = response.data
+          this.loading = false
         })
         .catch(function (error) {
           console.log(error);

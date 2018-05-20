@@ -22,9 +22,9 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<link href="{{URL::asset('css/ionicons.css')}}" rel="stylesheet">
-	<link href="{{URL::asset('css/styles.css')}}" rel="stylesheet">
-  <link href="{{URL::asset('css/responsive.css')}}" rel="stylesheet">
+	<link href="{{URL::asset('css/styles.min.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('css/responsive.min.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('css/ionicons.css')}}" rel="stylesheet">
   
 </head>
 <body>
@@ -47,6 +47,7 @@
   @section('content')
   @show
   <br>
+  <a class="load-more-btn" href="#"><b>LOAD MORE</b></a>
 </body>
 
 <footer>

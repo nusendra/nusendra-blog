@@ -73,10 +73,9 @@ class PostController extends Controller
     {
         $post = Post::where('slug', $slug)->firstOrFail();
         $kategori = Kategori::select('id', 'kategori')->get();
-        // $post->view_counter = $post->view_counter + 1;
-        // $post->save();
+        $post->view_counter = $post->view_counter + 1;
+        $post->save();
         return view('frontend.page.post', compact('post', 'kategori'));
-        // return view('frontend.page.post');
     }
 
     public function search(Request $request)
