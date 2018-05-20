@@ -4,11 +4,13 @@
 @section('hero-title','NUSENDRA')
 @section('hero-description','Full Stack Web Developer | Desktop App Developer | Network Engineer | Blogger')
 
-<div class="slider display-table center-text">
-  <h1 class="title display-table-cell"><b>@yield('hero-title')</b></h1><br>
-  {{-- <h5 class="title display-table-cell"><b>@yield('hero-description')</b></h5> --}}
-</div>
 @section('content')
+<div class="jumbotron jumbotron-fluid jumbo">
+  <div class="container">
+    <h1 class="display-4">Nusendra</h1>
+    <p class="lead">Full Stack Web Developer | Blogger</p>
+  </div>
+</div>
 <section class="blog-area section">
   <div class="container">
     <div class="row">

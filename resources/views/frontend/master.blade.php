@@ -21,7 +21,7 @@
   <meta name="google-site-verification" content="FTUgjnGVYX1mfONGgk5FZkmKgeTti6_LLJ3q_-WiUE0" />
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-	<link href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<link href="{{URL::asset('css/ionicons.css')}}" rel="stylesheet">
 	<link href="{{URL::asset('css/styles.css')}}" rel="stylesheet">
   <link href="{{URL::asset('css/responsive.css')}}" rel="stylesheet">
@@ -41,12 +41,6 @@
           <li><a href="{{route('disclaimer')}}">Disclaimer</a></li>
           <li><a href="https://github.com/nusendra"><span class="icon"><i class="fa fa-github"></i></span></a></li>
         </ul>
-        {{-- <div class="src-area">
-          <form>
-            <button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-            <input class="src-input" type="text" placeholder="Type of search">
-          </form>
-        </div> --}}
       </div>
     </header>    
   </div>

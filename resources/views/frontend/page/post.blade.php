@@ -4,25 +4,39 @@
 
 @section('content')
 <section class="post-area brengsek">
+	<div class="jumbotron jumbotron-fluid jumbo">
 		<div class="container">
 			<div class="row">
-					<pre>{{$post}}</pre>
 				<div class="col-md-1"></div>
-				<div class="col-md-10">
-					<div class="main-post">
-						<div class="post-top-area">
-						<div class="judul">
-							<h2>{{ $post->judul }}</h2>
-							{{ $post->tgl_terbit }}
+					<div class="col-md-10">
+						<div class="main-post">
+							<div class="post-top-area text-center">
+								<h1 class="display-4">{{ $post->judul }}</h1><br>
+								<p><h4>{{ $post->tgl_terbit }}</h4></p>
+							</div>
 						</div>
-							{!! $post->isi !!}
-						</div><!-- post-top-area -->
-					</div><!-- main-post -->
-				</div><!-- col-lg-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<div class="main-post">
+					<div class="post-top-area">
+						{!! $post->isi !!}
+						<br>
+						<div id="disqus_thread"/>
+					</div><!-- post-top-area -->
+				</div><!-- main-post -->
+			</div><!-- col-lg-8 -->
+		</div><!-- row -->
+	</div><!-- container -->
+</section>
 @endsection
+
 <script type="text/javascript">
 	(function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
@@ -34,11 +48,6 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 
 <style>
-.judul {
-	font-family: "Times New Roman", Times, serif;
-	margin-top: 5%;
-	margin-bottom: 5%;
-}
 .post-top-area p {
 		font-family: "Times New Roman", Times, serif;
 		font-size: 22px;
