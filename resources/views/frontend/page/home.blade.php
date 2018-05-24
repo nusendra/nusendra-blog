@@ -8,7 +8,7 @@
 <div class="jumbotron jumbotron-fluid jumbo">
   <div class="container">
     <h1 class="display-4">Nusendra</h1>
-    <p class="lead">Full Stack Web Developer | Blogger</p>
+    <p class="lead">Full Stack Web Developer | Orang yang susah ngomong dan minim kosakata</p>
   </div>
 </div>
 <section class="blog-area section">
