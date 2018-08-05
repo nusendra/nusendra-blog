@@ -42,7 +42,6 @@ use Prophecy\Prophet;
 use ReflectionClass;
 use ReflectionException;
 use ReflectionObject;
-use SebastianBergmann;
 use SebastianBergmann\Comparator\Comparator;
 use SebastianBergmann\Comparator\Factory as ComparatorFactory;
 use SebastianBergmann\Diff\Differ;
@@ -293,7 +292,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     private $outputBufferingLevel;
 
     /**
-     * @var SebastianBergmann\GlobalState\Snapshot
+     * @var Snapshot
      */
     private $snapshot;
 
@@ -756,7 +755,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
      *
      * @param TestResult $result
      *
-     * @return TestResult|null
+     * @return TestResult
      *
      * @throws Exception
      */
@@ -779,7 +778,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
         if (!$this instanceof WarningTestCase &&
             !$this instanceof SkippedTestCase &&
             !$this->handleDependencies()) {
-            return;
+            return $result;
         }
 
         $runEntireClass =  $this->runClassInSeparateProcess && !$this->runTestInSeparateProcess;

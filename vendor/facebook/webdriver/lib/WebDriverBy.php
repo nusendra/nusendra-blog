@@ -24,7 +24,13 @@ namespace Facebook\WebDriver;
  */
 class WebDriverBy
 {
+    /**
+     * @var string
+     */
     private $mechanism;
+    /**
+     * @var string
+     */
     private $value;
 
     protected function __construct($mechanism, $value)
@@ -54,7 +60,7 @@ class WebDriverBy
      * names are not permitted.
      *
      * @param string $class_name
-     * @return WebDriverBy
+     * @return static
      */
     public static function className($class_name)
     {
@@ -65,7 +71,7 @@ class WebDriverBy
      * Locates elements matching a CSS selector.
      *
      * @param string $css_selector
-     * @return WebDriverBy
+     * @return static
      */
     public static function cssSelector($css_selector)
     {
@@ -76,7 +82,7 @@ class WebDriverBy
      * Locates elements whose ID attribute matches the search value.
      *
      * @param string $id
-     * @return WebDriverBy
+     * @return static
      */
     public static function id($id)
     {
@@ -87,7 +93,7 @@ class WebDriverBy
      * Locates elements whose NAME attribute matches the search value.
      *
      * @param string $name
-     * @return WebDriverBy
+     * @return static
      */
     public static function name($name)
     {
@@ -98,7 +104,7 @@ class WebDriverBy
      * Locates anchor elements whose visible text matches the search value.
      *
      * @param string $link_text
-     * @return WebDriverBy
+     * @return static
      */
     public static function linkText($link_text)
     {
@@ -110,7 +116,7 @@ class WebDriverBy
      * value.
      *
      * @param string $partial_link_text
-     * @return WebDriverBy
+     * @return static
      */
     public static function partialLinkText($partial_link_text)
     {
@@ -121,7 +127,7 @@ class WebDriverBy
      * Locates elements whose tag name matches the search value.
      *
      * @param string $tag_name
-     * @return WebDriverBy
+     * @return static
      */
     public static function tagName($tag_name)
     {
@@ -132,7 +138,7 @@ class WebDriverBy
      * Locates elements matching an XPath expression.
      *
      * @param string $xpath
-     * @return WebDriverBy
+     * @return static
      */
     public static function xpath($xpath)
     {

@@ -3,38 +3,31 @@
 @section('description',$post->ringkasan) --}}
 
 @section('content')
-<section class="post-area brengsek">
-	<div class="jumbotron jumbotron-fluid jumbo">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-1"></div>
-					<div class="col-md-10">
-						<div class="main-post">
-							<div class="post-top-area text-center">
-								<h1 class="display-4">{{ $post->judul }}</h1><br>
-								<p><h4>{{ $post->tgl_terbit }}</h4></p>
-							</div>
-						</div>
-					</div>
+<header class="masthead">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+				<div class="post-heading">
+					<h1>{{ $post->judul }}</h1>
+					<h2 class="subheading">{{ $post->ringkasan }}</h2>
+					<span class="meta">
+						on {{ $post->tgl_terbit }}
+					</span>
 				</div>
 			</div>
 		</div>
 	</div>
+</header>
+<article>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-10">
-				<div class="main-post">
-					<div class="post-top-area">
-						{!! $post->isi !!}
-						<br>
-						<div id="disqus_thread"/>
-					</div><!-- post-top-area -->
-				</div><!-- main-post -->
-			</div><!-- col-lg-8 -->
-		</div><!-- row -->
-	</div><!-- container -->
-</section>
+			<div class="col-lg-8 col-md-10 mx-auto">
+				{!! $post->isi !!}
+			</div>
+		</div>
+	</div>
+</article>
 @endsection
 
 <script type="text/javascript">
@@ -48,14 +41,7 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 
 <style>
-.post-top-area p {
-		font-family: "Times New Roman", Times, serif;
-		font-size: 22px;
+	.col-lg-8 p {
 		line-height: 2.3rem;
-}
-ol li {
-	font-family: "Times New Roman", Times, serif;
-		font-size: 22px;
-		line-height: 2.3rem;
-}
+	}
 </style>

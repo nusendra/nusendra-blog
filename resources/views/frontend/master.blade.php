@@ -20,104 +20,100 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
   <meta name="google-site-verification" content="FTUgjnGVYX1mfONGgk5FZkmKgeTti6_LLJ3q_-WiUE0" />
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<link href="{{URL::asset('css/styles.min.css')}}" rel="stylesheet">
-  <link href="{{URL::asset('css/responsive.min.css')}}" rel="stylesheet">
-  <link href="{{URL::asset('css/ionicons.css')}}" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	
+  <link href="{{URL::asset('css/clean-blog.min.css')}}" rel="stylesheet">
   
 </head>
 <body>
-  <div id="app">
-    <header>
-      <div class="container-fluid position-relative no-side-padding">
-        <a href="#" class="logo"><img src="{{URL::asset('image/logo.png')}}" alt="Logo Image"></a>
-        <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
-        <ul class="main-menu visible-on-click" id="main-menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="{{route('skills')}}">Skills</a></li>
-          {{-- <li><a href="{{route('contact')}}">Contact</a></li> --}}
-          <li><a href="{{route('tos')}}">TOS</a></li>
-          <li><a href="{{route('disclaimer')}}">Disclaimer</a></li>
-          <li><a href="https://github.com/nusendra"><span class="icon"><i class="fa fa-github"></i></span></a></li>
-        </ul>
-      </div>
-    </header>    
-  </div>
-  @section('content')
-  @show
-  <br>
-</body>
-
-<footer>
-  <div class="container" id="el">
-    <div class="row">
-      <div class="col-lg-4 col-md-6">
-        <div class="footer-section">
-          <a class="logo" href="#"><img src="{{URL::asset('image/logo.png')}}" alt="Logo Image"></a>
-          <p class="copyright"><strong>Nusendra.com</strong> adalah Personal web blog yang memuat konten seputar pemrograman (web development) dan opini pribadi.</p>
-        </div><!-- footer-section -->
-      </div><!-- col-lg-4 col-md-6 -->
-      
-      {{-- <div class="col-lg-4 col-md-6">
-          <div class="footer-section">
-          <h4 class="title"><b>CATAGORIES</b></h4>
-          <ul>
-            <li><a href="#">BEAUTY</a></li>
-            <li><a href="#">HEALTH</a></li>
-            <li><a href="#">MUSIC</a></li>
-          </ul>
-          <ul>
-            <li><a href="#">SPORT</a></li>
-            <li><a href="#">DESIGN</a></li>
-            <li><a href="#">TRAVEL</a></li>
-          </ul>
-        </div><!-- footer-section -->
-      </div><!-- col-lg-4 col-md-6 -->
-
-      <div class="col-lg-4 col-md-6">
-        <div class="footer-section">
-
-          <h4 class="title"><b>SUBSCRIBE</b></h4>
-          <div class="input-area">
-            <form>
-              <input class="email-input" type="text" placeholder="Enter your email">
-              <button class="submit-btn" type="submit"><i class="icon ion-ios-email-outline"></i></button>
-            </form>
-          </div>
-
-        </div><!-- footer-section -->
-      </div><!-- col-lg-4 col-md-6 --> --}}
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-          <div class="content has-text-centered">
-            <p>© 2018 <strong>Nusendra.com</strong> Made with <span style="color:red;margin-right: 5px;">❤️</span> from Gresik, Indonesia.</p>
+        <a class="navbar-brand" href="/">Nusendra.com</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('now')}}">Now</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('skills')}}">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('contact')}}">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('tos')}}">TOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('disclaimer')}}">Disclaimer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/nusendra"><span class="icon"><i class="fa fa-github"></i> My Github</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    @section('content')
+    @show
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://twitter.com/nusendra_">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/andraeinstein">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/nusendra">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Nusendra H. 2018</p>
           </div>
         </div>
-    </div><!-- row -->
-  </div><!-- container -->
-</footer>
+      </div>
+    </footer>
+</body>
+
 </html>
-<script src="{{ URL::asset('js/frontend.js') }}" charset="utf-8"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="{{URL::asset('js/jquery.min.js')}}"></script>
+<script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/clean-blog.min.js"></script>
 <script>
-  var vm = new Vue({
-    el:"#el",
-    mounted () {
-      console.log(" \n========================= \nWELCOME TO MY BLOG \nNusendra.com \n========================= ")
-    }
-  })
-</script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
-  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  if ($navbarBurgers.length > 0) {
-    $navbarBurgers.forEach(function ($el) {
-      $el.addEventListener('click', function () {
-        var target = $el.dataset.target;
-        var $target = document.getElementById(target);
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-      });
-    });
-  }
-});
+  console.log(" \n========================= \nWELCOME TO MY BLOG \nNusendra.com \n========================= ")
 </script>

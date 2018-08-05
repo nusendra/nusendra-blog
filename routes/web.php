@@ -1,5 +1,6 @@
 <?php
 Route::resource('/','HomeController');
+Route::view('/now','frontend.page.now')->name('now');
 Route::view('/skills','frontend.page.skill')->name('skills');
 Route::view('/disclaimer','frontend.page.disclaimer')->name('disclaimer');
 Route::view('/contact','frontend.page.contact')->name('contact');
