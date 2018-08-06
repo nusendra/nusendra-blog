@@ -31,8 +31,8 @@
             {{$post->ringkasan}}
           </h3>
         </a>
-        <p class="post-meta">Posted by
-          on {{$post->tgl_terbit}}. {{number_format($post->view_counter)}} views.
+        <p class="post-meta">
+	  Posted on {{$post->tgl_terbit}}. {{number_format($post->view_counter)}} views.
         </p>
       </div>
       <hr>
