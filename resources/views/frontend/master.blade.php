@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
   <meta name="theme-color" content="#b0c5e8">
   <meta name="description" content="@yield('description')">
   <meta name="robots" content="index,follow">
