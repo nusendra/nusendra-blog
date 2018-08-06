@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('title','Nusendra.com - Full Stack Web Developer')
-@section('description','Personal web blog yang memuat konten seputar pemrograman (full stack web development)')
+@section('description','Personal web blog yang memuat konten seputar kehidupan programmer dan aktifitas ngoding')
 
 @section('content')
 <header class="masthead" style="background-image: url({{URL::asset('image/minify.png')}})">

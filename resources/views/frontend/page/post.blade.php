@@ -1,6 +1,6 @@
 @extends('frontend.master')
-{{-- @section('title',$post->judul . ' - Nusendra.com')
-@section('description',$post->ringkasan) --}}
+@section('title',$post->judul . ' - Nusendra.com')
+@section('description',$post->ringkasan)
 
 @section('content')
 <header class="masthead">
