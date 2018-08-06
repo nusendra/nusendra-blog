@@ -26,7 +26,7 @@
         <h2>Jelasin dikit dong buat apa halaman ini</h2>
         <p>
           Halaman now ini masih jarang diterapkan di beberapa blog di Indonesia, saya juga baru tau dari blog nya kang <a href="https://filosofikode.me/">Fariz Rizaldy</a>.
-          Silakan baca baca di <a href="https://filosofikode.me/">sini</a> untuk lebih lanjut mengenai halaman <b>now</b> ini.
+          Silakan baca baca di <a href="https://nownownow.com/">sini</a> untuk lebih lanjut mengenai halaman <b>now</b> ini.
         </p>
         <p>
           Berbeda dengan halaman <i>about us</i> atau tentang saya, halaman now ini menjelaskan tentang apa yang sedang saya lakukan akhir akhir ini. Mungkin ada beberapa pertanyaan, kenapa gak lewat sosial media saja?
