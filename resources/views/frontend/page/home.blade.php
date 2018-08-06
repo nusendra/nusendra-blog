@@ -9,9 +9,9 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-          <h1>Nusendra Hanggarawan</h1>
+          <h1>Nusendra H.</h1>
           <p/>
-          <span class="subheading"><b>Full Stack Web & Mobile Developer</b></span>
+          <span class="subheading">Full Stack Web & Mobile Developer</span>
         </div>
       </div>
     </div>
