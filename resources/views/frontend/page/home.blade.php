@@ -11,7 +11,7 @@
         <div class="site-heading">
           <h1>Nusendra Hanggarawan</h1>
           <p/>
-          <span class="subheading">Full Stack Web & Mobile Developer</span>
+          <span class="subheading"><b>Full Stack Web & Mobile Developer</b></span>
         </div>
       </div>
     </div>
