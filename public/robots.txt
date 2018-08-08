@@ -2,5 +2,3 @@ User-agent: *
 Disallow:
 
 Sitemap: https://nusendra.com/sitemap.xml
-Sitemap: https://nusendra.com/sitemap.xml/posts
-Sitemap: https://nusendra.com/sitemap.xml/categories
