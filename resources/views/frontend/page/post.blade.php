@@ -24,6 +24,10 @@
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
 				{!! $post->isi !!}
+				<hr/>
+				<p>
+					<div id="disqus_thread"/>
+				</p>
 			</div>
 		</div>
 	</div>
