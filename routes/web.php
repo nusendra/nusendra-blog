@@ -1,5 +1,10 @@
 <?php
 Route::resource('/','HomeController');
+
+Route::get('/sitemap.xml', 'SitemapController@index');
+Route::get('/sitemap.xml/posts', 'SitemapController@posts');
+Route::get('/sitemap.xml/categories', 'SitemapController@categories');
+
 Route::view('/now','frontend.page.now')->name('now');
 Route::view('/skills','frontend.page.skill')->name('skills');
 Route::view('/disclaimer','frontend.page.disclaimer')->name('disclaimer');
