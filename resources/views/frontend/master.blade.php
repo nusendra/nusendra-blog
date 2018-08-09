@@ -117,11 +117,14 @@
 
 </html>
 <!-- Bootstrap core JavaScript -->
-<script src="{{URL::asset('js/jquery.min.js')}}"></script>
-<script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/id.js"></script>
 
 <!-- Custom scripts for this template -->
 <script src="js/clean-blog.min.js"></script>
 <script>
-  console.log(" \n========================= \nWELCOME TO MY BLOG \nNusendra.com \n========================= ")
+console.log(" \n========================= \nWELCOME TO MY BLOG \nNusendra.com \n========================= ")
+$(document).ready(function(){$('.moment').each(function(){date = moment(new Date($(this).attr('data-date')));$(this).html('<span>' + date.fromNow() + '</span>');});});
 </script>
