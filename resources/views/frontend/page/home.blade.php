@@ -32,7 +32,7 @@
           </h3>
         </a>
         <p class="post-meta">
-	        Diposting  <span class="moment" data-date="{{$post->tgl_terbit}}"></span>. {{number_format($post->view_counter)}} views.
+	        Diposting  <span class="moment" data-date="{{$post->created_at}}"></span>. {{number_format($post->view_counter)}} views.
         </p>
       </div>
       <hr>

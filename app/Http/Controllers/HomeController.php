@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::select('id', 'judul', 'ringkasan', 'tgl_terbit', 'user_id', 'status_terbit', 'slug', 'view_counter')->with(['user' => function ($query) {
+        $posts = Post::select('id', 'judul', 'ringkasan', 'tgl_terbit', 'user_id', 'status_terbit', 'slug', 'view_counter', 'created_at')->with(['user' => function ($query) {
             $query->select('id', 'name');
         },'kategoris' => function ($q) {
             $q->select('kategori');
