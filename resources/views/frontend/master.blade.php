@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  @include('frontend.onesignal')
   @include('frontend.ga')
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
