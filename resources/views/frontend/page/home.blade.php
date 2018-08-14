@@ -11,7 +11,13 @@
         <div class="site-heading">
           <h1>Nusendra H.</h1>
           <p/>
-          <span class="subheading">Full Stack Web & Mobile Developer</span>
+          <span class="subheading">
+            {{-- <div id="typed-strings">
+                <p><h2>Full Stack Web & Mobile Developer</h2></p>
+                <p>It <em>types</em> out sentences.</p>
+            </div> --}}
+            <h2><span id="typed"></span></h2>
+          </span>
         </div>
       </div>
     </div>

@@ -122,10 +122,12 @@
 <script type="text/javascript" src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/id.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 
 <!-- Custom scripts for this template -->
 <script src="js/clean-blog.min.js"></script>
 <script>
 console.log(" \n========================= \nWELCOME TO MY BLOG \nNusendra.com \n========================= ")
 $(document).ready(function(){$('.moment').each(function(){date = moment(new Date($(this).attr('data-date')));$(this).html('<span>' + date.fromNow() + '</span>');});});
+new Typed('#typed',{strings:["Full Stack Web Developer","Mobile App Developer","JavaScript Coder","Tech and Personal Blogger"],typeSpeed:100,backSpeed:40,loop:true,loopCount:Infinity});
 </script>
