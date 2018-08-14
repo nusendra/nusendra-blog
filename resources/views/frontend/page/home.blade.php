@@ -12,10 +12,12 @@
           <h1>Nusendra H.</h1>
           <p/>
           <span class="subheading">
-            {{-- <div id="typed-strings">
-                <p><h2>Full Stack Web & Mobile Developer</h2></p>
-                <p>It <em>types</em> out sentences.</p>
-            </div> --}}
+            <div id="typed-strings">
+                <p>Full Stack Web Developer</p>
+                <p>Mobile App Developer</p>
+                <p>JavaScript Coder</p>
+                <p>Tech and Personal Blogger</p>
+            </div>
             <h2><span id="typed"></span></h2>
           </span>
         </div>
