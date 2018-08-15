@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	
   <link href="{{URL::asset('css/clean-blog.min.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('css/styles/default.css')}}" rel="stylesheet">
   
 </head>
 <body>
@@ -123,6 +124,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/id.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script type="text/javascript" src="{{URL::asset('js/highlight.pack.js')}}"></script>
 
 <!-- Custom scripts for this template -->
 <script src="js/clean-blog.min.js"></script>
@@ -130,4 +132,5 @@
 console.log(" \n========================= \nWELCOME TO MY BLOG \nNusendra.com \n========================= ")
 $(document).ready(function(){$('.moment').each(function(){date = moment(new Date($(this).attr('data-date')));$(this).html('<span>' + date.fromNow() + '</span>');});});
 if($('#typed').length === 1){new Typed('#typed',{stringsElement: '#typed-strings',typeSpeed:100,backSpeed:40,loop:true,loopCount:Infinity});}
+hljs.initHighlightingOnLoad();
 </script>

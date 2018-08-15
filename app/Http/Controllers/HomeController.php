@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Kategori;
 
 class HomeController extends Controller
 {
@@ -13,8 +14,10 @@ class HomeController extends Controller
             $query->select('id', 'name');
         },'kategoris' => function ($q) {
             $q->select('kategori');
-        }])->where('status_terbit', 1)->orderBy('tgl_terbit', 'desc')->take(9)->get();
-        return view('frontend.page.home', compact('posts'));
+        }])->where('status_terbit', 1)->orderBy('id', 'desc')->simplePaginate(5);
+
+        $kategoris = Kategori::with('posts:judul')->get();
+        return view('frontend.page.home', compact('posts', 'kategoris'));
     }
 
     public function getPopularPosts()

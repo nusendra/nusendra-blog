@@ -47,8 +47,9 @@ class KategoriController extends Controller
     {
         $posts = Post::whereHas('kategoris',function($q) use($kategori){
             $q->where('kategori',$kategori);
-        })->get();
-        return view('frontend.page.kategoriPost',compact('posts','kategori'));
+        })->orderBy('id', 'desc')->simplePaginate(5);
+        $kategoris = Kategori::with('posts:judul')->get();
+        return view('frontend.page.kategoriPost',compact('posts','kategoris','kategori'));
     }
 
     public function edit(Kategori $kategori)

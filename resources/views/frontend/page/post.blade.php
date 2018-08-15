@@ -12,7 +12,7 @@
 					<h1>{{ $post->judul }}</h1>
 					<h2 class="subheading">{{ $post->ringkasan }}</h2>
 					<span class="meta">
-						on {{ $post->tgl_terbit }}
+						<span class="moment" data-date="{{$post->created_at}}"></span>
 					</span>
 				</div>
 			</div>

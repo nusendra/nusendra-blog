@@ -19,7 +19,7 @@ class PostController extends Controller
             $query->select('id', 'name');
         },'kategoris' => function ($q) {
             $q->select('kategori');
-        }])->get();
+        }])->orderBy('id','desc')->get();
         return $model;
     }
 
