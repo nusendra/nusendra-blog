@@ -1,5 +1,6 @@
 <?php
 Route::resource('/','HomeController');
+Route::view('/offline', 'frontend.page.offline');
 
 Route::get('/sitemap.xml', 'SitemapController@index');
 Route::get('/sitemap.xml/posts', 'SitemapController@posts');
