@@ -28,13 +28,31 @@
 
   <meta name="csrf-token" content="{{ csrf_token() }}">
   
+  <link rel="apple-touch-icon" sizes="57x57" href='/image/icons/apple-icon-57x57.png'>
+  <link rel="apple-touch-icon" sizes="60x60" href='/image/icons/apple-icon-60x60.png'>
+  <link rel="apple-touch-icon" sizes="72x72" href='/image/icons/apple-icon-72x72.png'>
+  <link rel="apple-touch-icon" sizes="76x76" href='/image/icons/apple-icon-76x76.png'>
+  <link rel="apple-touch-icon" sizes="114x114" href='/image/icons/apple-icon-114x114.png'>
+  <link rel="apple-touch-icon" sizes="120x120" href='/image/icons/apple-icon-120x120.png'>
+  <link rel="apple-touch-icon" sizes="144x144" href='/image/icons/apple-icon-144x144.png'>
+  <link rel="apple-touch-icon" sizes="152x152" href='/image/icons/apple-icon-152x152.png'>
+  <link rel="apple-touch-icon" sizes="180x180" href='/image/icons/apple-icon-180x180.png'>
+  <link rel="icon" type="image/png" sizes="192x192"  href='/image/icons/android-icon-192x192.png')}}">
+  <link rel="icon" type="image/png" sizes="32x32" href='/image/icons/favicon-32x32.png'>
+  <link rel="icon" type="image/png" sizes="96x96" href='/image/icons/favicon-96x96.png'>
+  <link rel="icon" type="image/png" sizes="16x16" href='/image/icons/favicon-16x16.png'>
+  <meta name="msapplication-TileColor" content="#b0c5e8">
+  <meta name="msapplication-TileImage" content="'/image/icons/ms-icon-144x144.png'>
+  <link rel="shortcut icon" href="'/image/icons/favicon.ico' type="image/x-icon">
+  <link rel="icon" href='/image/icons/favicon.ico' type="image/x-icon">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	
-  <link href="{{URL::asset('css/clean-blog.min.css')}}" rel="stylesheet">
-  <link href="{{URL::asset('css/styles/default.css')}}" rel="stylesheet">
+  <link href='/css/clean-blog.min.css' rel="stylesheet">
+  <link href='/css/styles/default.css' rel="stylesheet">
   
 </head>
 <body>
@@ -119,18 +137,31 @@
 
 </html>
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="{{URL::asset('js/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
+<script type="text/javascript" src='/js/jquery.min.js'></script>
+<script type="text/javascript" src='/js/bootstrap.bundle.min.js'></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/id.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-<script type="text/javascript" src="{{URL::asset('js/highlight.pack.js')}}"></script>
+<script type="text/javascript" src='/js/highlight.pack.js'></script>
 
 <!-- Custom scripts for this template -->
-<script src="js/clean-blog.min.js"></script>
+<script src="/js/clean-blog.min.js"></script>
 <script>
 console.log(" \n========================= \nWELCOME TO MY BLOG \nNusendra.com \n========================= ")
 $(document).ready(function(){$('.moment').each(function(){date = moment(new Date($(this).attr('data-date')));$(this).html('<span>' + date.fromNow() + '</span>');});});
 if($('#typed').length === 1){new Typed('#typed',{stringsElement: '#typed-strings',typeSpeed:100,backSpeed:40,loop:true,loopCount:Infinity});}
 hljs.initHighlightingOnLoad();
+</script>
+<script>
+  if ('serviceWorker' in navigator ) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
 </script>

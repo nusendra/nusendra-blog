@@ -3,7 +3,7 @@
 @section('description','Personal web blog yang memuat konten seputar kehidupan programmer dan aktifitas ngoding')
 
 @section('content')
-<header class="masthead" style="background-image: url({{URL::asset('image/minify.png')}})">
+<header class="masthead" style="background-image: url('/image/minify.png')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
