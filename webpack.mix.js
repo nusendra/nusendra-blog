@@ -10,18 +10,14 @@ mix.webpackConfig({
         minify: true,
         stripPrefix: 'public/',
         handleFetch: true,
+        dontCacheBustUrlsMatching: /\.\w{6}\./,
         dynamicUrlToDependencies: { //you should add the path to your blade files here so they can be cached
-               //and have full support for offline first (example below)
-            '/': ['resources/views/frontend/page/home.blade.php'],
+        //        //and have full support for offline first (example below)
             '/now': ['resources/views/frontend/page/now.blade.php'],
             '/skills': ['resources/views/frontend/page/skill.blade.php'],
             '/disclaimer': ['resources/views/frontend/page/disclaimer.blade.php'],
             '/contact': ['resources/views/frontend/page/contact.blade.php'],
-            '/terms-of-service': ['resources/views/frontend/page/tos.blade.php'],
-            '/sitemap.xml': ['resources/views/frontend/sitemap/index.blade.php'],
-            '/post': dynamicStringValue,
-            '/kategori': ['resources/views/frontend/page/kategoriPost.blade.php'],
-            '/backend': ['resources/views/backend/index.blade.php']
+            '/terms-of-service': ['resources/views/frontend/page/tos.blade.php']
         },
         staticFileGlobsIgnorePatterns: [/\.map$/, /mix-manifest\.json$/, /manifest\.json$/, /service-worker\.js$/],
         navigateFallback: '/',
