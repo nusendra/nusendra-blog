@@ -42,9 +42,10 @@
   <link rel="icon" type="image/png" sizes="96x96" href='/image/icons/favicon-96x96.png'>
   <link rel="icon" type="image/png" sizes="16x16" href='/image/icons/favicon-16x16.png'>
   <meta name="msapplication-TileColor" content="#b0c5e8">
-  <meta name="msapplication-TileImage" content="'/image/icons/ms-icon-144x144.png'>
+  <meta name="msapplication-TileImage" content='/image/icons/ms-icon-144x144.png'>
   <link rel="shortcut icon" href="'/image/icons/favicon.ico' type="image/x-icon">
   <link rel="icon" href='/image/icons/favicon.ico' type="image/x-icon">
+  @include('feed::links')
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
