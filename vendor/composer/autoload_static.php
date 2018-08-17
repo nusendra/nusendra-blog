@@ -68,6 +68,7 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
+            'Spatie\\Feed\\' => 12,
         ),
         'R' => 
         array (
@@ -224,6 +225,10 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         'Symfony\\Bridge\\PsrHttpMessage\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/psr-http-message-bridge',
+        ),
+        'Spatie\\Feed\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-feed/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -388,6 +393,7 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         'App\\Http\\Controllers\\KategoriController' => __DIR__ . '/../..' . '/app/Http/Controllers/KategoriController.php',
         'App\\Http\\Controllers\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessageController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
+        'App\\Http\\Controllers\\SitemapController' => __DIR__ . '/../..' . '/app/Http/Controllers/SitemapController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authentication' => __DIR__ . '/../..' . '/app/Http/Middleware/Authentication.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -3222,6 +3228,13 @@ class ComposerStaticInitac5c5e30b13b64064632d9afd5041ad6
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Spatie\\Feed\\Exceptions\\InvalidFeedItem' => __DIR__ . '/..' . '/spatie/laravel-feed/src/Exceptions/InvalidFeedItem.php',
+        'Spatie\\Feed\\Feed' => __DIR__ . '/..' . '/spatie/laravel-feed/src/Feed.php',
+        'Spatie\\Feed\\FeedItem' => __DIR__ . '/..' . '/spatie/laravel-feed/src/FeedItem.php',
+        'Spatie\\Feed\\FeedServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-feed/src/FeedServiceProvider.php',
+        'Spatie\\Feed\\Feedable' => __DIR__ . '/..' . '/spatie/laravel-feed/src/Feedable.php',
+        'Spatie\\Feed\\Helpers\\Path' => __DIR__ . '/..' . '/spatie/laravel-feed/src/Helpers/Path.php',
+        'Spatie\\Feed\\Http\\FeedController' => __DIR__ . '/..' . '/spatie/laravel-feed/src/Http/FeedController.php',
         'Symfony\\Bridge\\PsrHttpMessage\\Factory\\DiactorosFactory' => __DIR__ . '/..' . '/symfony/psr-http-message-bridge/Factory/DiactorosFactory.php',
         'Symfony\\Bridge\\PsrHttpMessage\\Factory\\HttpFoundationFactory' => __DIR__ . '/..' . '/symfony/psr-http-message-bridge/Factory/HttpFoundationFactory.php',
         'Symfony\\Bridge\\PsrHttpMessage\\HttpFoundationFactoryInterface' => __DIR__ . '/..' . '/symfony/psr-http-message-bridge/HttpFoundationFactoryInterface.php',

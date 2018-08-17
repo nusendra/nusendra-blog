@@ -29,3 +29,4 @@ Route::group(['middleware' => 'Authentication'], function(){
 
 
 Auth::routes();
+Route::feeds();

@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Post extends Model
+class Post extends Model implements Feedable
 {
   use SoftDeletes;
 
@@ -15,18 +17,20 @@ class Post extends Model
   protected $guarded = ['id'];
   protected $hidden = ['pivot'];
 
-  public function searchableAs()
+  public function toFeedItem()
   {
-      return "post_index";
+      return FeedItem::create()
+          ->id($this->id)
+          ->title($this->judul)
+          ->summary($this->ringkasan)
+          ->updated($this->updated_at)
+          ->link("/post/$this->slug")
+          ->author("Nusendra Hanggarawan");
   }
 
-  public function toSearchableArray()
+  public static function getFeedItems()
   {
-      $array = $this->toArray();
-
-      // Customize array...
-
-      return $array;
+      return Post::all();
   }
 
   public function kategoris()
