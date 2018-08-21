@@ -7,6 +7,7 @@ use App\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use Berkayk\OneSignal\OneSignalFacade;
 use Auth;
 use Image;
 use Carbon\Carbon;
@@ -47,19 +48,23 @@ class PostController extends Controller
             // Image::make($request->get('image'))->save(public_path('image/').$fileName);
 
             $post = Post::updateOrCreate(
-            ['id' => $request->id],
-            [
-            'judul'         => $request->judul,
-            'ringkasan'     => $request->ringkasan,
-            'slug'          => $request->slug,
-            'isi'           => $request->isi,
-            'status_terbit' => $request->status_terbit,
-            'tgl_terbit'    => $request->tgl_terbit,
-            'user_id'       => Auth::user()->id,
-            // 'featured_thumbnail' => $fileName,
-            'created_by'    => Auth::user()->id
-            ]
+                ['id' => $request->id],
+                [
+                    'judul'         => $request->judul,
+                    'ringkasan'     => $request->ringkasan,
+                    'slug'          => $request->slug,
+                    'isi'           => $request->isi,
+                    'status_terbit' => $request->status_terbit,
+                    'tgl_terbit'    => $request->tgl_terbit,
+                    'user_id'       => Auth::user()->id,
+                    // 'featured_thumbnail' => $fileName,
+                    'created_by'    => Auth::user()->id
+                ]
             );
+
+            if ($post->wasRecentlyCreated) {
+                OneSignalFacade::sendNotificationToAll($post->judul, $url = null, $data = null, $buttons = null, $schedule = null);
+            }
 
             $post->kategoris()->sync($request->kategori);
             $status = 1;
@@ -88,11 +93,6 @@ class PostController extends Controller
     {
         $model = Post::findOrFail($id);
         return $model;
-    }
-
-    public function update(Request $request, Post $post)
-    {
-        //
     }
 
     public function destroy($id)
