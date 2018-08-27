@@ -71,6 +71,10 @@
           </ol>
         </p>
         <p>dah gitu aja ..</p>
+	<hr>
+	<p>
+	    <i style="color: red;">Pasti kalian ada yang ketawa habis baca ini ya? Diatas saya bilang ada 2 film favorit, padahal ada 3. Hahaha (Kalau ketawa berarti kalian jeli).</i>
+	</p>
 			</div>
 		</div>
 	</div>
