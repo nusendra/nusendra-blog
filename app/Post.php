@@ -23,7 +23,7 @@ class Post extends Model implements Feedable
           ->id($this->id)
           ->title($this->judul)
           ->summary($this->ringkasan)
-          ->updated($this->updated_at)
+          ->updated($this->created_at)
           ->link("/post/$this->slug")
           ->author("Nusendra Hanggarawan");
   }
