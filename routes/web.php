@@ -8,6 +8,7 @@ Route::get('/sitemap.xml/categories', 'SitemapController@categories');
 
 Route::view('/now','frontend.page.now')->name('now');
 Route::view('/skills','frontend.page.skill')->name('skills');
+Route::view('/portfolio','frontend.page.portfolio')->name('portfolio');
 Route::view('/disclaimer','frontend.page.disclaimer')->name('disclaimer');
 Route::view('/contact','frontend.page.contact')->name('contact');
 Route::view('/terms-of-service','frontend.page.tos')->name('tos');
