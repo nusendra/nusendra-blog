@@ -1,7 +1,6 @@
 @extends('frontend.master')
 @section('title','Nusendra.com - Skills')
-@section('hero-title','Skill Set')
-@section('hero-description','Full Stack Web Developer | Desktop App Developer | Network Engineer | Blogger')
+@section('description','Skillset nusendra')
 
 @section('content')
 <header class="masthead">
@@ -12,7 +11,7 @@
         <div class="site-heading">
           <h1>SKILLS</h1>
           <p/>
-          <span class="subheading">Full Stack Web & Mobile Developer</span>
+          <span class="subheading">Apa saja dan bagaimana dengan keahlian saya ..</span>
         </div>
       </div>
     </div>
