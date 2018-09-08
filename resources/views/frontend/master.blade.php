@@ -54,6 +54,7 @@
 	
   <link href='/css/clean-blog.min.css' rel="stylesheet">
   <link href='/css/styles/default.css' rel="stylesheet">
+  <link href='/css/ekko-lightbox.css' rel="stylesheet">
   
 </head>
 <body>
@@ -155,6 +156,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/id.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 <script type="text/javascript" src='/js/highlight.pack.js'></script>
+<script type="text/javascript" src='/js/ekko-lightbox.min.js'></script>
 
 <!-- Custom scripts for this template -->
 <script src="/js/clean-blog.min.js"></script>
@@ -163,6 +165,10 @@ console.log(" \n========================= \nWELCOME TO MY BLOG \nNusendra.com \n
 $(document).ready(function(){$('.moment').each(function(){date = moment(new Date($(this).attr('data-date')));$(this).html('<span>' + date.fromNow() + '</span>');});});
 if($('#typed').length === 1){new Typed('#typed',{stringsElement: '#typed-strings',typeSpeed:100,backSpeed:40,loop:true,loopCount:Infinity});}
 hljs.initHighlightingOnLoad();
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
 </script>
 <script>
   if ('serviceWorker' in navigator ) {

@@ -59,7 +59,15 @@
                     <h3>Screenshots</h3>
                 </p>
                 <p>
-                    <img src="https://farm8.staticflickr.com/7169/26837471761_676e23dd24_z.jpg" alt="vre gtalk center and sender">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <a href="https://farm8.staticflickr.com/7169/26837471761_676e23dd24_z.jpg" data-toggle="lightbox">
+                                    <img src="https://farm8.staticflickr.com/7169/26837471761_676e23dd24_q.jpg" class="img-fluid" alt="vre gtalk center and sender">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </p>
             </div>
         </div>

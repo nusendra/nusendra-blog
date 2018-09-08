@@ -13,10 +13,16 @@ Route::view('/disclaimer','frontend.page.disclaimer')->name('disclaimer');
 Route::view('/contact','frontend.page.contact')->name('contact');
 Route::view('/terms-of-service','frontend.page.tos')->name('tos');
 
-//portfolio
+// mini portfolio
 Route::view('/portfolio/vre-price-manager', 'frontend.page.portfolio.mini.priceManager');
 Route::view('/portfolio/vre-gtalk-center-sender', 'frontend.page.portfolio.mini.gtalkCenterSender');
 Route::view('/portfolio/vre-ddcounter', 'frontend.page.portfolio.mini.ddcounter');
+Route::view('/portfolio/vre-ddcounter-operator', 'frontend.page.portfolio.mini.ddcounterOperator');
+Route::view('/portfolio/vre-xmpp-client', 'frontend.page.portfolio.mini.xmppClient');
+
+// main portfolio
+Route::view('/portfolio/ahtefe-counter-reload', 'frontend.page.portfolio.main.ahtefeCounterReload');
+Route::view('/portfolio/webmap-peruntukan-lahan-permukiman', 'frontend.page.portfolio.main.webmapPeruntukanLahanPermukiman');
 
 Route::get('/post/{slug}','PostController@show');
 Route::get('/kategori/{kategori}','KategoriController@show');

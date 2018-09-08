@@ -29,7 +29,7 @@
                     </tr>
                     <tr>
                         <td>Tahun</td>
-                        <td>2014</td>
+                        <td>2015</td>
                     </tr>
                     <tr>
                         <td>Kategori Project</td>
@@ -59,11 +59,35 @@
                 <p>
                     <h3>Screenshots</h3>
                 </p>
-                <p><img src="https://farm8.staticflickr.com/7018/26812201762_9b88813668_c.jpg" alt="vre ddcounter"></p>
-                <p><img src="https://farm8.staticflickr.com/7573/26872267796_336e5696d7_c.jpg" alt="vre ddcounter"></p>
-                <p><img src="https://farm8.staticflickr.com/7479/26905665815_5697d16e6f_c.jpg" alt="vre ddcounter"></p>
-                <p><img src="https://farm8.staticflickr.com/7460/26301766743_7f8445a484_c.jpg" alt="vre ddcounter"></p>
-                <p><img src="https://farm8.staticflickr.com/7655/26872624696_5736eb53e5_c.jpg" alt="vre ddcounter"></p>
+                <p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <a href="https://farm8.staticflickr.com/7018/26812201762_9b88813668_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm8.staticflickr.com/7018/26812201762_9b88813668_q.jpg" class="img-fluid" alt="vre ddcounter">
+                                </a>
+                                <a href="https://farm8.staticflickr.com/7573/26872267796_336e5696d7_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm8.staticflickr.com/7573/26872267796_336e5696d7_q.jpg" class="img-fluid" alt="vre ddcounter">
+                                </a>
+                                <a href="https://farm8.staticflickr.com/7479/26905665815_5697d16e6f_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm8.staticflickr.com/7538/26838292071_856aa71600_q.jpg" class="img-fluid" alt="vre ddcounter">
+                                </a>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <a href="https://farm8.staticflickr.com/7460/26301766743_7f8445a484_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm8.staticflickr.com/7460/26301766743_7f8445a484_q.jpg" class="img-fluid" alt="vre ddcounter">
+                                </a>
+                                <a href="https://farm8.staticflickr.com/7479/26905665815_5697d16e6f_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm8.staticflickr.com/7479/26905665815_5697d16e6f_q.jpg" class="img-fluid" alt="vre ddcounter">
+                                </a>
+                                <a href="https://farm8.staticflickr.com/7655/26872624696_5736eb53e5_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm8.staticflickr.com/7655/26872624696_5736eb53e5_q.jpg" class="img-fluid" alt="vre ddcounter">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </p>
             </div>
         </div>
 	</div>
