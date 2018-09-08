@@ -21,25 +21,30 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-                <h2>SIDE PROJECT</h2>
-                <hr>
-                VRE - Price Manager <code>*Desktop</code><br>
-                VRE - Gtalk Center & Sender <code>*Desktop</code><br>
-                VRE - DDCounter <code>*Desktop</code><br>
-                VRE - DDCounter Operator <code>*Desktop</code><br>
-                VRE - Jabber Client <code>*Desktop</code><br>
-                <p></p>
-                <h2>MAIN PROJECT</h2>
-                <hr>
-                Ahtefe Counter Reload <code>*Desktop</code><br>
-                Webmap Peruntukan Lahan Permukiman <code>*Web</code><br>
-                Nusendra.com <code>*Web</code><br>
-                ERP PT. Benteng Api Technic <code>*Web</code><br>
-                Ahtefe Pulsa Reload <code>*Mobile</code><br>
-
-                <p></p>
-                <hr>
-                Dan lainnya... (Sayang nya tidak terdokumentasi)
+        <p>
+          <h2>SIDE PROJECT</h2>
+          <hr>
+          <a href="/portfolio/vre-price-manager">VRE - Price Manager </a><code>*Desktop</code><br>
+          <a href="/portfolio/vre-gtalk-center-sender">VRE - Gtalk Center & Sender </a><code>*Desktop</code><br>
+          <a href="/portfolio/vre-ddcounter">VRE - DDCounter </a><code>*Desktop</code><br>
+          VRE - DDCounter Operator <code>*Desktop</code><br>
+          VRE - Jabber Client <code>*Desktop</code><br>
+        </p>
+        <p>
+          <h2>MAIN PROJECT</h2>
+          <hr>
+          Ahtefe Counter Reload <code>*Desktop</code><br>
+          Webmap Peruntukan Lahan Permukiman <code>*Web</code><br>
+          Nusendra.com <code>*Web</code><br>
+          ERP PT. Benteng Api Technic <code>*Web</code><br>
+          Ahtefe Pulsa Reload <code>*Mobile</code><br>
+        </p>
+        <hr>
+        <p>
+          Dan lainnya... (Sayang nya tidak terdokumentasi)
+        </p>
+      </div>
+    </div>
 	</div>
 </article>
 @endsection
