@@ -172,7 +172,7 @@ class Repository implements CacheContract, ArrayAccess
      */
     public function pull($key, $default = null)
     {
-        return tap($this->get($key, $default), function ($value) use ($key) {
+        return tap($this->get($key, $default), function () use ($key) {
             $this->forget($key);
         });
     }
@@ -188,7 +188,9 @@ class Repository implements CacheContract, ArrayAccess
     public function put($key, $value, $minutes = null)
     {
         if (is_array($key)) {
-            return $this->putMany($key, $value);
+            $this->putMany($key, $value);
+
+            return;
         }
 
         if (! is_null($minutes = $this->getMinutes($minutes))) {

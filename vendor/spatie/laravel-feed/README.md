@@ -7,7 +7,7 @@
 [![StyleCI](https://styleci.io/repos/51826021/shield)](https://styleci.io/repos/51826021)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-feed.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-feed)
 
-This package provides an easy way to generate [rss feeds](http://www.whatisrss.com/). There's almost no coding required on your part. Just follow the installation instructions update your config file and you're good to go.
+This package provides an easy way to generate [RSS feeds](http://www.whatisrss.com/). There's almost no coding required on your part. Just follow the installation instructions update your config file and you're good to go.
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
@@ -136,19 +136,20 @@ If you prefer, returning an associative array with the necessary keys will do th
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
 class NewsItem extends Model implements Feedable
 {
     public function toFeedItem()
     {
-        return [
+        return FeedItem::create([
             'id' => $this->id,
             'title' => $this->title,
             'summary' => $this->summary,
             'updated' => $this->updated_at,
             'link' => $this->link,
             'author' => $this->author,
-        ];
+        ]);
     }
 }
 ```

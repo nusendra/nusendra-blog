@@ -3,6 +3,7 @@
 namespace Illuminate\Database\Query\Grammars;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Database\Query\Builder;
 
 class PostgresGrammar extends Grammar
@@ -19,6 +20,27 @@ class PostgresGrammar extends Grammar
         '&&', '@>', '<@', '?', '?|', '?&', '||', '-', '-', '#-',
         'is distinct from', 'is not distinct from',
     ];
+
+    /**
+     * {@inheritdoc}
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array  $where
+     * @return string
+     */
+    protected function whereBasic(Builder $query, $where)
+    {
+        if (Str::contains(strtolower($where['operator']), 'like')) {
+            return sprintf(
+                '%s::text %s %s',
+                $this->wrap($where['column']),
+                $where['operator'],
+                $this->parameter($where['value'])
+            );
+        }
+
+        return parent::whereBasic($query, $where);
+    }
 
     /**
      * Compile a "where date" clause.
@@ -75,6 +97,21 @@ class PostgresGrammar extends Grammar
         $column = str_replace('->>', '->', $this->wrap($column));
 
         return '('.$column.')::jsonb @> '.$value;
+    }
+
+    /**
+     * Compile a "JSON length" statement into SQL.
+     *
+     * @param  string  $column
+     * @param  string  $operator
+     * @param  string  $value
+     * @return string
+     */
+    protected function compileJsonLength($column, $operator, $value)
+    {
+        $column = str_replace('->>', '->', $this->wrap($column));
+
+        return 'json_array_length(('.$column.')::json) '.$operator.' '.$value;
     }
 
     /**
