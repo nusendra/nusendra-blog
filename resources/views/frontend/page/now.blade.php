@@ -78,7 +78,7 @@
             <li>Music Player: Clementine & Spotify</li>
             <li>Movie Player: VLC</li>
             <li>Code Editor: Visual Studio Code & Mousepad</li>
-            <li>Database GUI: HeidiSQL (with Wine)</li>
+            <li>Database GUI: HeidiSQL (with Wine) & RoboMongo</li>
             <li>Browsers: Google Chrome & Mozilla Firefox</li>
             <li>Version Control: GitKraken</li>
             <li>Mail: Mozilla Thunderbird</li>
