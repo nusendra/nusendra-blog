@@ -21,7 +21,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-        update tanggal 5 Agustus 2018
+        update tanggal 1 Oktober 2018
         <p/>
         <h2>Jelasin dikit dong buat apa halaman ini</h2>
         <p>
@@ -53,15 +53,15 @@
         </p>
         <h2>Refreshing</h2>
         <p>
-          Kerja juga butuh refreshing dong. Untuk refreshing, kalo pas jam istirahat, makan sambil nonton. Malam sampe rumah kadang main Dota dulu biar penat hilang, abis itu koding lagi. haha No life beneran
+          Kerja juga butuh refreshing dong. Untuk refreshing, kalo pas jam istirahat, makan sambil nonton. Di rumah kalau lagi penat banget, biasa nonton bareng sama istri sambil makan es krim.
         </p>
         <h2>Musik</h2>
         <p>
-          Suka dengan musik keras (Slipknot, BMTH, MCR, Alter Bridge, One OK Rock) dan benci musik / lagu Indonesia, apalagi yang mendayu dayu. 
+          Suka dengan musik keras (Slipknot, BMTH, MCR, Alter Bridge) dan benci musik / lagu Indonesia, apalagi yang mendayu dayu. 
         </p>
         <h2>Tontonan</h2>
         <p>
-          Pokoknya nonton film yang baru baru. Serial yang disuka (Stranger Things dan Silicon Valley). Film favorit sepanjang masa ada 2, Trilogi Back to the Future (udah nonton 6 kali), Marvel Cinematic Universe, dan The Lord of the Rings
+          Pokoknya nonton film yang baru baru. Serial yang disuka (Stranger Things dan Silicon Valley). Film favorit sepanjang masa ada 3, Trilogi Back to the Future (udah nonton 6 kali), Marvel Cinematic Universe, dan The Lord of the Rings
         </p>
         <h2>Project yang lagi di garap</h2>
         <p>
@@ -70,11 +70,24 @@
             <li>Ahtefe Reload (React Native, Socket.io, Node.js, OneSignal)</li>
           </ol>
         </p>
+	<h2>Software yang saya pake</h2>
+        <p>
+          <ul>
+            <li>OS: Linux (Debian)</li>
+            <li>Spreadsheet: Libre Office</li>
+            <li>Music Player: Clementine & Spotify</li>
+            <li>Movie Player: VLC</li>
+            <li>Code Editor: Visual Studio Code & Mousepad</li>
+            <li>Database GUI: HeidiSQL (with Wine)</li>
+            <li>Browsers: Google Chrome & Mozilla Firefox</li>
+            <li>Version Control: GitKraken</li>
+            <li>Mail: Mozilla Thunderbird</li>
+            <li>RSS Reader: Mozile Thunderbird</li>
+            <li>Image Editing: GIMP & InkScape</li>
+            <li>Others: Telegram Desktop, Teamviewer, GwenView, Transmission</li>
+          </ul>
+        </p>
         <p>dah gitu aja ..</p>
-	<hr>
-	<p>
-	    <i style="color: red;">Pasti kalian ada yang ketawa habis baca ini ya? Diatas saya bilang ada 2 film favorit, padahal ada 3. Hahaha (Kalau ketawa berarti kalian jeli).</i>
-	</p>
 			</div>
 		</div>
 	</div>
