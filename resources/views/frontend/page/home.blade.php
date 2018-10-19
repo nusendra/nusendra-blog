@@ -30,7 +30,9 @@
   <div class="row">
     <div class="col-lg-3 col-md-10 mx-auto">
       <div class="list-group">
-        <li class="list-group-item list-group-item-secondary">Top Categories</li>
+        <ul>
+          <li class="list-group-item list-group-item-secondary">Top Categories</li>
+        </ul>
         @foreach($kategoris as $item)
           @if($item->posts->count() > 0)
             <a href="/kategori/{{$item->kategori}}" class="list-group-item list-group-item-action">{{$item->kategori}} ({{$item->posts->count()}})</a>
@@ -56,8 +58,9 @@
       <hr>
       @endforeach
       <div class="clearfix">
-        <!-- <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a> -->
-        <span class="pull-right">{{ $posts->links() }}</span>
+        <ul>
+          <span class="pull-right">{{ $posts->links() }}</span>
+        </ul>
       </div>
     </div>
   </div>
