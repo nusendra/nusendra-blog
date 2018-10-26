@@ -3,7 +3,7 @@
 @section('description','Personal web blog yang memuat konten seputar kehidupan programmer dan aktifitas ngoding')
 
 @section('content')
-<header class="masthead" style="background-image: url('/image/minify.png')">
+<header class="masthead" style="background-image: url('https://cdn.staticaly.com/img/nusendra.com/image/minify.png')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -15,7 +15,6 @@
             <div id="typed-strings">
                 <p>Full Stack Web Developer</p>
                 <p>Mobile App Developer</p>
-                <p>JavaScript Coder</p>
                 <p>Tech and Personal Blogger</p>
             </div>
             <h2><span id="typed"></span></h2>
