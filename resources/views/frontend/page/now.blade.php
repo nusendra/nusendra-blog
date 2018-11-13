@@ -21,7 +21,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-        update tanggal 1 Oktober 2018
+        update tanggal 13 November 2018
         <p/>
         <h2>Jelasin dikit dong buat apa halaman ini</h2>
         <p>
@@ -68,8 +68,11 @@
           <ol>
             <li>ERP PT. Benteng Api Technic (Nuxt.js, Lumen, Pusher.js)</li>
             <li>Ahtefe Reload (React Native, Socket.io, Node.js, OneSignal)</li>
+            <li>Laporan Rencana Anggaran Pemerintah Mojokerto 2018 (Nuxt.js, Laravel, Pusher.js)</li>
+            <li>Payroll PT.BAT - PT. Ume Persada Indonesia</li>
           </ol>
         </p>
+        <p>Haha handle 4 project itu rasanya cenut cenut</p>
 	<h2>Software yang saya pake</h2>
         <p>
           <ul>
@@ -77,12 +80,12 @@
             <li>Spreadsheet: Libre Office</li>
             <li>Music Player: Clementine & Spotify</li>
             <li>Movie Player: VLC</li>
-            <li>Code Editor: Visual Studio Code & Mousepad</li>
+            <li>Code Editor: VIM</li>
             <li>Database GUI: HeidiSQL (with Wine) & RoboMongo</li>
             <li>Browsers: Google Chrome & Mozilla Firefox</li>
             <li>Version Control: GitKraken</li>
             <li>Mail: Mozilla Thunderbird</li>
-            <li>RSS Reader: Mozile Thunderbird</li>
+            <li>RSS Reader: Mozilla Thunderbird</li>
             <li>Image Editing: GIMP & InkScape</li>
             <li>Others: Telegram Desktop, Teamviewer, GwenView, Transmission</li>
           </ul>
