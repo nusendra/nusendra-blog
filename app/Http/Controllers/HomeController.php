@@ -14,7 +14,7 @@ class HomeController extends Controller
             $query->select('id', 'name');
         },'kategoris' => function ($q) {
             $q->select('kategori');
-        }])->where('status_terbit', 1)->orderBy('id', 'desc')->simplePaginate(5);
+        }])->where('status_terbit', 1)->orderBy('id', 'desc')->simplePaginate(10);
 
         $kategoris = Kategori::with('posts:judul')->get();
         return view('frontend.page.home', compact('posts', 'kategoris'));
