@@ -24,6 +24,7 @@ Route::view('/portfolio/vre-xmpp-client', 'frontend.page.portfolio.mini.xmppClie
 Route::view('/portfolio/ahtefe-counter-reload', 'frontend.page.portfolio.main.ahtefeCounterReload');
 Route::view('/portfolio/webmap-peruntukan-lahan-permukiman', 'frontend.page.portfolio.main.webmapPeruntukanLahanPermukiman');
 Route::view('/portfolio/nusendra-blog', 'frontend.page.portfolio.main.nusendra');
+Route::view('/portfolio/payroll-and-man-power', 'frontend.page.portfolio.main.payroll');
 
 Route::get('/post/{slug}','PostController@show');
 Route::get('/kategori/{kategori}','KategoriController@show');

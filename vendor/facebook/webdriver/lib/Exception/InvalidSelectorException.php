@@ -15,6 +15,7 @@
 
 namespace Facebook\WebDriver\Exception;
 
-class InvalidSelectorException extends WebDriverException
-{
+
+class InvalidSelectorException extends WebDriverException {
+
 }

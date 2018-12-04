@@ -15,6 +15,7 @@
 
 namespace Facebook\WebDriver\Exception;
 
-class NullPointerException extends WebDriverException
-{
+
+class NullPointerException extends WebDriverException {
+
 }

@@ -15,6 +15,7 @@
 
 namespace Facebook\WebDriver\Exception;
 
-class IMENotAvailableException extends WebDriverException
-{
+
+class IMENotAvailableException extends WebDriverException {
+
 }

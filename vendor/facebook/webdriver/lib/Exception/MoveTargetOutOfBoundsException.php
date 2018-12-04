@@ -15,6 +15,7 @@
 
 namespace Facebook\WebDriver\Exception;
 
-class MoveTargetOutOfBoundsException extends WebDriverException
-{
+
+class MoveTargetOutOfBoundsException extends WebDriverException {
+
 }

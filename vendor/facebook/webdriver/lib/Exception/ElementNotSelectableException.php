@@ -15,6 +15,7 @@
 
 namespace Facebook\WebDriver\Exception;
 
-class ElementNotSelectableException extends WebDriverException
-{
+
+class ElementNotSelectableException extends WebDriverException {
+
 }

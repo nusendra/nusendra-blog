@@ -18,55 +18,42 @@ namespace Facebook\WebDriver;
 /**
  * Represent a dimension.
  */
-class WebDriverDimension
-{
-    /**
-     * @var int
-     */
-    private $height;
-    /**
-     * @var int
-     */
-    private $width;
+class WebDriverDimension {
 
-    /**
-     * @param int $width
-     * @param int $height
-     */
-    public function __construct($width, $height)
-    {
-        $this->width = $width;
-        $this->height = $height;
-    }
+  private $height, $width;
 
-    /**
-     * Get the height.
-     *
-     * @return int The height.
-     */
-    public function getHeight()
-    {
-        return $this->height;
-    }
+  public function __construct($width, $height) {
+    $this->width = $width;
+    $this->height = $height;
+  }
 
-    /**
-     * Get the width.
-     *
-     * @return int The width.
-     */
-    public function getWidth()
-    {
-        return $this->width;
-    }
+  /**
+   * Get the height.
+   *
+   * @return int The height.
+   */
+  public function getHeight() {
+    return $this->height;
+  }
 
-    /**
-     * Check whether the given dimension is the same as the instance.
-     *
-     * @param WebDriverDimension $dimension The dimension to be compared with.
-     * @return bool Whether the height and the width are the same as the instance.
-     */
-    public function equals(self $dimension)
-    {
-        return $this->height === $dimension->getHeight() && $this->width === $dimension->getWidth();
-    }
+  /**
+   * Get the width.
+   *
+   * @return int The width.
+   */
+  public function getWidth() {
+    return $this->width;
+  }
+
+  /**
+   * Check whether the given dimension is the same as the instance.
+   *
+   * @param WebDriverDimension $dimension The dimension to be compared with.
+   * @return bool Whether the height and the width are the same as the
+   *              instance.
+   */
+  public function equals(WebDriverDimension $dimension) {
+    return $this->height === $dimension->getHeight() &&
+           $this->width === $dimension->getWidth();
+  }
 }

@@ -17,148 +17,131 @@ namespace Facebook\WebDriver\Remote\Service;
 
 use Exception;
 use Facebook\WebDriver\Net\URLChecker;
-use Symfony\Component\Process\Process;
-use Symfony\Component\Process\ProcessBuilder;
 
-/**
- * Start local WebDriver service (when remote WebDriver server is not used).
- */
-class DriverService
-{
-    /**
-     * @var string
-     */
-    private $executable;
+class DriverService {
 
-    /**
-     * @var string
-     */
-    private $url;
+  /**
+   * @var string
+   */
+  private $executable;
 
-    /**
-     * @var array
-     */
-    private $args;
+  /**
+   * @var string
+   */
+  private $url;
 
-    /**
-     * @var array
-     */
-    private $environment;
+  /**
+   * @var array
+   */
+  private $args;
 
-    /**
-     * @var Process|null
-     */
-    private $process;
+  /**
+   * @var array
+   */
+  private $environment;
 
-    /**
-     * @param string $executable
-     * @param int $port The given port the service should use.
-     * @param array $args
-     * @param array|null $environment Use the system environment if it is null
-     */
-    public function __construct($executable, $port, $args = [], $environment = null)
-    {
-        $this->executable = self::checkExecutable($executable);
-        $this->url = sprintf('http://localhost:%d', $port);
-        $this->args = $args;
-        $this->environment = $environment ?: $_ENV;
+  /**
+   * @var resource
+   */
+  private $process;
+
+  /**
+   * @param string $executable
+   * @param int $port The given port the service should use.
+   * @param array $args
+   * @param array|null $environment Use the system environment if it is null
+   */
+  public function __construct(
+    $executable,
+    $port,
+    $args = array(),
+    $environment = null
+  ) {
+    $this->executable = self::checkExecutable($executable);
+    $this->url = sprintf('http://localhost:%d', $port);
+    $this->args = $args;
+    $this->environment = $environment ?: $_ENV;
+  }
+
+  /**
+   * @return string
+   */
+  public function getURL() {
+    return $this->url;
+  }
+
+  /**
+   * @return DriverService
+   */
+  public function start() {
+    if ($this->process !== null) {
+      return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getURL()
-    {
-        return $this->url;
+    $pipes = array();
+    $this->process = proc_open(
+      sprintf("%s %s", $this->executable, implode(' ', $this->args)),
+      $descriptorspec = array(
+        0 => array('pipe', 'r'), // stdin
+        1 => array('pipe', 'w'), // stdout
+        2 => array('pipe', 'a'), // stderr
+      ),
+      $pipes,
+      null,
+      $this->environment
+    );
+
+    $checker = new URLChecker();
+    $checker->waitUntilAvailable(20 * 1000, $this->url.'/status');
+
+    return $this;
+  }
+
+  /**
+   * @return DriverService
+   */
+  public function stop() {
+    if ($this->process === null) {
+      return $this;
     }
 
-    /**
-     * @return DriverService
-     */
-    public function start()
-    {
-        if ($this->process !== null) {
-            return $this;
-        }
+    proc_terminate($this->process);
+    $this->process = null;
 
-        $this->process = $this->createProcess();
-        $this->process->start();
+    $checker = new URLChecker();
+    $checker->waitUntilUnAvailable(3 * 1000, $this->url.'/shutdown');
 
-        $checker = new URLChecker();
-        $checker->waitUntilAvailable(20 * 1000, $this->url . '/status');
+    return $this;
+  }
 
-        return $this;
+  /**
+   * @return bool
+   */
+  public function isRunning() {
+    if ($this->process === null) {
+      return false;
     }
 
-    /**
-     * @return DriverService
-     */
-    public function stop()
-    {
-        if ($this->process === null) {
-            return $this;
-        }
+    $status = proc_get_status($this->process);
+    return $status['running'];
+  }
 
-        $this->process->stop();
-        $this->process = null;
-
-        $checker = new URLChecker();
-        $checker->waitUntilUnavailable(3 * 1000, $this->url . '/shutdown');
-
-        return $this;
+  /**
+   * Check if the executable is executable.
+   *
+   * @param string $executable
+   * @return string
+   * @throws Exception
+   */
+  protected static function checkExecutable($executable) {
+    if (!is_file($executable)) {
+      throw new Exception("'$executable' is not a file.");
     }
 
-    /**
-     * @return bool
-     */
-    public function isRunning()
-    {
-        if ($this->process === null) {
-            return false;
-        }
-
-        return $this->process->isRunning();
+    if (!is_executable($executable)) {
+      throw new Exception("'$executable' is not executable.");
     }
 
-    /**
-     * Check if the executable is executable.
-     *
-     * @param string $executable
-     * @throws Exception
-     * @return string
-     */
-    protected static function checkExecutable($executable)
-    {
-        if (!is_file($executable)) {
-            throw new Exception("'$executable' is not a file.");
-        }
-
-        if (!is_executable($executable)) {
-            throw new Exception("'$executable' is not executable.");
-        }
-
-        return $executable;
-    }
-
-    /**
-     * @return Process
-     */
-    private function createProcess()
-    {
-        // BC: ProcessBuilder deprecated since Symfony 3.4 and removed in Symfony 4.0.
-        if (class_exists(ProcessBuilder::class)
-            && false === mb_strpos('@deprecated', (new \ReflectionClass(ProcessBuilder::class))->getDocComment())
-        ) {
-            $processBuilder = (new ProcessBuilder())
-                ->setPrefix($this->executable)
-                ->setArguments($this->args)
-                ->addEnvironmentVariables($this->environment);
-
-            return $processBuilder->getProcess();
-        }
-        // Safe to use since Symfony 3.3
-        $commandLine = array_merge([$this->executable], $this->args);
-
-        return new Process($commandLine, null, $this->environment);
-    }
+    return $executable;
+  }
 }

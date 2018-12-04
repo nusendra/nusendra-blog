@@ -15,6 +15,7 @@
 
 namespace Facebook\WebDriver\Exception;
 
-class SessionNotCreatedException extends WebDriverException
-{
+
+class SessionNotCreatedException extends WebDriverException {
+
 }

@@ -15,31 +15,31 @@
 
 namespace Facebook\WebDriver;
 
-interface WebDriverKeyboard
-{
-    /**
-     * Send a sequence of keys.
-     *
-     * @param string $keys
-     * @return $this
-     */
-    public function sendKeys($keys);
+interface WebDriverKeyboard {
 
-    /**
-     * Press a key
-     *
-     * @see WebDriverKeys
-     * @param string $key
-     * @return $this
-     */
-    public function pressKey($key);
+  /**
+   * Send a sequence of keys.
+   *
+   * @param string $keys
+   * @return $this
+   */
+  public function sendKeys($keys);
 
-    /**
-     * Release a key
-     *
-     * @see WebDriverKeys
-     * @param string $key
-     * @return $this
-     */
-    public function releaseKey($key);
+  /**
+   * Press a key
+   *
+   * @see WebDriverKeys
+   * @param string $key
+   * @return $this
+   */
+  public function pressKey($key);
+
+  /**
+   * Release a key
+   *
+   * @see WebDriverKeys
+   * @param string $key
+   * @return $this
+   */
+  public function releaseKey($key);
 }

@@ -56,9 +56,9 @@ abstract class TestCase extends FoundationTestCase
     }
 
     /**
-     * Return the default user to authenticate.
+     * Get a callback that returns the default user to authenticate.
      *
-     * @return \App\User|int|null
+     * @return \Closure
      * @throws \Exception
      */
     protected function user()

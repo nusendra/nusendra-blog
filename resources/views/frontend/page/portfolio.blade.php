@@ -36,6 +36,7 @@
           <a href="/portfolio/ahtefe-counter-reload">Ahtefe Counter Reload </a><code>*Desktop</code><br>
           <a href="/portfolio/webmap-peruntukan-lahan-permukiman">Webmap Peruntukan Lahan Permukiman </a><code>*Web</code><br>
           <a href="/portfolio/nusendra-blog">Nusendra.com </a><code>*Web</code><br>
+          <a href="/portfolio/payroll-and-man-power">Payroll and Man Power Control</a><code>*Web</code><br>
           Monitoring Project PT. Benteng Api Technic <code>*Web</code><br>
           ERP PT. Benteng Api Technic <code>*Web</code><br>
           Ahtefe Pulsa Reload <code>*Mobile</code><br>

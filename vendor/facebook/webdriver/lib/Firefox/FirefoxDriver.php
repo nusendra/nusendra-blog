@@ -15,14 +15,10 @@
 
 namespace Facebook\WebDriver\Firefox;
 
-/**
- * @codeCoverageIgnore
- */
-class FirefoxDriver
-{
-    const PROFILE = 'firefox_profile';
+class FirefoxDriver {
+  const PROFILE = 'firefox_profile';
 
-    private function __construct()
-    {
-    }
+  private function __construct()
+  {
+  }
 }

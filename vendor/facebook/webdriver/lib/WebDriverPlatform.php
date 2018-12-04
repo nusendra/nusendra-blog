@@ -17,21 +17,18 @@ namespace Facebook\WebDriver;
 
 /**
  * The platforms supported by WebDriver.
- *
- * @codeCoverageIgnore
  */
-class WebDriverPlatform
-{
-    const ANDROID = 'ANDROID';
-    const ANY = 'ANY';
-    const LINUX = 'LINUX';
-    const MAC = 'MAC';
-    const UNIX = 'UNIX';
-    const VISTA = 'VISTA';
-    const WINDOWS = 'WINDOWS';
-    const XP = 'XP';
+class WebDriverPlatform {
+  const ANDROID = 'ANDROID';
+  const ANY = 'ANY';
+  const LINUX = 'LINUX';
+  const MAC = 'MAC';
+  const UNIX = 'UNIX';
+  const VISTA = 'VISTA';
+  const WINDOWS = 'WINDOWS';
+  const XP = 'XP';
 
-    private function __construct()
-    {
-    }
+  private function __construct()
+  {
+  }
 }

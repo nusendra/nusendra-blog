@@ -15,6 +15,7 @@
 
 namespace Facebook\WebDriver\Exception;
 
-class WebDriverCurlException extends WebDriverException
-{
+
+class WebDriverCurlException extends WebDriverException {
+
 }

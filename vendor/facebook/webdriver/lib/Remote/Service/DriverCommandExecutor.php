@@ -19,50 +19,47 @@ use Facebook\WebDriver\Exception\WebDriverException;
 use Facebook\WebDriver\Remote\DriverCommand;
 use Facebook\WebDriver\Remote\HttpCommandExecutor;
 use Facebook\WebDriver\Remote\WebDriverCommand;
-use Facebook\WebDriver\Remote\WebDriverResponse;
 
 /**
  * A HttpCommandExecutor that talks to a local driver service instead of
  * a remote server.
  */
-class DriverCommandExecutor extends HttpCommandExecutor
-{
-    /**
-     * @var DriverService
-     */
-    private $service;
+class DriverCommandExecutor extends HttpCommandExecutor {
 
-    public function __construct(DriverService $service)
-    {
-        parent::__construct($service->getURL());
-        $this->service = $service;
+  /**
+   * @var DriverService
+   */
+  private $service;
+
+  public function __construct(DriverService $service) {
+    parent::__construct($service->getURL());
+    $this->service = $service;
+  }
+
+  /**
+   * @param WebDriverCommand $command
+   *
+   * @return mixed
+   * @throws WebDriverException
+   * @throws \Exception
+   */
+  public function execute(WebDriverCommand $command) {
+    if ($command->getName() === DriverCommand::NEW_SESSION) {
+      $this->service->start();
     }
 
-    /**
-     * @param WebDriverCommand $command
-     *
-     * @throws WebDriverException
-     * @throws \Exception
-     * @return WebDriverResponse
-     */
-    public function execute(WebDriverCommand $command)
-    {
-        if ($command->getName() === DriverCommand::NEW_SESSION) {
-            $this->service->start();
-        }
-
-        try {
-            $value = parent::execute($command);
-            if ($command->getName() === DriverCommand::QUIT) {
-                $this->service->stop();
-            }
-
-            return $value;
-        } catch (\Exception $e) {
-            if (!$this->service->isRunning()) {
-                throw new WebDriverException('The driver server has died.');
-            }
-            throw $e;
-        }
+    try {
+      $value = parent::execute($command);
+      if ($command->getName() === DriverCommand::QUIT) {
+        $this->service->stop();
+      }
+      return $value;
+    } catch (\Exception $e) {
+      if (!$this->service->isRunning()) {
+        throw new WebDriverException('The driver server has died.');
+      }
+      throw $e;
     }
+  }
+
 }

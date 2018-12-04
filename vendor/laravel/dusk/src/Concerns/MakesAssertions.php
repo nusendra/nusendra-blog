@@ -17,10 +17,7 @@ trait MakesAssertions
      */
     public function assertTitle($title)
     {
-        PHPUnit::assertEquals(
-            $title, $this->driver->getTitle(),
-            "Expected title [{$title}] does not equal actual title [{$this->driver->getTitle()}]."
-        );
+        PHPUnit::assertEquals($title, $this->driver->getTitle(), "Expected title [{$title}] does not equal actual title [{$this->driver->getTitle()}].");
 
         return $this;
     }
@@ -61,10 +58,7 @@ trait MakesAssertions
             array_get($segments, 'path', '')
         );
 
-        PHPUnit::assertRegExp(
-            '/^'.$pattern.'$/u', $currentUrl,
-            "Actual URL [{$this->driver->getCurrentURL()}] does not equal expected URL [{$url}]."
-        );
+        PHPUnit::assertRegExp('/^'.$pattern.'$/u', $currentUrl, "Actual URL [{$currentUrl}] does not equal expected URL [{$pattern}].");
 
         return $this;
     }
@@ -83,10 +77,7 @@ trait MakesAssertions
 
         $actualPath = parse_url($this->driver->getCurrentURL())['path'];
 
-        PHPUnit::assertRegExp(
-            '/^'.$pattern.'$/u', $actualPath,
-            "Actual path [{$actualPath}] does not equal expected path [{$path}]."
-        );
+        PHPUnit::assertRegExp('/^'.$pattern.'$/u', $actualPath, "Actual path [{$actualPath}] does not equal expected path [{$pattern}].");
 
         return $this;
     }
@@ -101,10 +92,7 @@ trait MakesAssertions
     {
         $actualPath = parse_url($this->driver->getCurrentURL())['path'];
 
-        PHPUnit::assertStringStartsWith(
-            $path, $actualPath,
-            "Actual path [{$actualPath}] does not begin with expected path [{$path}]."
-        );
+        PHPUnit::assertStringStartsWith($path, $actualPath, "Actual path [{$actualPath}] does not begin with expected path [{$path}].");
 
         return $this;
     }
@@ -119,10 +107,7 @@ trait MakesAssertions
     {
         $actualPath = parse_url($this->driver->getCurrentURL())['path'];
 
-        PHPUnit::assertNotEquals(
-            $path, $actualPath,
-            "Path [{$path}] should not equal the actual value."
-        );
+        PHPUnit::assertNotEquals($path, $actualPath, "Path [{$path}] should not equal the actual value.");
 
         return $this;
     }
@@ -139,10 +124,7 @@ trait MakesAssertions
 
         $actualFragment = (string) parse_url($this->driver->executeScript('return window.location.href;'), PHP_URL_FRAGMENT);
 
-        PHPUnit::assertRegExp(
-            '/^'.str_replace('\*', '.*', $pattern).'$/u', $actualFragment,
-            "Actual fragment [{$actualFragment}] does not equal expected fragment [{$fragment}]."
-        );
+        PHPUnit::assertRegExp('/^'.str_replace('\*', '.*', $pattern).'$/u', $actualFragment, "Actual fragment [{$actualFragment}] does not equal expected fragment [{$pattern}].");
 
         return $this;
     }
@@ -157,10 +139,7 @@ trait MakesAssertions
     {
         $actualFragment = (string) parse_url($this->driver->executeScript('return window.location.href;'), PHP_URL_FRAGMENT);
 
-        PHPUnit::assertStringStartsWith(
-            $fragment, $actualFragment,
-            "Actual fragment [$actualFragment] does not begin with expected fragment [$fragment]."
-        );
+        PHPUnit::assertStringStartsWith($fragment, $actualFragment, "Actual fragment [$actualFragment] does not begin with expected fragment [$fragment].");
 
         return $this;
     }
@@ -175,10 +154,7 @@ trait MakesAssertions
     {
         $actualFragment = (string) parse_url($this->driver->executeScript('return window.location.href;'), PHP_URL_FRAGMENT);
 
-        PHPUnit::assertNotEquals(
-            $fragment, $actualFragment,
-            "Fragment [{$fragment}] should not equal the actual value."
-        );
+        PHPUnit::assertNotEquals($fragment, $actualFragment, "Fragment [{$fragment}] should not equal the actual value.");
 
         return $this;
     }
@@ -271,16 +247,13 @@ trait MakesAssertions
     /**
      * Assert that the given cookie is present.
      *
-     * @param  string $name
-     * @param  bool  $decrypt
+     * @param  string  $name
      * @return $this
      */
-    public function assertHasCookie($name, $decrypt = true)
+    public function assertHasCookie($name)
     {
-        $cookie = $decrypt ? $this->cookie($name) : $this->plainCookie($name);
-
         PHPUnit::assertTrue(
-            ! is_null($cookie),
+            ! is_null($this->cookie($name)),
             "Did not find expected cookie [{$name}]."
         );
 
@@ -288,44 +261,19 @@ trait MakesAssertions
     }
 
     /**
-     * Assert that the given plain cookie is present.
+     * Assert that the given cookie is not present.
      *
      * @param  string  $name
      * @return $this
      */
-    public function assertHasPlainCookie($name)
+    public function assertCookieMissing($name)
     {
-        return $this->assertHasCookie($name, false);
-    }
-
-    /**
-     * Assert that the given cookie is not present.
-     *
-     * @param  string $name
-     * @param  bool  $decrypt
-     * @return $this
-     */
-    public function assertCookieMissing($name, $decrypt = true)
-    {
-        $cookie = $decrypt ? $this->cookie($name) : $this->plainCookie($name);
-
         PHPUnit::assertTrue(
-            is_null($cookie),
+            is_null($this->cookie($name)),
             "Found unexpected cookie [{$name}]."
         );
 
         return $this;
-    }
-
-    /**
-     * Assert that the given plain cookie is not present.
-     *
-     * @param  string  $name
-     * @return $this
-     */
-    public function assertPlainCookieMissing($name)
-    {
-        return $this->assertCookieMissing($name, false);
     }
 
     /**
@@ -489,7 +437,7 @@ trait MakesAssertions
         if ($this->resolver->prefix) {
             $message = "Saw unexpected link [{$link}] within [{$this->resolver->prefix}].";
         } else {
-            $message = "Saw unexpected link [{$link}].";
+            $message = "Saw unexpected expected link [{$link}].";
         }
 
         PHPUnit::assertFalse(
@@ -529,10 +477,7 @@ JS;
      */
     public function assertInputValue($field, $value)
     {
-        PHPUnit::assertEquals(
-            $value, $this->inputValue($field),
-            "Expected value [{$value}] for the [{$field}] input does not equal the actual value [{$this->inputValue($field)}]."
-        );
+        PHPUnit::assertEquals($value, $this->inputValue($field), "Expected value [{$value}] for the [{$field}] input does not equal the actual value [{$this->inputValue($field)}].");
 
         return $this;
     }
@@ -546,10 +491,7 @@ JS;
      */
     public function assertInputValueIsNot($field, $value)
     {
-        PHPUnit::assertNotEquals(
-            $value, $this->inputValue($field),
-            "Value [{$value}] for the [{$field}] input should not equal the actual value."
-        );
+        PHPUnit::assertNotEquals($value, $this->inputValue($field), "Value [{$value}] for the [{$field}] input should not equal the actual value.");
 
         return $this;
     }
@@ -838,11 +780,8 @@ JS;
      */
     public function assertDialogOpened($message)
     {
-        $actualMessage = $this->driver->switchTo()->alert()->getText();
-
         PHPUnit::assertEquals(
-            $message, $actualMessage,
-            "Expected dialog message [{$message}] does not equal actual message [{$actualMessage}]."
+            $message, $this->driver->switchTo()->alert()->getText()
         );
 
         return $this;
@@ -965,7 +904,7 @@ JS;
 
     /**
      * Assert that the Vue component's attribute at the given key
-     * is an array that does not contain the given value.
+     * is an array that contains the given value.
      *
      * @param  string  $key
      * @param  string  $value
