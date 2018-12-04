@@ -36,11 +36,14 @@
           <a href="/portfolio/ahtefe-counter-reload">Ahtefe Counter Reload </a><code>*Desktop</code><br>
           <a href="/portfolio/webmap-peruntukan-lahan-permukiman">Webmap Peruntukan Lahan Permukiman </a><code>*Web</code><br>
           <a href="/portfolio/nusendra-blog">Nusendra.com </a><code>*Web</code><br>
-          <a href="/portfolio/payroll-and-man-power">Payroll and Man Power Control</a><code>*Web</code><br>
-          Monitoring Project PT. Benteng Api Technic <code>*Web</code><br>
+          <a href="/portfolio/bat-monitoring-project">Monitoring Project PT. Benteng Api Technic</a><code> *Web</code><br>
+          <a href="/portfolio/payroll-and-man-power">Payroll and Man Power Control</a><code> *Web</code><br>
+          <a href="/portfolio/e-pelaporan">e-Pelaporan Kab. Mojokerto</a><code> *Web</code><br>
+          <a href="/portfolio/digigov">Digigov.id</a><code> *Web</code><br>
+          <hr>
+          <h2>ON PROGRESS</h2>
           ERP PT. Benteng Api Technic <code>*Web</code><br>
           Ahtefe Pulsa Reload <code>*Mobile</code><br>
-          Digigov.id <code>*Web</code><br>
         </p>
         <hr>
         <p>

@@ -25,6 +25,9 @@ Route::view('/portfolio/ahtefe-counter-reload', 'frontend.page.portfolio.main.ah
 Route::view('/portfolio/webmap-peruntukan-lahan-permukiman', 'frontend.page.portfolio.main.webmapPeruntukanLahanPermukiman');
 Route::view('/portfolio/nusendra-blog', 'frontend.page.portfolio.main.nusendra');
 Route::view('/portfolio/payroll-and-man-power', 'frontend.page.portfolio.main.payroll');
+Route::view('/portfolio/bat-monitoring-project', 'frontend.page.portfolio.main.monitoring');
+Route::view('/portfolio/e-pelaporan', 'frontend.page.portfolio.main.epelaporan');
+Route::view('/portfolio/digigov', 'frontend.page.portfolio.main.digigov');
 
 Route::get('/post/{slug}','PostController@show');
 Route::get('/kategori/{kategori}','KategoriController@show');

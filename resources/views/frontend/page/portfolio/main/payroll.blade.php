@@ -29,7 +29,7 @@
                     </tr>
                     <tr>
                         <td>Tahun</td>
-                        <td>2018 - sekarang</td>
+                        <td>2018</td>
                     </tr>
                     <tr>
                         <td>Kategori Project</td>
