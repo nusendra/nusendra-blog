@@ -50,7 +50,7 @@
                     <h3>Tech Detail</h3>
                 </p>
                 <p>
-                    Web app ini dibangun menggunakan PHP (Lumen Framework) sebagai backend dan Nuxtjs sebagai Frontend.
+                    Web app ini dibangun menggunakan PHP (Lumen Framework) sebagai backend dan Nuxtjs sebagai Frontend. Aplikasi ini dibuat dengan sangat sederhana, karena tenggat waktu yang diberikan hanya satu minggu, ya, satu minggu :D
                 </p>
                 <p>
                     <h3>Screenshots</h3>
@@ -65,28 +65,24 @@
                                 <a href="https://farm5.staticflickr.com/4902/32296128448_92c8483409_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
                                     <img src="https://farm5.staticflickr.com/4902/32296128448_92c8483409_q.jpg" class="img-fluid" alt="nusendra-pwa-addtohomescreen">
                                 </a>
-                                <a href="https://farm2.staticflickr.com/1915/30286919887_c65e25c957.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
-                                    <img src="https://farm2.staticflickr.com/1915/30286919887_c65e25c957.jpg" class="img-fluid" alt="nusendra-pwa-a2hs">
+                                <a href="https://farm5.staticflickr.com/4898/32296128108_df1ed250ea_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm5.staticflickr.com/4898/32296128108_df1ed250ea_q.jpg" class="img-fluid" alt="nusendra-pwa-a2hs">
                                 </a>
-                                <a href="https://farm2.staticflickr.com/1963/30286919827_331204482f.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
-                                    <img src="https://farm2.staticflickr.com/1963/30286919827_331204482f.jpg" class="img-fluid" alt="nusendra-pwa-notification">
+                                <a href="https://farm5.staticflickr.com/4812/32296127938_0160d054fe_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm5.staticflickr.com/4812/32296127938_0160d054fe_q.jpg" class="img-fluid" alt="nusendra-pwa-notification">
                                 </a>
-                                <a href="https://farm2.staticflickr.com/1924/45226200861_3996d4cbf4.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
-                                    <img src="https://farm2.staticflickr.com/1924/45226200861_3996d4cbf4.jpg" class="img-fluid" alt="nusendra-pwa-nowoffline">
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <a href="https://farm5.staticflickr.com/4805/32296127808_9de7de2be2_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm5.staticflickr.com/4805/32296127808_9de7de2be2_q.jpg" class="img-fluid" alt="nusendra-pwa-nowoffline">
                                 </a>
-                                <a href="https://farm2.staticflickr.com/1932/30286919617_5ddcdcb3f7.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
-                                    <img src="https://farm2.staticflickr.com/1932/30286919617_5ddcdcb3f7.jpg" class="img-fluid" alt="nusendra-pwa-offlineaccess">
+                                <a href="https://farm5.staticflickr.com/4829/44350718760_00cbd3fd76_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm5.staticflickr.com/4829/44350718760_00cbd3fd76_q.jpg" class="img-fluid" alt="nusendra-pwa-nowoffline">
                                 </a>
-                                <a href="https://farm2.staticflickr.com/1913/45226200611_9f73ae4253.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
-                                    <img src="https://farm2.staticflickr.com/1913/45226200611_9f73ae4253.jpg" class="img-fluid" alt="nusendra-pwa-offlinehome">
+                                <a href="https://farm5.staticflickr.com/4832/45255149115_6dc1042a3f_c.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
+                                    <img src="https://farm5.staticflickr.com/4832/45255149115_6dc1042a3f_q.jpg" class="img-fluid" alt="nusendra-pwa-nowoffline">
                                 </a>
-                                <a href="https://farm2.staticflickr.com/1904/44315463185_c44457a88b.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
-                                    <img src="https://farm2.staticflickr.com/1904/44315463185_c44457a88b.jpg" class="img-fluid" alt="nusendra-pwa-permission-notification">
-                                </a>
-                                <a href="https://farm2.staticflickr.com/1933/45226200061_c37cbca8fe.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-sm-3">
-                                    <img src="https://farm2.staticflickr.com/1933/45226200061_c37cbca8fe.jpg" class="img-fluid" alt="nusendra-pwa-homepage">
-                                </a>
-                                
                             </div>
                         </div>
                     </div>
